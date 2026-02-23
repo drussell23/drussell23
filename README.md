@@ -106,17 +106,63 @@ For the past 12 months, I have been executing a solo build of **JARVIS** — a t
 | **ML / Inference** | PyTorch, Transformers, llama.cpp, llama-cpp-python, GGUF quantization, ONNX Runtime, CoreML Tools, SpeechBrain, scikit-learn, SentenceTransformers, HuggingFace Hub, safetensors, tiktoken, Numba (JIT), sympy, LangChain, YOLO |
 | **Training** | LoRA, DPO, RLHF, FSDP, MAML (meta-learning), curriculum learning, federated learning, causal reasoning, world model training, online learning, active learning, EWC |
 | **Models / Vision** | LLaVA (multimodal), ECAPA-TDNN (speaker verification), Whisper (faster-whisper, openai-whisper), Porcupine/Picovoice (wake word), Piper TTS, OmniParser (OCR) |
-| **LLM APIs** | Anthropic Claude API (chat, vision, computer use), OpenAI API (chat completions, embeddings) |
+| **LLM APIs** | Anthropic Claude API (chat, vision, computer use), OpenAI API (chat completions, embeddings), Google Gemini API, Ollama (local inference) |
 | **Rust** | PyO3, ndarray, rayon, parking_lot, DashMap, crossbeam, serde, mimalloc, image crate, Metal (GPU compute), tokio, zstd, lz4, candle (on-device ML) |
 | **Swift / macOS** | Swift Package Manager, CoreLocation, WeatherKit, AppKit, Foundation, Quartz/CoreGraphics, Accessibility API, AVFoundation, pyobjc, launchd, osascript, yabai |
 | **Vector / Data** | ChromaDB, FAISS, Redis, PostgreSQL (asyncpg, psycopg2), SQLite (aiosqlite), NetworkX, bloom filters |
 | **Infrastructure** | GCP (Compute Engine, Cloud SQL, Cloud Run, Secret Manager, Monitoring), Docker, docker-compose, Terraform, Kubernetes, systemd, CMake, pybind11, cpp-httplib |
-| **CI/CD** | GitHub Actions (20+ workflows), git worktrees |
+| **CI/CD** | GitHub Actions (30+ workflows), CodeQL, Super-Linter, Dependabot, Gitleaks, Postman/Newman, git worktrees |
 | **Backend** | FastAPI, uvicorn, uvloop, gRPC, Protobuf, asyncio, aiohttp, httpx, WebSocket, Cloud SQL Proxy, circuit breakers, exponential backoff, distributed locks, epoch fencing |
-| **Observability** | OpenTelemetry (tracing + metrics + OTLP/gRPC export), structlog, psutil, Pydantic, JSONL telemetry pipeline |
+| **Observability** | OpenTelemetry (tracing + metrics + OTLP/gRPC export), Prometheus, structlog, psutil, Pydantic, JSONL telemetry pipeline, LangFuse, Helicone, PostHog |
 | **Frontend** | React 19, Next.js, Framer Motion, Axios, WebSocket real-time streaming |
-| **Audio / Vision** | OpenCV, sounddevice, PyAudio, webrtcvad (VAD), Silero VAD, speexdsp (AEC), librosa, pyautogui, CoreML VAD |
+| **Audio / Vision** | OpenCV, sounddevice, PyAudio, webrtcvad (VAD), Silero VAD, speexdsp (AEC), librosa, pyautogui, CoreML VAD, Tesseract OCR |
+| **Voice / TTS** | ElevenLabs, GCP TTS, Piper TTS, Edge-TTS, gTTS, pyttsx3, macOS Say, Wav2Vec2 |
 | **C++ (ReactorCore)** | Custom `mlforge` ML library: KD-trees, graph structures, trie, matrix ops, linear/logistic regression, decision trees, neural nets, model serialization, deployment API |
+| **AI Orchestration** | LangChain, LangGraph, CrewAI, OpenHands, Open Interpreter, OmniParser |
+| **Experiment Tracking** | Weights & Biases (wandb), TensorBoard |
+| **Browser Automation** | Playwright, DuckDuckGo Search, Beautiful Soup |
+| **Quality / Linting** | pytest, Ruff, Black, isort, Flake8, mypy, Pyright, Bandit, ESLint, pre-commit |
+| **Notifications** | Discord, Slack, Telegram, SMTP/Email |
+| **External APIs** | OpenWeather, Alpha Vantage, News API, Wikipedia API, Google Safe Browsing |
+
+</details>
+
+---
+
+## <img src="https://media.giphy.com/media/LaVp0AyqR5bGsC5Cbm/giphy.gif" width="30"> AI Tools & Development
+
+<div align="center">
+
+[![Claude](https://img.shields.io/badge/Claude-Anthropic-d4a574?style=for-the-badge&logo=anthropic&logoColor=white)](https://www.anthropic.com)
+[![Cursor](https://img.shields.io/badge/Cursor-IDE-00D1FF?style=for-the-badge&logo=cursor&logoColor=white)](https://cursor.sh)
+[![Claude Code](https://img.shields.io/badge/Claude_Code-CLI-d4a574?style=for-the-badge&logo=anthropic&logoColor=white)](https://docs.anthropic.com/en/docs/claude-code)
+[![Gemini](https://img.shields.io/badge/Gemini-Google-4285F4?style=for-the-badge&logo=googlegemini&logoColor=white)](https://deepmind.google/technologies/gemini/)
+[![OpenAI](https://img.shields.io/badge/OpenAI-Whisper-412991?style=for-the-badge&logo=openai&logoColor=white)](https://openai.com)
+[![HuggingFace](https://img.shields.io/badge/HuggingFace-Hub-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co)
+[![Ollama](https://img.shields.io/badge/Ollama-Local_LLM-000000?style=for-the-badge&logo=ollama&logoColor=white)](https://ollama.com)
+[![W&B](https://img.shields.io/badge/Weights_&_Biases-FFBE00?style=for-the-badge&logo=weightsandbiases&logoColor=black)](https://wandb.ai)
+[![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)](https://langchain.com)
+[![ElevenLabs](https://img.shields.io/badge/ElevenLabs-TTS-000000?style=for-the-badge&logo=elevenlabs&logoColor=white)](https://elevenlabs.io)
+[![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)](https://playwright.dev)
+[![Postman](https://img.shields.io/badge/Postman-API_Testing-FF6C37?style=for-the-badge&logo=postman&logoColor=white)](https://postman.com)
+
+</div>
+
+<details>
+<summary><b>Full AI & Dev Tools Inventory</b></summary>
+<br>
+
+| Category | Tools |
+|----------|-------|
+| **LLM Platforms** | Anthropic Claude (chat, vision, computer use), OpenAI (Whisper, embeddings), Google Gemini, Ollama, HuggingFace Transformers, llama.cpp (GGUF), Apple MLX, Candle (Rust ML), ONNX Runtime, CoreML |
+| **AI Development** | Cursor IDE, Claude Code CLI, Claude GitHub Actions (5 workflows: PR analyzer, docs generator, test generator, security analyzer, auto-fix) |
+| **AI Orchestration** | LangChain, LangGraph, CrewAI (multi-agent), OpenHands (coding assistant), Open Interpreter, OmniParser (vision parsing) |
+| **Experiment Tracking** | Weights & Biases (wandb), TensorBoard, LangFuse (LLM observability), Helicone (LLM cost tracking), PostHog (product analytics) |
+| **Voice & Audio** | OpenAI Whisper, Faster-Whisper, SpeechBrain, Wav2Vec2, ElevenLabs TTS, GCP TTS, Piper TTS, Edge-TTS, gTTS, pyttsx3, Picovoice/Porcupine (wake word), WebRTC VAD, Silero VAD, CoreML VAD |
+| **Browser Automation** | Playwright, DuckDuckGo Search, Beautiful Soup, Google Safe Browsing API |
+| **Testing & Quality** | pytest, Ruff, Black, isort, Flake8, mypy, Pyright, Bandit, ESLint, Super-Linter, CodeQL, Dependabot, Gitleaks, Postman/Newman, pre-commit hooks |
+| **Notifications** | Discord, Slack, Telegram, SMTP/Email (Gmail) |
+| **External Data APIs** | OpenWeather, Alpha Vantage (stocks), News API, Wikipedia API, Google NotebookLM |
 
 </details>
 
@@ -141,40 +187,45 @@ For the past 12 months, I have been executing a solo build of **JARVIS** — a t
 Every component below is production code running in the JARVIS ecosystem — not academic exercises.
 
 <details>
-<summary><b>Data Structures (40+ types)</b></summary>
+<summary><b>Data Structures (50+ types)</b></summary>
 <br>
 
 | Category | Structures | Implementation |
 |----------|-----------|----------------|
-| **Trees** | Quadtree (spatial indexing), KD-Tree (nearest neighbor), Trie (prefix search), DAG (startup dependency graph), Scene Graph, Knowledge Graph, Process Tree | Python + Rust + C++ |
-| **Graphs** | Reasoning Graph, Dependency Graph, Multi-Space Context Graph, Window Relationship Graph, Service Mesh Discovery Graph, LangGraph state machines | Python |
-| **Hash-Based** | Bloom Filters (probabilistic membership), LSH Semantic Cache, LRU Cache, TTL Cache, Consistent Hashing, DashMap (lock-free concurrent) | Python + Rust + Swift |
-| **Queues & Buffers** | Priority Queue, Bounded Queue, Ring Buffer, Circular Buffer, Work-Stealing Queue, Zero-Copy IPC (mmap), Lock-Free SPSC Queue | Python + Rust + JS |
+| **Trees** | Quadtree (spatial indexing), KD-Tree (nearest neighbor + radius search), Trie (prefix search), DAG (startup dependency graph), Scene Graph, Knowledge Graph, Process Tree | Python + Rust + C++ |
+| **Graphs** | Reasoning Graph, Dependency Graph, Multi-Space Context Graph, Window Relationship Graph, Service Mesh Discovery Graph, LangGraph state machines, Causal Graphs (do-calculus) | Python |
+| **Hash-Based** | Bloom Filters (3 languages), LSH Semantic Cache, LRU Cache, TTL Cache, Consistent Hashing, DashMap (lock-free concurrent), Bitmaps/Bitsets | Python + Rust + Swift |
+| **Heaps & Queues** | Binary Heap (heapq), Priority Queue, Bounded Queue, Ring Buffer, Circular Buffer, Work-Stealing Queue, Zero-Copy IPC (mmap), Lock-Free SPSC Queue | Python + Rust + JS |
 | **Concurrent** | Arc\<Mutex\<>>, RwLock, DashMap, mpsc channels, Vector Clock, CRDT, Distributed Lock, asyncio.Queue | Rust + Python |
-| **Matrices** | Matrix2D, Matrix3D (row-major), Memory Pool, Slab Allocator, Zero-Copy Buffers, Object Recycler | Rust + C++ |
+| **Matrices & Tensors** | Matrix2D, Matrix3D (row-major), Sparse Matrices (nalgebra-sparse), PyTorch Tensors, Quantized Tensors (INT8/INT4), Embedding Vectors | Rust + C++ + Python |
+| **Memory** | Memory Pool, Slab Allocator, Zero-Copy Buffers, Object Recycler, mmap Ring Buffers | Rust + Python |
 | **State** | Finite State Machine, Event Bus, Event Store, Sliding Window, Bounded Collections | Python |
 
 </details>
 
 <details>
-<summary><b>Algorithms (50+ implementations)</b></summary>
+<summary><b>Algorithms (80+ implementations)</b></summary>
 <br>
 
 | Category | Algorithms | Where |
 |----------|-----------|-------|
 | **Resilience** | Circuit Breaker (5 variants), Exponential Backoff w/ Jitter, Graceful Degradation, Self-Healing, Leader Election, Distributed Locking, Distributed Transactions, Distributed Dedup | JARVIS + Prime |
 | **Scheduling** | Round Robin, Token Bucket, Leaky Bucket, Sliding Window Rate Limiter, Work Stealing, Backpressure Control, Adaptive ML-Based Rate Limiting | All three repos |
-| **Graph / Search** | Topological Sort (DAG), BFS/DFS (dependency resolution), A\* Pathfinding (vision navigation), K-Nearest Neighbor (KD-Tree) | JARVIS + Reactor |
-| **ML Training** | LoRA/QLoRA, DPO (preference optimization), RLHF (PPO pipeline), FSDP (parameter sharding), MAML/Reptile (meta-learning), Federated Learning (FedAvg, FedProx, Byzantine-robust), Curriculum Learning, Causal Reasoning (do-calculus), Online Learning w/ EWC, World Model Training (Dreamer/MuZero-inspired) | ReactorCore |
-| **ML Inference** | Quantized INT8/INT4 Inference, Cosine Similarity, Locality-Sensitive Hashing, Embeddings/Vector Search, Anomaly Detection, Pattern Recognition, Goal Inference, Activity Recognition, Tiered Complexity Routing | JARVIS + Prime |
-| **Signal Processing** | VAD (WebRTC + Silero + CoreML), MFCC/Mel Filterbanks, Spectrogram Analysis, Anti-Spoofing Detection, Barge-In Detection, ECAPA-TDNN Speaker Verification | JARVIS |
+| **Graph / Search** | Topological Sort (DAG), BFS/DFS, A\* Search, Dijkstra's Shortest Path, K-Nearest Neighbor, PageRank (file importance ranking) | All three repos |
+| **Statistical / Bayesian** | Bayesian Inference (Beta-Bernoulli, Normal-Normal posteriors), Bayesian Confidence Fusion, Multi-Armed Bandit (Thompson Sampling, epsilon-greedy), Monte Carlo Validation, Kalman Filter (RSSI smoothing), Markov Chain Prediction | JARVIS + Prime |
+| **ML Training** | LoRA/QLoRA, DPO (preference optimization), RLHF (PPO pipeline), FSDP (parameter sharding), MAML/Reptile (meta-learning), Federated Learning (FedAvg, FedProx, Byzantine-robust), Curriculum Learning, Causal Reasoning (do-calculus), Online Learning w/ EWC, World Model Training (Dreamer/MuZero-inspired), Knowledge Distillation (Hinton, FitNets, attention transfer, multi-teacher), Gradient Accumulation, Mixed Precision (BF16/FP16) | ReactorCore + Prime |
+| **ML Inference** | Quantized INT8/INT4, Cosine Similarity, LSH, Vector Search, Anomaly Detection, Pattern Recognition, Goal Inference, Activity Recognition, Tiered Complexity Routing, Flash Attention | JARVIS + Prime |
+| **Neural Networks** | Multi-Head Self-Attention, Dropout, BatchNorm, LayerNorm, LSTM + Attention, Feedforward w/ Backpropagation, Cognitive Layers (cross-attention + residual) | All three repos |
+| **Clustering & Reduction** | K-Means, DBSCAN, PCA, Truncated SVD, TF-IDF Vectorization | JARVIS + Reactor |
+| **Ensemble Methods** | Random Forest, Gradient Boosting, Isolation Forest, Ensemble STT (multi-model voting), Weighted Model Ensemble (majority/cascade) | JARVIS + Reactor |
+| **Signal Processing** | VAD (WebRTC + Silero + CoreML), MFCC/Mel Filterbanks, Spectrogram, Anti-Spoofing, Barge-In Detection, ECAPA-TDNN Speaker Verification | JARVIS |
 | **Compression** | Zstd, LZ4, Gzip/Zlib, Custom Vision Compression | Rust + Python |
-| **Cryptography** | HMAC, JWT, Secure Password Hashing, File Integrity Checksums | JARVIS |
-| **Caching** | LRU Eviction, TTL Eviction, Predictive Cache Warming (EWMA + time-series), LSH Semantic Cache, Bloom Filter Negative Cache | All three repos |
+| **Cryptography** | HMAC, SHA-256, MD5, JWT, Secure Password Hashing, File Integrity Checksums, Checkpoint Verification | All three repos |
+| **Caching** | LRU Eviction, TTL Eviction, Predictive Cache Warming (EWMA + time-series), LSH Semantic Cache, Bloom Filter Negative Cache, Memoization (lru_cache) | All three repos |
 | **Evolutionary** | Genetic Algorithm (Ouroboros self-programming loop) | JARVIS |
 | **Concurrency** | Deadlock Prevention, CPU Affinity Pinning, Parallel DAG Initialization, Zero-Copy mmap IPC, Lock-Free Channels | JARVIS + Prime |
-| **GPU** | Metal Compute Shaders, ARM64 NEON SIMD Intrinsics | JARVIS (Rust + C + Assembly) |
-| **C++ ML** | Linear Regression (Ridge/Lasso), Logistic Regression (gradient descent), Decision Tree (Gini impurity), Feedforward Neural Net (backpropagation), Matrix Serialization | ReactorCore (mlforge) |
+| **GPU / SIMD** | Metal Compute Shaders, ARM64 NEON SIMD Intrinsics | JARVIS (Rust + C + Assembly) |
+| **C++ ML (mlforge)** | Linear Regression (Ridge/Lasso), Logistic Regression, Decision Tree (Gini), Neural Net (backprop), Matrix Serialization, KD-Tree, Graph (BFS/DFS), Trie | ReactorCore |
 
 </details>
 
