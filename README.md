@@ -110,33 +110,169 @@ For the past 12 months, I have been executing a solo build of **JARVIS** — a t
 
 JARVIS is not a chatbot wrapper. It is a distributed AI operating system composed of three interdependent repositories — each a standalone production system, together forming a self-improving autonomous intelligence.
 
+### System Architecture
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a1b27', 'primaryTextColor': '#a9b1d6', 'primaryBorderColor': '#70a5fd', 'lineColor': '#545c7e', 'secondaryColor': '#24283b', 'tertiaryColor': '#1a1b27', 'fontSize': '14px', 'fontFamily': 'JetBrains Mono, monospace' }}}%%
+
+flowchart TD
+    KERNEL["<b>UNIFIED SUPERVISOR KERNEL</b><br/>Single Entry Point · 50K+ LOC<br/>7-Zone Parallel Initialization"]
+
+    KERNEL -->|"orchestrates"| JARVIS
+    KERNEL -->|"routes inference"| PRIME
+    KERNEL -->|"triggers training"| REACTOR
+
+    subgraph JARVIS["<b>JARVIS — The Body</b> &nbsp; Python / Rust / Swift &nbsp; :8010"]
+        direction TB
+        J1["🕸️ Neural Mesh<br/><i>16+ async agents · capability routing</i>"]
+        J2["🎙️ Voice & Auth<br/><i>ECAPA-TDNN · full-duplex · wake word</i>"]
+        J3["👁️ Vision & Spatial<br/><i>LLaVA · YOLO · Ghost Display · OCR</i>"]
+        J4["🍎 macOS Native<br/><i>Swift 203 files · ObjC · Rust · CoreML</i>"]
+        J5["🧠 Intelligence<br/><i>RAG · Ouroboros · Google Workspace</i>"]
+    end
+
+    subgraph PRIME["<b>JARVIS-Prime — The Mind</b> &nbsp; Python / GGUF &nbsp; :8000-8001"]
+        direction TB
+        P1["📡 Task-Type Router<br/><i>11 specialist models · 40.4 GB</i>"]
+        P2["⚡ Neural Switchboard<br/><i>v98.1 · WebSocket contracts</i>"]
+        P3["👁️ LLaVA Vision Server<br/><i>multimodal · OpenAI-compatible API</i>"]
+        P4["💭 Reasoning Engine<br/><i>CoT / ToT / self-reflection</i>"]
+        P5["📊 Telemetry Capture<br/><i>JSONL · deployment feedback loop</i>"]
+    end
+
+    subgraph REACTOR["<b>ReactorCore — The Forge</b> &nbsp; C++ / Python &nbsp; :8090"]
+        direction TB
+        R1["🔥 Training Pipeline<br/><i>LoRA · DPO · RLHF · FSDP</i>"]
+        R2["🚪 Deployment Gate<br/><i>integrity validation · probation monitor</i>"]
+        R3["🧬 Model Lineage<br/><i>full provenance chain · append-only JSONL</i>"]
+        R4["☁️ GCP Spot Recovery<br/><i>checkpoint persistence · 60% cost savings</i>"]
+        R5["⚙️ C++ Kernels<br/><i>CMake · pybind11 · native performance</i>"]
+    end
+
+    PRIME -.->|"telemetry + experiences"| REACTOR
+    REACTOR -.->|"improved GGUF models"| PRIME
+    JARVIS <-.->|"inference requests / responses"| PRIME
+    REACTOR -.->|"training signals"| JARVIS
+
+    style KERNEL fill:#1a1b27,stroke:#70a5fd,stroke-width:2px,color:#70a5fd
+    style JARVIS fill:#0d1117,stroke:#70a5fd,stroke-width:2px,color:#a9b1d6
+    style PRIME fill:#0d1117,stroke:#bf91f3,stroke-width:2px,color:#a9b1d6
+    style REACTOR fill:#0d1117,stroke:#bb9af7,stroke-width:2px,color:#a9b1d6
+```
+
+### Data Flow
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a1b27', 'primaryTextColor': '#a9b1d6', 'lineColor': '#545c7e', 'fontSize': '13px', 'fontFamily': 'JetBrains Mono, monospace' }}}%%
+
+flowchart LR
+    A["🎤 Voice Input"] --> B["JARVIS Kernel"]
+    C["👁️ Screen Capture"] --> B
+    D["⌨️ User Command"] --> B
+    B --> E["JARVIS-Prime<br/><i>inference routing</i>"]
+    E --> F{"Task Type?"}
+    F -->|"math"| G["Qwen2.5-7B"]
+    F -->|"code"| H["DeepCoder"]
+    F -->|"vision"| I["LLaVA"]
+    F -->|"simple"| J["Fast 2.2GB"]
+    F -->|"complex"| K["Claude API"]
+    G & H & I & J & K --> L["Response"]
+    L --> B
+    E -->|"telemetry"| M["ReactorCore"]
+    M -->|"LoRA/DPO training"| N["Improved Model"]
+    N -->|"deploy + probation"| E
+
+    style B fill:#1a1b27,stroke:#70a5fd,stroke-width:2px,color:#70a5fd
+    style E fill:#1a1b27,stroke:#bf91f3,stroke-width:2px,color:#bf91f3
+    style M fill:#1a1b27,stroke:#bb9af7,stroke-width:2px,color:#bb9af7
+    style F fill:#24283b,stroke:#545c7e,stroke-width:1px,color:#a9b1d6
+```
+
+### Three-Tier Inference Routing
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a1b27', 'primaryTextColor': '#a9b1d6', 'lineColor': '#545c7e', 'fontSize': '13px', 'fontFamily': 'JetBrains Mono, monospace' }}}%%
+
+flowchart LR
+    REQ["Inference Request"] --> T1
+    T1["☁️ Tier 1: GCP Golden Image<br/><i>11 models · ~30s cold start</i>"]
+    T1 -->|"unavailable"| T2["💻 Tier 2: Local Apple Silicon<br/><i>M1 Metal GPU · on-device</i>"]
+    T2 -->|"resource constrained"| T3["🔑 Tier 3: Claude API<br/><i>emergency fallback</i>"]
+    T1 -->|"✅ success"| RES["Response"]
+    T2 -->|"✅ success"| RES
+    T3 -->|"✅ success"| RES
+
+    style T1 fill:#1a1b27,stroke:#70a5fd,stroke-width:2px,color:#70a5fd
+    style T2 fill:#1a1b27,stroke:#bf91f3,stroke-width:2px,color:#bf91f3
+    style T3 fill:#1a1b27,stroke:#bb9af7,stroke-width:2px,color:#bb9af7
+    style REQ fill:#24283b,stroke:#545c7e,stroke-width:1px,color:#a9b1d6
+    style RES fill:#24283b,stroke:#545c7e,stroke-width:1px,color:#a9b1d6
+```
+
+---
+
 <div align="center">
 
-```
-                         UNIFIED SUPERVISOR KERNEL
-                        (Single entry point, 50K+ LOC)
-                                    |
-              +---------------------+---------------------+
-              |                     |                     |
-         JARVIS (Body)       JARVIS-Prime (Mind)    ReactorCore (Forge)
-         Python/Rust/Swift    Python / GGUF          C++ / Python
-         Port 8010            Port 8000-8001         Port 8090
-              |                     |                     |
-     macOS native control    LLM inference routing    ML training engine
-     60+ agent neural mesh   11 specialist models     LoRA / DPO / FSDP
-     Voice biometrics        GCP golden image         GCP Spot VM recovery
-     Ghost Display           Vision (LLaVA)           Deployment gate
-     Computer use            Circuit breakers         Model lineage
-     Google Workspace        Reasoning engine         Active learning
-     Rust performance layer  Neural Switchboard       Causal discovery
-     Autonomous agent loop   Hollow Client mode       Federated learning
-```
+### Repository Breakdown
+
+<table>
+<tr>
+<td align="center" width="33%">
+
+<a href="https://github.com/drussell23/JARVIS">
+<img src="https://img.shields.io/badge/JARVIS-The_Body-70a5fd?style=for-the-badge" />
+</a>
+<br><br>
+<img src="https://skillicons.dev/icons?i=py,rust,swift&theme=dark" width="100"/>
+<br><br>
+<b>Port 8010</b><br>
+60+ Agent Neural Mesh<br>
+Voice Biometrics<br>
+Ghost Display + Vision<br>
+macOS Native (203 Swift files)<br>
+RAG + Ouroboros Self-Programming
+
+</td>
+<td align="center" width="33%">
+
+<a href="https://github.com/drussell23/JARVIS-Prime">
+<img src="https://img.shields.io/badge/JARVIS--Prime-The_Mind-bf91f3?style=for-the-badge" />
+</a>
+<br><br>
+<img src="https://skillicons.dev/icons?i=py,gcp,docker&theme=dark" width="100"/>
+<br><br>
+<b>Port 8000-8001</b><br>
+11 Specialist GGUF Models (40.4 GB)<br>
+Task-Type Inference Routing<br>
+LLaVA Vision Server<br>
+CoT/ToT Reasoning Engine<br>
+Neural Switchboard v98.1
+
+</td>
+<td align="center" width="33%">
+
+<a href="https://github.com/drussell23/JARVIS-Reactor">
+<img src="https://img.shields.io/badge/ReactorCore-The_Forge-bb9af7?style=for-the-badge" />
+</a>
+<br><br>
+<img src="https://skillicons.dev/icons?i=cpp,py,cmake&theme=dark" width="100"/>
+<br><br>
+<b>Port 8090</b><br>
+LoRA / DPO / RLHF Training<br>
+Deployment Gate + Probation<br>
+Model Lineage Tracking<br>
+GCP Spot VM Auto-Recovery<br>
+Native C++ Training Kernels
+
+</td>
+</tr>
+</table>
 
 </div>
 
-### <img src="https://img.shields.io/badge/JARVIS-The_Body-70a5fd?style=flat-square" /> &nbsp; [`drussell23/JARVIS`](https://github.com/drussell23/JARVIS)
+---
 
-The central operating system and control plane. A custom Python kernel (`unified_supervisor.py`, 50K+ lines) that boots, coordinates, and monitors the entire ecosystem through a 7-zone initialization architecture with parallel dependency resolution.
+### <img src="https://img.shields.io/badge/JARVIS-The_Body-70a5fd?style=flat-square" /> &nbsp; Deep Dive
 
 <details>
 <summary><b>Agent Architecture</b></summary>
@@ -212,35 +348,57 @@ The central operating system and control plane. A custom Python kernel (`unified
 
 </details>
 
-### <img src="https://img.shields.io/badge/JARVIS--Prime-The_Cognitive_Core-bf91f3?style=flat-square" /> &nbsp; [`drussell23/JARVIS-Prime`](https://github.com/drussell23/JARVIS-Prime)
+### <img src="https://img.shields.io/badge/JARVIS--Prime-The_Mind-bf91f3?style=flat-square" /> &nbsp; Deep Dive
 
-The inference engine and reasoning layer. A production-ready model serving system that dynamically routes queries to specialist models based on task-type classification.
+<details>
+<summary><b>Inference and Routing</b></summary>
+<br>
 
 - **11 specialist GGUF models** (~40.4 GB) pre-baked into a GCP golden image with ~30-second cold starts
 - **Task-type routing** — math queries hit Qwen2.5-7B, code queries hit DeepCoder, simple queries hit a 2.2 GB fast model, vision hits LLaVA
 - **GCP Model Swap Coordinator** with intelligent hot-swapping, per-model configuration, and inference validation
 - **Neural Switchboard v98.1** — stable public API facade over routing and orchestration with WebSocket integration contracts
 - **Hollow Client mode** for memory-constrained hardware — strict lazy imports, zero ML dependencies at startup on 16 GB machines
+
+</details>
+
+<details>
+<summary><b>Reasoning and Telemetry</b></summary>
+<br>
+
 - **Continuous learning hook** — post-inference experience recording for Elastic Weight Consolidation via ReactorCore
 - **Reasoning engine activation** — chain-of-thought scaffolding (CoT/ToT/self-reflection) for high-complexity requests above configurable thresholds
 - **APARS protocol** (Adaptive Progress-Aware Readiness System) — 6-phase startup with real-time health reporting to the supervisor
 - **LLaVA vision server** — multimodal inference on port 8001 with OpenAI-compatible API, semaphore serialization, queue depth cap
 - **Telemetry capture** — structured JSONL interaction logging with deployment feedback loop and post-deployment probation monitoring
 
-### <img src="https://img.shields.io/badge/ReactorCore-The_Forge-bb9af7?style=flat-square" /> &nbsp; [`drussell23/JARVIS-Reactor`](https://github.com/drussell23/JARVIS-Reactor)
+</details>
 
-The ML training backbone. A hybrid C++/Python engine that transforms raw telemetry into improved models through an automated training pipeline with deployment safety gates.
+### <img src="https://img.shields.io/badge/ReactorCore-The_Forge-bb9af7?style=flat-square" /> &nbsp; Deep Dive
+
+<details>
+<summary><b>Training Pipeline</b></summary>
+<br>
 
 - **Full training pipeline**: telemetry ingestion → active learning selection → gatekeeper evaluation → LoRA SFT → GGUF export → deployment gate → probation monitoring → feedback loop
 - **DeploymentGate** validates model integrity before deployment; rejects corrupt or degenerate outputs
 - **Post-deployment probation** — 30-minute health monitoring window with automatic commit or rollback based on live inference quality
 - **Model lineage tracking** — full provenance chain (hash, parent model, training method, evaluation scores, gate decision) in append-only JSONL
 - **Tier-2/Tier-3 runtime orchestration** — curriculum learning, meta-learning (MAML), causal discovery with correlation-based fallback, world model training
+
+</details>
+
+<details>
+<summary><b>Infrastructure and Integration</b></summary>
+<br>
+
 - **GCP Spot VM auto-recovery** with training checkpoint persistence and 60% cost reduction over on-demand instances
 - **Native C++ training kernels** via CMake/pybind11/cpp-httplib for performance-critical operations
 - **Atomic experience snapshots** — buffer drain under async lock, JSONL with DataHash for dataset versioning
 - **PrimeConnector** — WebSocket path rotation, health polling fallback, contract path discovery for cross-repo communication
 - **Cross-repo integration** — Ghost Display state reader, cloud mode detection, Trinity Unified Loop Manager, pipeline event logger with correlation IDs
+
+</details>
 
 ---
 
