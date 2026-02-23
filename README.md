@@ -1,8 +1,20 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1b27,100:24283b&height=230&section=header&text=Derek%20J.%20Russell&fontSize=48&fontColor=70a5fd&fontAlignY=35&desc=AI%20Engineer%20%7C%20Computer%20Engineer%20%7C%20Autonomous%20Systems%20Architect&descSize=18&descColor=a9b1d6&descAlignY=55&animation=fadeIn" width="100%"/>
+<img src="./assets/matrix-rain.svg" width="100%" alt=""/>
 
 <br>
+
+<img src="./assets/name-animated.svg" width="700" alt="Derek J. Russell"/>
+
+<br>
+
+<img src="https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif" width="36"/>
+<br>
+<b>Hey there, I'm Derek</b>
+<br>
+<sub>I design, build, and deploy production-grade AI ecosystems from bare metal to cloud inference.</sub>
+
+<br><br>
 
 <img src="./assets/jarvis-ui.png" width="90%" alt="JARVIS Interface — Autonomous AI Operating System"/>
 
@@ -18,13 +30,6 @@
 </div>
 
 ---
-
-<div align="center">
-
-> *I design, build, and deploy production-grade AI ecosystems from bare metal to cloud inference.*
-> *My work sits at the intersection of systems engineering, machine learning infrastructure, and real-time intelligent automation.*
-
-</div>
 
 For the past 12 months, I have been executing a solo build of **JARVIS** — a three-repository, multi-process autonomous AI operating system spanning Python, C++, Rust, Swift, Objective-C, and TypeScript. The system orchestrates 60+ asynchronous agents across a neural mesh, routes inference dynamically between local Apple Silicon and GCP, performs real-time voice biometric authentication, controls macOS at the native API level, and continuously trains its own models through a self-improving feedback loop.
 
@@ -45,6 +50,16 @@ For the past 12 months, I have been executing a solo build of **JARVIS** — a t
 </a>
 
 <sub><b>DS4EVER</b> &nbsp;·&nbsp; Click to listen on Spotify</sub>
+
+</div>
+
+---
+
+## <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> Currently Building
+
+<div align="center">
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=16&duration=2500&pause=800&color=39FF14&center=true&vCenter=true&repeat=true&width=700&height=30&lines=%F0%9F%9F%A2+JARVIS+v260+%E2%80%94+Neural+Mesh+self-healing+agent+topology;%F0%9F%9F%A2+Prime+%E2%80%94+Multi-model+inference+routing+with+circuit+breakers;%F0%9F%9F%A2+ReactorCore+%E2%80%94+LoRA+fine-tuning+pipeline+on+GCP+Spot+VMs;%F0%9F%9F%A2+Ghost+Display+%E2%80%94+Vision-first+autonomous+screen+control;%F0%9F%9F%A1+Ouroboros+%E2%80%94+Self-programming+loop+%28experimental%29)](https://github.com/drussell23)
 
 </div>
 

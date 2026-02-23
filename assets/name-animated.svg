@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 120">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#70a5fd">
+        <animate attributeName="stop-color" values="#70a5fd;#bf91f3;#bb9af7;#7dcfff;#70a5fd" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" style="stop-color:#bf91f3">
+        <animate attributeName="stop-color" values="#bf91f3;#bb9af7;#70a5fd;#bf91f3;#bf91f3" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#7dcfff">
+        <animate attributeName="stop-color" values="#7dcfff;#70a5fd;#bf91f3;#bb9af7;#7dcfff" dur="4s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.35 0" result="dimblur"/>
+      <feComposite in="SourceGraphic" in2="dimblur" operator="over"/>
+    </filter>
+  </defs>
+  <style>
+    @keyframes fadeUp { 0% { opacity:0; transform:translateY(12px); } 100% { opacity:1; transform:translateY(0); } }
+    @keyframes pulse { 0%,100% { opacity:0.4; } 50% { opacity:0.8; } }
+    .name { font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif; font-size:52px; font-weight:700; fill:url(#grad); filter:url(#softglow); animation:fadeUp 1.2s ease-out both; }
+    .subtitle { font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif; font-size:15px; font-weight:400; fill:#a9b1d6; letter-spacing:4px; animation:fadeUp 1.2s ease-out 0.3s both; }
+    .line { stroke:url(#grad); stroke-width:1.5; animation:pulse 3s ease-in-out infinite; }
+  </style>
+  <line class="line" x1="200" y1="78" x2="600" y2="78"/>
+  <text class="name" x="400" y="60" text-anchor="middle">Derek J. Russell</text>
+  <text class="subtitle" x="400" y="108" text-anchor="middle">AI ENGINEER &#xA0;&#xB7;&#xA0; COMPUTER ENGINEER &#xA0;&#xB7;&#xA0; SYSTEMS ARCHITECT</text>
+</svg>

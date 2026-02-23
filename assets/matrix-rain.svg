@@ -1,0 +1,1154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200">
+  <defs>
+    <linearGradient id="mg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0.85"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="200" fill="#0d1117"/>
+  <style>
+    @keyframes fall { 0% { opacity:0; transform:translateY(-20px); } 10% { opacity:1; } 90% { opacity:1; } 100% { opacity:0; transform:translateY(20px); } }
+    .m { font-family:monospace; font-size:11px; fill:#1a472a; }
+    .mb { fill:#39ff14; }
+    .c0 { animation: fall 4.2s ease-in-out 1.1s infinite; }
+    .c1 { animation: fall 3.8s ease-in-out 0.1s infinite; }
+    .c2 { animation: fall 3.8s ease-in-out 2.5s infinite; }
+    .c3 { animation: fall 3.5s ease-in-out 2.2s infinite; }
+    .c4 { animation: fall 3.6s ease-in-out 2.1s infinite; }
+    .c5 { animation: fall 4.7s ease-in-out 1.2s infinite; }
+    .c6 { animation: fall 4.2s ease-in-out 0.9s infinite; }
+    .c7 { animation: fall 4.2s ease-in-out 5.1s infinite; }
+    .c8 { animation: fall 3.5s ease-in-out 0.8s infinite; }
+    .c9 { animation: fall 4.4s ease-in-out 4.0s infinite; }
+    .c10 { animation: fall 3.5s ease-in-out 0.3s infinite; }
+    .c11 { animation: fall 3.8s ease-in-out 0.1s infinite; }
+    .c12 { animation: fall 4.8s ease-in-out 0.8s infinite; }
+    .c13 { animation: fall 4.2s ease-in-out 1.9s infinite; }
+    .c14 { animation: fall 4.1s ease-in-out 2.1s infinite; }
+    .c15 { animation: fall 4.3s ease-in-out 4.8s infinite; }
+    .c16 { animation: fall 4.5s ease-in-out 0.1s infinite; }
+    .c17 { animation: fall 4.4s ease-in-out 5.2s infinite; }
+    .c18 { animation: fall 3.6s ease-in-out 1.8s infinite; }
+    .c19 { animation: fall 3.3s ease-in-out 5.1s infinite; }
+    .c20 { animation: fall 3.7s ease-in-out 3.9s infinite; }
+    .c21 { animation: fall 3.6s ease-in-out 2.1s infinite; }
+    .c22 { animation: fall 3.5s ease-in-out 4.2s infinite; }
+    .c23 { animation: fall 4.7s ease-in-out 2.5s infinite; }
+    .c24 { animation: fall 4.6s ease-in-out 0.0s infinite; }
+    .c25 { animation: fall 3.7s ease-in-out 1.5s infinite; }
+    .c26 { animation: fall 4.2s ease-in-out 4.0s infinite; }
+    .c27 { animation: fall 3.8s ease-in-out 3.1s infinite; }
+    .c28 { animation: fall 4.7s ease-in-out 2.5s infinite; }
+    .c29 { animation: fall 3.9s ease-in-out 1.3s infinite; }
+    .c30 { animation: fall 3.6s ease-in-out 1.9s infinite; }
+    .c31 { animation: fall 3.6s ease-in-out 3.1s infinite; }
+    .c32 { animation: fall 4.1s ease-in-out 0.9s infinite; }
+    .c33 { animation: fall 3.6s ease-in-out 0.8s infinite; }
+    .c34 { animation: fall 4.1s ease-in-out 3.6s infinite; }
+    .c35 { animation: fall 4.6s ease-in-out 0.9s infinite; }
+    .c36 { animation: fall 3.8s ease-in-out 3.3s infinite; }
+    .c37 { animation: fall 3.6s ease-in-out 3.3s infinite; }
+    .c38 { animation: fall 4.8s ease-in-out 2.4s infinite; }
+    .c39 { animation: fall 4.0s ease-in-out 0.3s infinite; }
+    .c40 { animation: fall 3.3s ease-in-out 4.3s infinite; }
+    .c41 { animation: fall 3.3s ease-in-out 5.1s infinite; }
+    .c42 { animation: fall 3.4s ease-in-out 1.1s infinite; }
+    .c43 { animation: fall 4.2s ease-in-out 3.6s infinite; }
+    .c44 { animation: fall 4.5s ease-in-out 0.8s infinite; }
+    .c45 { animation: fall 3.9s ease-in-out 5.2s infinite; }
+    .c46 { animation: fall 3.3s ease-in-out 2.7s infinite; }
+    .c47 { animation: fall 3.8s ease-in-out 3.4s infinite; }
+    .c48 { animation: fall 4.8s ease-in-out 5.4s infinite; }
+    .c49 { animation: fall 4.0s ease-in-out 1.8s infinite; }
+    .c50 { animation: fall 4.8s ease-in-out 0.6s infinite; }
+    .c51 { animation: fall 4.6s ease-in-out 0.3s infinite; }
+    .c52 { animation: fall 3.2s ease-in-out 2.1s infinite; }
+    .c53 { animation: fall 4.4s ease-in-out 2.7s infinite; }
+    .c54 { animation: fall 4.3s ease-in-out 0.8s infinite; }
+    .c55 { animation: fall 4.1s ease-in-out 2.1s infinite; }
+    .c56 { animation: fall 3.6s ease-in-out 0.9s infinite; }
+    .c57 { animation: fall 4.2s ease-in-out 3.6s infinite; }
+    .c58 { animation: fall 3.4s ease-in-out 2.5s infinite; }
+    .c59 { animation: fall 3.9s ease-in-out 4.3s infinite; }
+  </style>
+  <text class="m c0" x="6.0" y="14.0">0</text>
+  <text class="m c0" x="6.0" y="24.5">ソ</text>
+  <text class="m c0" x="6.0" y="35.0">e</text>
+  <text class="m c0" x="6.0" y="45.5">コ</text>
+  <text class="m c0" x="6.0" y="56.0">e</text>
+  <text class="m c0" x="6.0" y="66.5">オ</text>
+  <text class="m c0" x="6.0" y="77.0">=</text>
+  <text class="m c0" x="6.0" y="87.5">ツ</text>
+  <text class="m c0" x="6.0" y="98.0">=</text>
+  <text class="m c0" x="6.0" y="108.5">e</text>
+  <text class="m c0" x="6.0" y="119.0"><</text>
+  <text class="m c0" x="6.0" y="129.5">サ</text>
+  <text class="m mb c0" x="6.0" y="140.0">ク</text>
+  <text class="m mb c0" x="6.0" y="150.5">B</text>
+  <text class="m c0" x="6.0" y="161.0">ケ</text>
+  <text class="m c0" x="6.0" y="171.5">{</text>
+  <text class="m c0" x="6.0" y="182.0">f</text>
+  <text class="m c0" x="6.0" y="192.5">0</text>
+  <text class="m c1" x="20.8" y="14.0">テ</text>
+  <text class="m c1" x="20.8" y="24.5">d</text>
+  <text class="m c1" x="20.8" y="35.0">1</text>
+  <text class="m c1" x="20.8" y="45.5">カ</text>
+  <text class="m c1" x="20.8" y="56.0">B</text>
+  <text class="m c1" x="20.8" y="66.5">ツ</text>
+  <text class="m c1" x="20.8" y="77.0">セ</text>
+  <text class="m c1" x="20.8" y="87.5">イ</text>
+  <text class="m c1" x="20.8" y="98.0">セ</text>
+  <text class="m c1" x="20.8" y="108.5">[</text>
+  <text class="m c1" x="20.8" y="119.0">エ</text>
+  <text class="m c1" x="20.8" y="129.5">エ</text>
+  <text class="m c1" x="20.8" y="140.0">d</text>
+  <text class="m c1" x="20.8" y="150.5">ウ</text>
+  <text class="m mb c1" x="20.8" y="161.0">{</text>
+  <text class="m mb c1" x="20.8" y="171.5">キ</text>
+  <text class="m c1" x="20.8" y="182.0">キ</text>
+  <text class="m c1" x="20.8" y="192.5">+</text>
+  <text class="m c2" x="35.6" y="14.0">}</text>
+  <text class="m c2" x="35.6" y="24.5">ケ</text>
+  <text class="m c2" x="35.6" y="35.0">ソ</text>
+  <text class="m c2" x="35.6" y="45.5">f</text>
+  <text class="m c2" x="35.6" y="56.0"><</text>
+  <text class="m c2" x="35.6" y="66.5">F</text>
+  <text class="m c2" x="35.6" y="77.0">シ</text>
+  <text class="m c2" x="35.6" y="87.5">{</text>
+  <text class="m c2" x="35.6" y="98.0">サ</text>
+  <text class="m c2" x="35.6" y="108.5">ツ</text>
+  <text class="m c2" x="35.6" y="119.0">D</text>
+  <text class="m c2" x="35.6" y="129.5">+</text>
+  <text class="m mb c2" x="35.6" y="140.0">/</text>
+  <text class="m mb c2" x="35.6" y="150.5">B</text>
+  <text class="m c2" x="35.6" y="161.0">a</text>
+  <text class="m c2" x="35.6" y="171.5">f</text>
+  <text class="m c2" x="35.6" y="182.0">a</text>
+  <text class="m c2" x="35.6" y="192.5">カ</text>
+  <text class="m c3" x="50.4" y="14.0">ス</text>
+  <text class="m c3" x="50.4" y="24.5">ウ</text>
+  <text class="m c3" x="50.4" y="35.0">ト</text>
+  <text class="m c3" x="50.4" y="45.5">1</text>
+  <text class="m c3" x="50.4" y="56.0">]</text>
+  <text class="m c3" x="50.4" y="66.5">}</text>
+  <text class="m c3" x="50.4" y="77.0">ス</text>
+  <text class="m c3" x="50.4" y="87.5">]</text>
+  <text class="m mb c3" x="50.4" y="98.0">ス</text>
+  <text class="m mb c3" x="50.4" y="108.5">0</text>
+  <text class="m c3" x="50.4" y="119.0">ウ</text>
+  <text class="m c3" x="50.4" y="129.5">=</text>
+  <text class="m c3" x="50.4" y="140.0">イ</text>
+  <text class="m c3" x="50.4" y="150.5">ス</text>
+  <text class="m c3" x="50.4" y="161.0">ウ</text>
+  <text class="m c3" x="50.4" y="171.5">ア</text>
+  <text class="m c3" x="50.4" y="182.0">ト</text>
+  <text class="m c3" x="50.4" y="192.5">ウ</text>
+  <text class="m c4" x="65.2" y="14.0">セ</text>
+  <text class="m c4" x="65.2" y="24.5">タ</text>
+  <text class="m c4" x="65.2" y="35.0">+</text>
+  <text class="m c4" x="65.2" y="45.5">d</text>
+  <text class="m c4" x="65.2" y="56.0">シ</text>
+  <text class="m c4" x="65.2" y="66.5">{</text>
+  <text class="m c4" x="65.2" y="77.0">キ</text>
+  <text class="m c4" x="65.2" y="87.5">[</text>
+  <text class="m c4" x="65.2" y="98.0">[</text>
+  <text class="m c4" x="65.2" y="108.5">c</text>
+  <text class="m c4" x="65.2" y="119.0">セ</text>
+  <text class="m c4" x="65.2" y="129.5">c</text>
+  <text class="m c4" x="65.2" y="140.0">E</text>
+  <text class="m mb c4" x="65.2" y="150.5">サ</text>
+  <text class="m mb c4" x="65.2" y="161.0">オ</text>
+  <text class="m c4" x="65.2" y="171.5">オ</text>
+  <text class="m c4" x="65.2" y="182.0">+</text>
+  <text class="m c4" x="65.2" y="192.5">F</text>
+  <text class="m c5" x="80.0" y="14.0">F</text>
+  <text class="m c5" x="80.0" y="24.5">E</text>
+  <text class="m c5" x="80.0" y="35.0">b</text>
+  <text class="m c5" x="80.0" y="45.5">イ</text>
+  <text class="m c5" x="80.0" y="56.0">*</text>
+  <text class="m c5" x="80.0" y="66.5">/</text>
+  <text class="m c5" x="80.0" y="77.0">/</text>
+  <text class="m c5" x="80.0" y="87.5">オ</text>
+  <text class="m c5" x="80.0" y="98.0">イ</text>
+  <text class="m c5" x="80.0" y="108.5">D</text>
+  <text class="m mb c5" x="80.0" y="119.0">ト</text>
+  <text class="m mb c5" x="80.0" y="129.5">オ</text>
+  <text class="m c5" x="80.0" y="140.0">セ</text>
+  <text class="m c5" x="80.0" y="150.5">サ</text>
+  <text class="m c5" x="80.0" y="161.0">サ</text>
+  <text class="m c5" x="80.0" y="171.5">{</text>
+  <text class="m c5" x="80.0" y="182.0">a</text>
+  <text class="m c5" x="80.0" y="192.5">キ</text>
+  <text class="m c6" x="94.8" y="14.0">コ</text>
+  <text class="m c6" x="94.8" y="24.5">タ</text>
+  <text class="m c6" x="94.8" y="35.0">b</text>
+  <text class="m c6" x="94.8" y="45.5">セ</text>
+  <text class="m c6" x="94.8" y="56.0">ウ</text>
+  <text class="m c6" x="94.8" y="66.5">a</text>
+  <text class="m c6" x="94.8" y="77.0">}</text>
+  <text class="m c6" x="94.8" y="87.5">オ</text>
+  <text class="m c6" x="94.8" y="98.0">イ</text>
+  <text class="m c6" x="94.8" y="108.5">/</text>
+  <text class="m c6" x="94.8" y="119.0">{</text>
+  <text class="m mb c6" x="94.8" y="129.5">0</text>
+  <text class="m mb c6" x="94.8" y="140.0">エ</text>
+  <text class="m c6" x="94.8" y="150.5">セ</text>
+  <text class="m c6" x="94.8" y="161.0">ケ</text>
+  <text class="m c6" x="94.8" y="171.5">E</text>
+  <text class="m c6" x="94.8" y="182.0">d</text>
+  <text class="m c6" x="94.8" y="192.5">c</text>
+  <text class="m c7" x="109.6" y="14.0">D</text>
+  <text class="m c7" x="109.6" y="24.5">イ</text>
+  <text class="m c7" x="109.6" y="35.0">ケ</text>
+  <text class="m c7" x="109.6" y="45.5">C</text>
+  <text class="m c7" x="109.6" y="56.0">0</text>
+  <text class="m c7" x="109.6" y="66.5">C</text>
+  <text class="m c7" x="109.6" y="77.0">ソ</text>
+  <text class="m c7" x="109.6" y="87.5">b</text>
+  <text class="m mb c7" x="109.6" y="98.0">チ</text>
+  <text class="m mb c7" x="109.6" y="108.5">F</text>
+  <text class="m c7" x="109.6" y="119.0">}</text>
+  <text class="m c7" x="109.6" y="129.5">+</text>
+  <text class="m c7" x="109.6" y="140.0">d</text>
+  <text class="m c7" x="109.6" y="150.5">ク</text>
+  <text class="m c7" x="109.6" y="161.0">サ</text>
+  <text class="m c7" x="109.6" y="171.5">チ</text>
+  <text class="m c7" x="109.6" y="182.0">シ</text>
+  <text class="m c7" x="109.6" y="192.5">イ</text>
+  <text class="m c8" x="124.4" y="14.0">{</text>
+  <text class="m c8" x="124.4" y="24.5">イ</text>
+  <text class="m c8" x="124.4" y="35.0">テ</text>
+  <text class="m c8" x="124.4" y="45.5">イ</text>
+  <text class="m c8" x="124.4" y="56.0">イ</text>
+  <text class="m c8" x="124.4" y="66.5">]</text>
+  <text class="m c8" x="124.4" y="77.0">c</text>
+  <text class="m c8" x="124.4" y="87.5">e</text>
+  <text class="m c8" x="124.4" y="98.0">f</text>
+  <text class="m c8" x="124.4" y="108.5">ケ</text>
+  <text class="m c8" x="124.4" y="119.0">イ</text>
+  <text class="m c8" x="124.4" y="129.5">e</text>
+  <text class="m c8" x="124.4" y="140.0">エ</text>
+  <text class="m c8" x="124.4" y="150.5">コ</text>
+  <text class="m mb c8" x="124.4" y="161.0">ウ</text>
+  <text class="m mb c8" x="124.4" y="171.5"><</text>
+  <text class="m c8" x="124.4" y="182.0">ウ</text>
+  <text class="m c8" x="124.4" y="192.5">*</text>
+  <text class="m c9" x="139.2" y="14.0">D</text>
+  <text class="m c9" x="139.2" y="24.5">カ</text>
+  <text class="m c9" x="139.2" y="35.0">[</text>
+  <text class="m c9" x="139.2" y="45.5">セ</text>
+  <text class="m c9" x="139.2" y="56.0">]</text>
+  <text class="m c9" x="139.2" y="66.5"><</text>
+  <text class="m c9" x="139.2" y="77.0">ア</text>
+  <text class="m c9" x="139.2" y="87.5">></text>
+  <text class="m mb c9" x="139.2" y="98.0">エ</text>
+  <text class="m mb c9" x="139.2" y="108.5">E</text>
+  <text class="m c9" x="139.2" y="119.0">+</text>
+  <text class="m c9" x="139.2" y="129.5">]</text>
+  <text class="m c9" x="139.2" y="140.0">[</text>
+  <text class="m c9" x="139.2" y="150.5">f</text>
+  <text class="m c9" x="139.2" y="161.0">テ</text>
+  <text class="m c9" x="139.2" y="171.5">ソ</text>
+  <text class="m c9" x="139.2" y="182.0">シ</text>
+  <text class="m c9" x="139.2" y="192.5">+</text>
+  <text class="m c10" x="154.0" y="14.0">セ</text>
+  <text class="m c10" x="154.0" y="24.5">ソ</text>
+  <text class="m c10" x="154.0" y="35.0">D</text>
+  <text class="m c10" x="154.0" y="45.5">キ</text>
+  <text class="m c10" x="154.0" y="56.0">+</text>
+  <text class="m c10" x="154.0" y="66.5">/</text>
+  <text class="m c10" x="154.0" y="77.0">ツ</text>
+  <text class="m c10" x="154.0" y="87.5">b</text>
+  <text class="m c10" x="154.0" y="98.0">テ</text>
+  <text class="m c10" x="154.0" y="108.5">ウ</text>
+  <text class="m mb c10" x="154.0" y="119.0">0</text>
+  <text class="m mb c10" x="154.0" y="129.5">b</text>
+  <text class="m c10" x="154.0" y="140.0">></text>
+  <text class="m c10" x="154.0" y="150.5">[</text>
+  <text class="m c10" x="154.0" y="161.0">オ</text>
+  <text class="m c10" x="154.0" y="171.5">ウ</text>
+  <text class="m c10" x="154.0" y="182.0">{</text>
+  <text class="m c10" x="154.0" y="192.5">シ</text>
+  <text class="m c11" x="168.8" y="14.0">ソ</text>
+  <text class="m c11" x="168.8" y="24.5">キ</text>
+  <text class="m c11" x="168.8" y="35.0">A</text>
+  <text class="m c11" x="168.8" y="45.5">ウ</text>
+  <text class="m c11" x="168.8" y="56.0">セ</text>
+  <text class="m c11" x="168.8" y="66.5">B</text>
+  <text class="m c11" x="168.8" y="77.0">チ</text>
+  <text class="m c11" x="168.8" y="87.5">ケ</text>
+  <text class="m c11" x="168.8" y="98.0">a</text>
+  <text class="m c11" x="168.8" y="108.5">{</text>
+  <text class="m c11" x="168.8" y="119.0">ツ</text>
+  <text class="m c11" x="168.8" y="129.5">></text>
+  <text class="m c11" x="168.8" y="140.0">/</text>
+  <text class="m mb c11" x="168.8" y="150.5">f</text>
+  <text class="m mb c11" x="168.8" y="161.0">0</text>
+  <text class="m c11" x="168.8" y="171.5">+</text>
+  <text class="m c11" x="168.8" y="182.0">}</text>
+  <text class="m c11" x="168.8" y="192.5">ツ</text>
+  <text class="m c12" x="183.6" y="14.0">オ</text>
+  <text class="m c12" x="183.6" y="24.5">キ</text>
+  <text class="m c12" x="183.6" y="35.0">ソ</text>
+  <text class="m c12" x="183.6" y="45.5">カ</text>
+  <text class="m c12" x="183.6" y="56.0">オ</text>
+  <text class="m c12" x="183.6" y="66.5">}</text>
+  <text class="m c12" x="183.6" y="77.0">ク</text>
+  <text class="m c12" x="183.6" y="87.5">タ</text>
+  <text class="m c12" x="183.6" y="98.0">チ</text>
+  <text class="m c12" x="183.6" y="108.5"><</text>
+  <text class="m c12" x="183.6" y="119.0">シ</text>
+  <text class="m c12" x="183.6" y="129.5">ト</text>
+  <text class="m c12" x="183.6" y="140.0">シ</text>
+  <text class="m c12" x="183.6" y="150.5">*</text>
+  <text class="m c12" x="183.6" y="161.0">=</text>
+  <text class="m mb c12" x="183.6" y="171.5">ソ</text>
+  <text class="m mb c12" x="183.6" y="182.0">e</text>
+  <text class="m c12" x="183.6" y="192.5">d</text>
+  <text class="m c13" x="198.4" y="14.0">イ</text>
+  <text class="m c13" x="198.4" y="24.5">エ</text>
+  <text class="m c13" x="198.4" y="35.0">=</text>
+  <text class="m c13" x="198.4" y="45.5">F</text>
+  <text class="m c13" x="198.4" y="56.0">タ</text>
+  <text class="m c13" x="198.4" y="66.5">ア</text>
+  <text class="m c13" x="198.4" y="77.0">0</text>
+  <text class="m c13" x="198.4" y="87.5">ト</text>
+  <text class="m c13" x="198.4" y="98.0">キ</text>
+  <text class="m mb c13" x="198.4" y="108.5">=</text>
+  <text class="m mb c13" x="198.4" y="119.0">ソ</text>
+  <text class="m c13" x="198.4" y="129.5">ケ</text>
+  <text class="m c13" x="198.4" y="140.0">a</text>
+  <text class="m c13" x="198.4" y="150.5">}</text>
+  <text class="m c13" x="198.4" y="161.0">F</text>
+  <text class="m c13" x="198.4" y="171.5">}</text>
+  <text class="m c13" x="198.4" y="182.0">0</text>
+  <text class="m c13" x="198.4" y="192.5">カ</text>
+  <text class="m c14" x="213.2" y="14.0">ク</text>
+  <text class="m c14" x="213.2" y="24.5">{</text>
+  <text class="m c14" x="213.2" y="35.0">ア</text>
+  <text class="m c14" x="213.2" y="45.5">B</text>
+  <text class="m c14" x="213.2" y="56.0">]</text>
+  <text class="m c14" x="213.2" y="66.5">}</text>
+  <text class="m mb c14" x="213.2" y="77.0">ク</text>
+  <text class="m mb c14" x="213.2" y="87.5">F</text>
+  <text class="m c14" x="213.2" y="98.0">キ</text>
+  <text class="m c14" x="213.2" y="108.5">ア</text>
+  <text class="m c14" x="213.2" y="119.0">ツ</text>
+  <text class="m c14" x="213.2" y="129.5">B</text>
+  <text class="m c14" x="213.2" y="140.0">ア</text>
+  <text class="m c14" x="213.2" y="150.5">A</text>
+  <text class="m c14" x="213.2" y="161.0">シ</text>
+  <text class="m c14" x="213.2" y="171.5">*</text>
+  <text class="m c14" x="213.2" y="182.0">セ</text>
+  <text class="m c14" x="213.2" y="192.5">+</text>
+  <text class="m c15" x="228.0" y="14.0">A</text>
+  <text class="m c15" x="228.0" y="24.5">}</text>
+  <text class="m c15" x="228.0" y="35.0">E</text>
+  <text class="m c15" x="228.0" y="45.5">></text>
+  <text class="m c15" x="228.0" y="56.0">ク</text>
+  <text class="m c15" x="228.0" y="66.5">セ</text>
+  <text class="m mb c15" x="228.0" y="77.0">ケ</text>
+  <text class="m mb c15" x="228.0" y="87.5">コ</text>
+  <text class="m c15" x="228.0" y="98.0">E</text>
+  <text class="m c15" x="228.0" y="108.5">1</text>
+  <text class="m c15" x="228.0" y="119.0">コ</text>
+  <text class="m c15" x="228.0" y="129.5">ト</text>
+  <text class="m c15" x="228.0" y="140.0">E</text>
+  <text class="m c15" x="228.0" y="150.5">+</text>
+  <text class="m c15" x="228.0" y="161.0">セ</text>
+  <text class="m c15" x="228.0" y="171.5">タ</text>
+  <text class="m c15" x="228.0" y="182.0">ケ</text>
+  <text class="m c15" x="228.0" y="192.5">オ</text>
+  <text class="m c16" x="242.8" y="14.0">ア</text>
+  <text class="m c16" x="242.8" y="24.5">c</text>
+  <text class="m c16" x="242.8" y="35.0">ス</text>
+  <text class="m c16" x="242.8" y="45.5">サ</text>
+  <text class="m c16" x="242.8" y="56.0">b</text>
+  <text class="m c16" x="242.8" y="66.5">A</text>
+  <text class="m c16" x="242.8" y="77.0">ツ</text>
+  <text class="m c16" x="242.8" y="87.5">ス</text>
+  <text class="m c16" x="242.8" y="98.0">ス</text>
+  <text class="m c16" x="242.8" y="108.5">1</text>
+  <text class="m c16" x="242.8" y="119.0">+</text>
+  <text class="m mb c16" x="242.8" y="129.5">サ</text>
+  <text class="m mb c16" x="242.8" y="140.0">D</text>
+  <text class="m c16" x="242.8" y="150.5">ト</text>
+  <text class="m c16" x="242.8" y="161.0">タ</text>
+  <text class="m c16" x="242.8" y="171.5">ウ</text>
+  <text class="m c16" x="242.8" y="182.0">タ</text>
+  <text class="m c16" x="242.8" y="192.5">A</text>
+  <text class="m c17" x="257.6" y="14.0">e</text>
+  <text class="m c17" x="257.6" y="24.5">D</text>
+  <text class="m c17" x="257.6" y="35.0">*</text>
+  <text class="m c17" x="257.6" y="45.5">{</text>
+  <text class="m c17" x="257.6" y="56.0">ト</text>
+  <text class="m c17" x="257.6" y="66.5">1</text>
+  <text class="m c17" x="257.6" y="77.0">カ</text>
+  <text class="m c17" x="257.6" y="87.5">ソ</text>
+  <text class="m c17" x="257.6" y="98.0">コ</text>
+  <text class="m c17" x="257.6" y="108.5">]</text>
+  <text class="m c17" x="257.6" y="119.0">ソ</text>
+  <text class="m c17" x="257.6" y="129.5">ア</text>
+  <text class="m c17" x="257.6" y="140.0">オ</text>
+  <text class="m c17" x="257.6" y="150.5"><</text>
+  <text class="m c17" x="257.6" y="161.0">F</text>
+  <text class="m mb c17" x="257.6" y="171.5">A</text>
+  <text class="m mb c17" x="257.6" y="182.0">テ</text>
+  <text class="m c17" x="257.6" y="192.5">F</text>
+  <text class="m c18" x="272.4" y="14.0">e</text>
+  <text class="m c18" x="272.4" y="24.5">カ</text>
+  <text class="m c18" x="272.4" y="35.0">C</text>
+  <text class="m c18" x="272.4" y="45.5">[</text>
+  <text class="m c18" x="272.4" y="56.0">サ</text>
+  <text class="m c18" x="272.4" y="66.5">ソ</text>
+  <text class="m c18" x="272.4" y="77.0">ア</text>
+  <text class="m c18" x="272.4" y="87.5">F</text>
+  <text class="m c18" x="272.4" y="98.0">0</text>
+  <text class="m c18" x="272.4" y="108.5">f</text>
+  <text class="m c18" x="272.4" y="119.0">{</text>
+  <text class="m c18" x="272.4" y="129.5">*</text>
+  <text class="m c18" x="272.4" y="140.0">+</text>
+  <text class="m c18" x="272.4" y="150.5">サ</text>
+  <text class="m mb c18" x="272.4" y="161.0">B</text>
+  <text class="m mb c18" x="272.4" y="171.5">F</text>
+  <text class="m c18" x="272.4" y="182.0">ウ</text>
+  <text class="m c18" x="272.4" y="192.5">+</text>
+  <text class="m c19" x="287.2" y="14.0">></text>
+  <text class="m c19" x="287.2" y="24.5">テ</text>
+  <text class="m c19" x="287.2" y="35.0">+</text>
+  <text class="m c19" x="287.2" y="45.5">カ</text>
+  <text class="m c19" x="287.2" y="56.0">ツ</text>
+  <text class="m c19" x="287.2" y="66.5">e</text>
+  <text class="m c19" x="287.2" y="77.0">ツ</text>
+  <text class="m c19" x="287.2" y="87.5">+</text>
+  <text class="m c19" x="287.2" y="98.0">E</text>
+  <text class="m c19" x="287.2" y="108.5">テ</text>
+  <text class="m mb c19" x="287.2" y="119.0">D</text>
+  <text class="m mb c19" x="287.2" y="129.5">チ</text>
+  <text class="m c19" x="287.2" y="140.0">}</text>
+  <text class="m c19" x="287.2" y="150.5">キ</text>
+  <text class="m c19" x="287.2" y="161.0">サ</text>
+  <text class="m c19" x="287.2" y="171.5">E</text>
+  <text class="m c19" x="287.2" y="182.0">+</text>
+  <text class="m c19" x="287.2" y="192.5">C</text>
+  <text class="m c20" x="302.0" y="14.0">コ</text>
+  <text class="m c20" x="302.0" y="24.5">></text>
+  <text class="m c20" x="302.0" y="35.0">[</text>
+  <text class="m c20" x="302.0" y="45.5">ツ</text>
+  <text class="m c20" x="302.0" y="56.0">D</text>
+  <text class="m c20" x="302.0" y="66.5">}</text>
+  <text class="m c20" x="302.0" y="77.0">0</text>
+  <text class="m c20" x="302.0" y="87.5">ツ</text>
+  <text class="m c20" x="302.0" y="98.0">チ</text>
+  <text class="m c20" x="302.0" y="108.5">シ</text>
+  <text class="m c20" x="302.0" y="119.0">F</text>
+  <text class="m c20" x="302.0" y="129.5">]</text>
+  <text class="m c20" x="302.0" y="140.0"><</text>
+  <text class="m c20" x="302.0" y="150.5">/</text>
+  <text class="m c20" x="302.0" y="161.0">テ</text>
+  <text class="m mb c20" x="302.0" y="171.5">b</text>
+  <text class="m mb c20" x="302.0" y="182.0">a</text>
+  <text class="m c20" x="302.0" y="192.5">a</text>
+  <text class="m c21" x="316.8" y="14.0">シ</text>
+  <text class="m c21" x="316.8" y="24.5">e</text>
+  <text class="m c21" x="316.8" y="35.0">c</text>
+  <text class="m c21" x="316.8" y="45.5">ケ</text>
+  <text class="m c21" x="316.8" y="56.0">+</text>
+  <text class="m c21" x="316.8" y="66.5">エ</text>
+  <text class="m c21" x="316.8" y="77.0">チ</text>
+  <text class="m c21" x="316.8" y="87.5">e</text>
+  <text class="m c21" x="316.8" y="98.0">+</text>
+  <text class="m c21" x="316.8" y="108.5">=</text>
+  <text class="m c21" x="316.8" y="119.0">></text>
+  <text class="m c21" x="316.8" y="129.5">ト</text>
+  <text class="m c21" x="316.8" y="140.0">エ</text>
+  <text class="m c21" x="316.8" y="150.5">セ</text>
+  <text class="m c21" x="316.8" y="161.0">*</text>
+  <text class="m mb c21" x="316.8" y="171.5">ツ</text>
+  <text class="m mb c21" x="316.8" y="182.0">ス</text>
+  <text class="m c21" x="316.8" y="192.5">サ</text>
+  <text class="m c22" x="331.6" y="14.0">1</text>
+  <text class="m c22" x="331.6" y="24.5">ア</text>
+  <text class="m c22" x="331.6" y="35.0">セ</text>
+  <text class="m c22" x="331.6" y="45.5">c</text>
+  <text class="m c22" x="331.6" y="56.0">></text>
+  <text class="m c22" x="331.6" y="66.5">ウ</text>
+  <text class="m c22" x="331.6" y="77.0">b</text>
+  <text class="m mb c22" x="331.6" y="87.5">E</text>
+  <text class="m mb c22" x="331.6" y="98.0">=</text>
+  <text class="m c22" x="331.6" y="108.5">[</text>
+  <text class="m c22" x="331.6" y="119.0">サ</text>
+  <text class="m c22" x="331.6" y="129.5">C</text>
+  <text class="m c22" x="331.6" y="140.0">d</text>
+  <text class="m c22" x="331.6" y="150.5">D</text>
+  <text class="m c22" x="331.6" y="161.0">セ</text>
+  <text class="m c22" x="331.6" y="171.5">ク</text>
+  <text class="m c22" x="331.6" y="182.0">/</text>
+  <text class="m c22" x="331.6" y="192.5">0</text>
+  <text class="m c23" x="346.4" y="14.0">F</text>
+  <text class="m c23" x="346.4" y="24.5">ス</text>
+  <text class="m c23" x="346.4" y="35.0">コ</text>
+  <text class="m c23" x="346.4" y="45.5">f</text>
+  <text class="m c23" x="346.4" y="56.0">b</text>
+  <text class="m c23" x="346.4" y="66.5">イ</text>
+  <text class="m mb c23" x="346.4" y="77.0">}</text>
+  <text class="m mb c23" x="346.4" y="87.5">セ</text>
+  <text class="m c23" x="346.4" y="98.0">カ</text>
+  <text class="m c23" x="346.4" y="108.5">b</text>
+  <text class="m c23" x="346.4" y="119.0">キ</text>
+  <text class="m c23" x="346.4" y="129.5">b</text>
+  <text class="m c23" x="346.4" y="140.0">+</text>
+  <text class="m c23" x="346.4" y="150.5">f</text>
+  <text class="m c23" x="346.4" y="161.0">}</text>
+  <text class="m c23" x="346.4" y="171.5"><</text>
+  <text class="m c23" x="346.4" y="182.0">テ</text>
+  <text class="m c23" x="346.4" y="192.5">a</text>
+  <text class="m c24" x="361.2" y="14.0">e</text>
+  <text class="m c24" x="361.2" y="24.5">F</text>
+  <text class="m c24" x="361.2" y="35.0">}</text>
+  <text class="m c24" x="361.2" y="45.5">a</text>
+  <text class="m c24" x="361.2" y="56.0">ケ</text>
+  <text class="m c24" x="361.2" y="66.5">c</text>
+  <text class="m c24" x="361.2" y="77.0">a</text>
+  <text class="m c24" x="361.2" y="87.5">ソ</text>
+  <text class="m c24" x="361.2" y="98.0">セ</text>
+  <text class="m c24" x="361.2" y="108.5">=</text>
+  <text class="m c24" x="361.2" y="119.0">タ</text>
+  <text class="m c24" x="361.2" y="129.5">f</text>
+  <text class="m c24" x="361.2" y="140.0">d</text>
+  <text class="m c24" x="361.2" y="150.5">=</text>
+  <text class="m mb c24" x="361.2" y="161.0">セ</text>
+  <text class="m mb c24" x="361.2" y="171.5">タ</text>
+  <text class="m c24" x="361.2" y="182.0">a</text>
+  <text class="m c24" x="361.2" y="192.5">ウ</text>
+  <text class="m c25" x="376.0" y="14.0">セ</text>
+  <text class="m c25" x="376.0" y="24.5">タ</text>
+  <text class="m c25" x="376.0" y="35.0">ト</text>
+  <text class="m c25" x="376.0" y="45.5">テ</text>
+  <text class="m c25" x="376.0" y="56.0">{</text>
+  <text class="m c25" x="376.0" y="66.5">エ</text>
+  <text class="m c25" x="376.0" y="77.0">キ</text>
+  <text class="m c25" x="376.0" y="87.5">ク</text>
+  <text class="m c25" x="376.0" y="98.0">ス</text>
+  <text class="m mb c25" x="376.0" y="108.5">C</text>
+  <text class="m mb c25" x="376.0" y="119.0">ク</text>
+  <text class="m c25" x="376.0" y="129.5">シ</text>
+  <text class="m c25" x="376.0" y="140.0">ウ</text>
+  <text class="m c25" x="376.0" y="150.5">E</text>
+  <text class="m c25" x="376.0" y="161.0">E</text>
+  <text class="m c25" x="376.0" y="171.5">ト</text>
+  <text class="m c25" x="376.0" y="182.0">{</text>
+  <text class="m c25" x="376.0" y="192.5">b</text>
+  <text class="m c26" x="390.8" y="14.0">イ</text>
+  <text class="m c26" x="390.8" y="24.5">シ</text>
+  <text class="m c26" x="390.8" y="35.0">E</text>
+  <text class="m c26" x="390.8" y="45.5">C</text>
+  <text class="m c26" x="390.8" y="56.0">]</text>
+  <text class="m c26" x="390.8" y="66.5">1</text>
+  <text class="m c26" x="390.8" y="77.0">[</text>
+  <text class="m c26" x="390.8" y="87.5">C</text>
+  <text class="m c26" x="390.8" y="98.0">c</text>
+  <text class="m c26" x="390.8" y="108.5">0</text>
+  <text class="m c26" x="390.8" y="119.0">A</text>
+  <text class="m mb c26" x="390.8" y="129.5">ツ</text>
+  <text class="m mb c26" x="390.8" y="140.0">C</text>
+  <text class="m c26" x="390.8" y="150.5">E</text>
+  <text class="m c26" x="390.8" y="161.0">{</text>
+  <text class="m c26" x="390.8" y="171.5">{</text>
+  <text class="m c26" x="390.8" y="182.0"><</text>
+  <text class="m c26" x="390.8" y="192.5">ス</text>
+  <text class="m c27" x="405.6" y="14.0">ス</text>
+  <text class="m c27" x="405.6" y="24.5">タ</text>
+  <text class="m c27" x="405.6" y="35.0">F</text>
+  <text class="m c27" x="405.6" y="45.5">d</text>
+  <text class="m c27" x="405.6" y="56.0">1</text>
+  <text class="m c27" x="405.6" y="66.5">C</text>
+  <text class="m c27" x="405.6" y="77.0">ト</text>
+  <text class="m c27" x="405.6" y="87.5">+</text>
+  <text class="m c27" x="405.6" y="98.0">*</text>
+  <text class="m c27" x="405.6" y="108.5">D</text>
+  <text class="m c27" x="405.6" y="119.0">ケ</text>
+  <text class="m c27" x="405.6" y="129.5">b</text>
+  <text class="m mb c27" x="405.6" y="140.0">キ</text>
+  <text class="m mb c27" x="405.6" y="150.5">></text>
+  <text class="m c27" x="405.6" y="161.0">{</text>
+  <text class="m c27" x="405.6" y="171.5">1</text>
+  <text class="m c27" x="405.6" y="182.0">D</text>
+  <text class="m c27" x="405.6" y="192.5">]</text>
+  <text class="m c28" x="420.4" y="14.0">+</text>
+  <text class="m c28" x="420.4" y="24.5">1</text>
+  <text class="m c28" x="420.4" y="35.0">エ</text>
+  <text class="m c28" x="420.4" y="45.5">/</text>
+  <text class="m c28" x="420.4" y="56.0">F</text>
+  <text class="m c28" x="420.4" y="66.5">キ</text>
+  <text class="m c28" x="420.4" y="77.0">b</text>
+  <text class="m c28" x="420.4" y="87.5">コ</text>
+  <text class="m c28" x="420.4" y="98.0">イ</text>
+  <text class="m c28" x="420.4" y="108.5">ソ</text>
+  <text class="m c28" x="420.4" y="119.0">C</text>
+  <text class="m c28" x="420.4" y="129.5">テ</text>
+  <text class="m c28" x="420.4" y="140.0">シ</text>
+  <text class="m c28" x="420.4" y="150.5">b</text>
+  <text class="m mb c28" x="420.4" y="161.0">テ</text>
+  <text class="m mb c28" x="420.4" y="171.5">ト</text>
+  <text class="m c28" x="420.4" y="182.0">C</text>
+  <text class="m c28" x="420.4" y="192.5">タ</text>
+  <text class="m c29" x="435.2" y="14.0">ソ</text>
+  <text class="m c29" x="435.2" y="24.5">エ</text>
+  <text class="m c29" x="435.2" y="35.0">c</text>
+  <text class="m c29" x="435.2" y="45.5">1</text>
+  <text class="m c29" x="435.2" y="56.0">{</text>
+  <text class="m c29" x="435.2" y="66.5">イ</text>
+  <text class="m c29" x="435.2" y="77.0">A</text>
+  <text class="m c29" x="435.2" y="87.5">ス</text>
+  <text class="m c29" x="435.2" y="98.0">/</text>
+  <text class="m c29" x="435.2" y="108.5">ウ</text>
+  <text class="m c29" x="435.2" y="119.0">/</text>
+  <text class="m mb c29" x="435.2" y="129.5">ア</text>
+  <text class="m mb c29" x="435.2" y="140.0">1</text>
+  <text class="m c29" x="435.2" y="150.5">セ</text>
+  <text class="m c29" x="435.2" y="161.0">サ</text>
+  <text class="m c29" x="435.2" y="171.5">1</text>
+  <text class="m c29" x="435.2" y="182.0">></text>
+  <text class="m c29" x="435.2" y="192.5">ク</text>
+  <text class="m c30" x="450.0" y="14.0">キ</text>
+  <text class="m c30" x="450.0" y="24.5">c</text>
+  <text class="m c30" x="450.0" y="35.0">+</text>
+  <text class="m c30" x="450.0" y="45.5">カ</text>
+  <text class="m c30" x="450.0" y="56.0">[</text>
+  <text class="m c30" x="450.0" y="66.5">シ</text>
+  <text class="m c30" x="450.0" y="77.0">b</text>
+  <text class="m c30" x="450.0" y="87.5">ソ</text>
+  <text class="m mb c30" x="450.0" y="98.0">B</text>
+  <text class="m mb c30" x="450.0" y="108.5">ケ</text>
+  <text class="m c30" x="450.0" y="119.0"><</text>
+  <text class="m c30" x="450.0" y="129.5"><</text>
+  <text class="m c30" x="450.0" y="140.0">カ</text>
+  <text class="m c30" x="450.0" y="150.5">ケ</text>
+  <text class="m c30" x="450.0" y="161.0">ツ</text>
+  <text class="m c30" x="450.0" y="171.5">オ</text>
+  <text class="m c30" x="450.0" y="182.0">]</text>
+  <text class="m c30" x="450.0" y="192.5">1</text>
+  <text class="m c31" x="464.8" y="14.0">[</text>
+  <text class="m c31" x="464.8" y="24.5">*</text>
+  <text class="m c31" x="464.8" y="35.0">C</text>
+  <text class="m c31" x="464.8" y="45.5">D</text>
+  <text class="m c31" x="464.8" y="56.0">サ</text>
+  <text class="m c31" x="464.8" y="66.5">ウ</text>
+  <text class="m c31" x="464.8" y="77.0">]</text>
+  <text class="m c31" x="464.8" y="87.5">=</text>
+  <text class="m c31" x="464.8" y="98.0">セ</text>
+  <text class="m mb c31" x="464.8" y="108.5">オ</text>
+  <text class="m mb c31" x="464.8" y="119.0">ツ</text>
+  <text class="m c31" x="464.8" y="129.5">*</text>
+  <text class="m c31" x="464.8" y="140.0"><</text>
+  <text class="m c31" x="464.8" y="150.5">カ</text>
+  <text class="m c31" x="464.8" y="161.0">[</text>
+  <text class="m c31" x="464.8" y="171.5">ア</text>
+  <text class="m c31" x="464.8" y="182.0">A</text>
+  <text class="m c31" x="464.8" y="192.5">{</text>
+  <text class="m c32" x="479.6" y="14.0">+</text>
+  <text class="m c32" x="479.6" y="24.5">B</text>
+  <text class="m c32" x="479.6" y="35.0">ウ</text>
+  <text class="m c32" x="479.6" y="45.5">e</text>
+  <text class="m c32" x="479.6" y="56.0">/</text>
+  <text class="m c32" x="479.6" y="66.5">ト</text>
+  <text class="m c32" x="479.6" y="77.0">0</text>
+  <text class="m c32" x="479.6" y="87.5">E</text>
+  <text class="m c32" x="479.6" y="98.0">d</text>
+  <text class="m c32" x="479.6" y="108.5">オ</text>
+  <text class="m c32" x="479.6" y="119.0">F</text>
+  <text class="m mb c32" x="479.6" y="129.5">B</text>
+  <text class="m mb c32" x="479.6" y="140.0">=</text>
+  <text class="m c32" x="479.6" y="150.5">b</text>
+  <text class="m c32" x="479.6" y="161.0">ク</text>
+  <text class="m c32" x="479.6" y="171.5">F</text>
+  <text class="m c32" x="479.6" y="182.0">コ</text>
+  <text class="m c32" x="479.6" y="192.5">f</text>
+  <text class="m c33" x="494.4" y="14.0">タ</text>
+  <text class="m c33" x="494.4" y="24.5">></text>
+  <text class="m c33" x="494.4" y="35.0">{</text>
+  <text class="m c33" x="494.4" y="45.5">c</text>
+  <text class="m c33" x="494.4" y="56.0">b</text>
+  <text class="m c33" x="494.4" y="66.5">F</text>
+  <text class="m c33" x="494.4" y="77.0">]</text>
+  <text class="m c33" x="494.4" y="87.5">タ</text>
+  <text class="m c33" x="494.4" y="98.0">テ</text>
+  <text class="m c33" x="494.4" y="108.5">セ</text>
+  <text class="m c33" x="494.4" y="119.0">エ</text>
+  <text class="m c33" x="494.4" y="129.5">タ</text>
+  <text class="m c33" x="494.4" y="140.0">a</text>
+  <text class="m c33" x="494.4" y="150.5">セ</text>
+  <text class="m c33" x="494.4" y="161.0">b</text>
+  <text class="m mb c33" x="494.4" y="171.5">[</text>
+  <text class="m mb c33" x="494.4" y="182.0">></text>
+  <text class="m c33" x="494.4" y="192.5">+</text>
+  <text class="m c34" x="509.2" y="14.0">ト</text>
+  <text class="m c34" x="509.2" y="24.5">1</text>
+  <text class="m c34" x="509.2" y="35.0">d</text>
+  <text class="m c34" x="509.2" y="45.5">テ</text>
+  <text class="m c34" x="509.2" y="56.0">コ</text>
+  <text class="m c34" x="509.2" y="66.5">d</text>
+  <text class="m c34" x="509.2" y="77.0">シ</text>
+  <text class="m c34" x="509.2" y="87.5">A</text>
+  <text class="m c34" x="509.2" y="98.0">ソ</text>
+  <text class="m c34" x="509.2" y="108.5">ト</text>
+  <text class="m c34" x="509.2" y="119.0">タ</text>
+  <text class="m mb c34" x="509.2" y="129.5"><</text>
+  <text class="m mb c34" x="509.2" y="140.0">タ</text>
+  <text class="m c34" x="509.2" y="150.5">}</text>
+  <text class="m c34" x="509.2" y="161.0">0</text>
+  <text class="m c34" x="509.2" y="171.5">f</text>
+  <text class="m c34" x="509.2" y="182.0">サ</text>
+  <text class="m c34" x="509.2" y="192.5">エ</text>
+  <text class="m c35" x="524.0" y="14.0">E</text>
+  <text class="m c35" x="524.0" y="24.5">d</text>
+  <text class="m c35" x="524.0" y="35.0">}</text>
+  <text class="m c35" x="524.0" y="45.5">セ</text>
+  <text class="m c35" x="524.0" y="56.0">c</text>
+  <text class="m c35" x="524.0" y="66.5">/</text>
+  <text class="m c35" x="524.0" y="77.0">d</text>
+  <text class="m c35" x="524.0" y="87.5">a</text>
+  <text class="m mb c35" x="524.0" y="98.0">1</text>
+  <text class="m mb c35" x="524.0" y="108.5">エ</text>
+  <text class="m c35" x="524.0" y="119.0">チ</text>
+  <text class="m c35" x="524.0" y="129.5">ス</text>
+  <text class="m c35" x="524.0" y="140.0">D</text>
+  <text class="m c35" x="524.0" y="150.5">セ</text>
+  <text class="m c35" x="524.0" y="161.0">ツ</text>
+  <text class="m c35" x="524.0" y="171.5">+</text>
+  <text class="m c35" x="524.0" y="182.0">]</text>
+  <text class="m c35" x="524.0" y="192.5">B</text>
+  <text class="m c36" x="538.8" y="14.0">}</text>
+  <text class="m c36" x="538.8" y="24.5">f</text>
+  <text class="m c36" x="538.8" y="35.0">A</text>
+  <text class="m c36" x="538.8" y="45.5">F</text>
+  <text class="m c36" x="538.8" y="56.0">}</text>
+  <text class="m c36" x="538.8" y="66.5">ト</text>
+  <text class="m c36" x="538.8" y="77.0">A</text>
+  <text class="m c36" x="538.8" y="87.5">b</text>
+  <text class="m c36" x="538.8" y="98.0">タ</text>
+  <text class="m c36" x="538.8" y="108.5">ツ</text>
+  <text class="m c36" x="538.8" y="119.0">ソ</text>
+  <text class="m c36" x="538.8" y="129.5">ス</text>
+  <text class="m mb c36" x="538.8" y="140.0">カ</text>
+  <text class="m mb c36" x="538.8" y="150.5">サ</text>
+  <text class="m c36" x="538.8" y="161.0">テ</text>
+  <text class="m c36" x="538.8" y="171.5">カ</text>
+  <text class="m c36" x="538.8" y="182.0">{</text>
+  <text class="m c36" x="538.8" y="192.5">コ</text>
+  <text class="m c37" x="553.6" y="14.0">シ</text>
+  <text class="m c37" x="553.6" y="24.5">c</text>
+  <text class="m c37" x="553.6" y="35.0">タ</text>
+  <text class="m c37" x="553.6" y="45.5">]</text>
+  <text class="m c37" x="553.6" y="56.0">f</text>
+  <text class="m c37" x="553.6" y="66.5"><</text>
+  <text class="m c37" x="553.6" y="77.0">チ</text>
+  <text class="m c37" x="553.6" y="87.5">オ</text>
+  <text class="m mb c37" x="553.6" y="98.0">サ</text>
+  <text class="m mb c37" x="553.6" y="108.5">チ</text>
+  <text class="m c37" x="553.6" y="119.0">ス</text>
+  <text class="m c37" x="553.6" y="129.5">B</text>
+  <text class="m c37" x="553.6" y="140.0">コ</text>
+  <text class="m c37" x="553.6" y="150.5">ツ</text>
+  <text class="m c37" x="553.6" y="161.0">0</text>
+  <text class="m c37" x="553.6" y="171.5">{</text>
+  <text class="m c37" x="553.6" y="182.0">キ</text>
+  <text class="m c37" x="553.6" y="192.5">タ</text>
+  <text class="m c38" x="568.4" y="14.0">イ</text>
+  <text class="m c38" x="568.4" y="24.5">}</text>
+  <text class="m c38" x="568.4" y="35.0">チ</text>
+  <text class="m c38" x="568.4" y="45.5">キ</text>
+  <text class="m c38" x="568.4" y="56.0">=</text>
+  <text class="m mb c38" x="568.4" y="66.5">d</text>
+  <text class="m mb c38" x="568.4" y="77.0">オ</text>
+  <text class="m c38" x="568.4" y="87.5">0</text>
+  <text class="m c38" x="568.4" y="98.0">[</text>
+  <text class="m c38" x="568.4" y="108.5">チ</text>
+  <text class="m c38" x="568.4" y="119.0">c</text>
+  <text class="m c38" x="568.4" y="129.5">c</text>
+  <text class="m c38" x="568.4" y="140.0">a</text>
+  <text class="m c38" x="568.4" y="150.5">ト</text>
+  <text class="m c38" x="568.4" y="161.0">コ</text>
+  <text class="m c38" x="568.4" y="171.5">イ</text>
+  <text class="m c38" x="568.4" y="182.0">ソ</text>
+  <text class="m c38" x="568.4" y="192.5">c</text>
+  <text class="m c39" x="583.2" y="14.0">ウ</text>
+  <text class="m c39" x="583.2" y="24.5">D</text>
+  <text class="m c39" x="583.2" y="35.0">d</text>
+  <text class="m c39" x="583.2" y="45.5">ウ</text>
+  <text class="m c39" x="583.2" y="56.0">[</text>
+  <text class="m c39" x="583.2" y="66.5">=</text>
+  <text class="m mb c39" x="583.2" y="77.0">*</text>
+  <text class="m mb c39" x="583.2" y="87.5">イ</text>
+  <text class="m c39" x="583.2" y="98.0">ク</text>
+  <text class="m c39" x="583.2" y="108.5">ク</text>
+  <text class="m c39" x="583.2" y="119.0">[</text>
+  <text class="m c39" x="583.2" y="129.5">ツ</text>
+  <text class="m c39" x="583.2" y="140.0">エ</text>
+  <text class="m c39" x="583.2" y="150.5">セ</text>
+  <text class="m c39" x="583.2" y="161.0">カ</text>
+  <text class="m c39" x="583.2" y="171.5">}</text>
+  <text class="m c39" x="583.2" y="182.0">E</text>
+  <text class="m c39" x="583.2" y="192.5"><</text>
+  <text class="m c40" x="598.0" y="14.0">></text>
+  <text class="m c40" x="598.0" y="24.5">ス</text>
+  <text class="m c40" x="598.0" y="35.0">f</text>
+  <text class="m c40" x="598.0" y="45.5">C</text>
+  <text class="m c40" x="598.0" y="56.0">a</text>
+  <text class="m c40" x="598.0" y="66.5">a</text>
+  <text class="m c40" x="598.0" y="77.0">ツ</text>
+  <text class="m c40" x="598.0" y="87.5">]</text>
+  <text class="m c40" x="598.0" y="98.0">F</text>
+  <text class="m c40" x="598.0" y="108.5">ツ</text>
+  <text class="m c40" x="598.0" y="119.0">[</text>
+  <text class="m c40" x="598.0" y="129.5">></text>
+  <text class="m c40" x="598.0" y="140.0">イ</text>
+  <text class="m c40" x="598.0" y="150.5">></text>
+  <text class="m mb c40" x="598.0" y="161.0">オ</text>
+  <text class="m mb c40" x="598.0" y="171.5">シ</text>
+  <text class="m c40" x="598.0" y="182.0">=</text>
+  <text class="m c40" x="598.0" y="192.5">シ</text>
+  <text class="m c41" x="612.8" y="14.0">+</text>
+  <text class="m c41" x="612.8" y="24.5">エ</text>
+  <text class="m c41" x="612.8" y="35.0">ケ</text>
+  <text class="m c41" x="612.8" y="45.5">セ</text>
+  <text class="m c41" x="612.8" y="56.0">コ</text>
+  <text class="m c41" x="612.8" y="66.5">}</text>
+  <text class="m c41" x="612.8" y="77.0">ウ</text>
+  <text class="m c41" x="612.8" y="87.5">ケ</text>
+  <text class="m c41" x="612.8" y="98.0">0</text>
+  <text class="m mb c41" x="612.8" y="108.5">E</text>
+  <text class="m mb c41" x="612.8" y="119.0">a</text>
+  <text class="m c41" x="612.8" y="129.5"><</text>
+  <text class="m c41" x="612.8" y="140.0">c</text>
+  <text class="m c41" x="612.8" y="150.5">チ</text>
+  <text class="m c41" x="612.8" y="161.0">ア</text>
+  <text class="m c41" x="612.8" y="171.5">ス</text>
+  <text class="m c41" x="612.8" y="182.0">チ</text>
+  <text class="m c41" x="612.8" y="192.5">チ</text>
+  <text class="m c42" x="627.6" y="14.0">ウ</text>
+  <text class="m c42" x="627.6" y="24.5">*</text>
+  <text class="m c42" x="627.6" y="35.0">ス</text>
+  <text class="m c42" x="627.6" y="45.5">ソ</text>
+  <text class="m c42" x="627.6" y="56.0">=</text>
+  <text class="m c42" x="627.6" y="66.5">]</text>
+  <text class="m c42" x="627.6" y="77.0">+</text>
+  <text class="m c42" x="627.6" y="87.5">サ</text>
+  <text class="m c42" x="627.6" y="98.0">F</text>
+  <text class="m c42" x="627.6" y="108.5">カ</text>
+  <text class="m c42" x="627.6" y="119.0">{</text>
+  <text class="m c42" x="627.6" y="129.5">ス</text>
+  <text class="m mb c42" x="627.6" y="140.0">/</text>
+  <text class="m mb c42" x="627.6" y="150.5">ク</text>
+  <text class="m c42" x="627.6" y="161.0">タ</text>
+  <text class="m c42" x="627.6" y="171.5">ク</text>
+  <text class="m c42" x="627.6" y="182.0">ウ</text>
+  <text class="m c42" x="627.6" y="192.5">イ</text>
+  <text class="m c43" x="642.4" y="14.0">ツ</text>
+  <text class="m c43" x="642.4" y="24.5"><</text>
+  <text class="m c43" x="642.4" y="35.0">[</text>
+  <text class="m c43" x="642.4" y="45.5">チ</text>
+  <text class="m c43" x="642.4" y="56.0">a</text>
+  <text class="m c43" x="642.4" y="66.5">カ</text>
+  <text class="m c43" x="642.4" y="77.0">b</text>
+  <text class="m mb c43" x="642.4" y="87.5">ツ</text>
+  <text class="m mb c43" x="642.4" y="98.0">D</text>
+  <text class="m c43" x="642.4" y="108.5">タ</text>
+  <text class="m c43" x="642.4" y="119.0">e</text>
+  <text class="m c43" x="642.4" y="129.5">{</text>
+  <text class="m c43" x="642.4" y="140.0">d</text>
+  <text class="m c43" x="642.4" y="150.5">a</text>
+  <text class="m c43" x="642.4" y="161.0">エ</text>
+  <text class="m c43" x="642.4" y="171.5"><</text>
+  <text class="m c43" x="642.4" y="182.0">ア</text>
+  <text class="m c43" x="642.4" y="192.5">F</text>
+  <text class="m c44" x="657.2" y="14.0"><</text>
+  <text class="m c44" x="657.2" y="24.5">ソ</text>
+  <text class="m c44" x="657.2" y="35.0">1</text>
+  <text class="m c44" x="657.2" y="45.5">エ</text>
+  <text class="m c44" x="657.2" y="56.0">ス</text>
+  <text class="m c44" x="657.2" y="66.5">*</text>
+  <text class="m c44" x="657.2" y="77.0">[</text>
+  <text class="m c44" x="657.2" y="87.5">]</text>
+  <text class="m c44" x="657.2" y="98.0">1</text>
+  <text class="m c44" x="657.2" y="108.5">*</text>
+  <text class="m mb c44" x="657.2" y="119.0">タ</text>
+  <text class="m mb c44" x="657.2" y="129.5">[</text>
+  <text class="m c44" x="657.2" y="140.0">ア</text>
+  <text class="m c44" x="657.2" y="150.5">コ</text>
+  <text class="m c44" x="657.2" y="161.0">c</text>
+  <text class="m c44" x="657.2" y="171.5">f</text>
+  <text class="m c44" x="657.2" y="182.0">/</text>
+  <text class="m c44" x="657.2" y="192.5">a</text>
+  <text class="m c45" x="672.0" y="14.0">コ</text>
+  <text class="m c45" x="672.0" y="24.5">]</text>
+  <text class="m c45" x="672.0" y="35.0">F</text>
+  <text class="m c45" x="672.0" y="45.5">=</text>
+  <text class="m c45" x="672.0" y="56.0">d</text>
+  <text class="m c45" x="672.0" y="66.5">エ</text>
+  <text class="m c45" x="672.0" y="77.0">c</text>
+  <text class="m c45" x="672.0" y="87.5">A</text>
+  <text class="m c45" x="672.0" y="98.0">E</text>
+  <text class="m mb c45" x="672.0" y="108.5">ト</text>
+  <text class="m mb c45" x="672.0" y="119.0">テ</text>
+  <text class="m c45" x="672.0" y="129.5">+</text>
+  <text class="m c45" x="672.0" y="140.0">オ</text>
+  <text class="m c45" x="672.0" y="150.5">ケ</text>
+  <text class="m c45" x="672.0" y="161.0">ト</text>
+  <text class="m c45" x="672.0" y="171.5">E</text>
+  <text class="m c45" x="672.0" y="182.0">d</text>
+  <text class="m c45" x="672.0" y="192.5">チ</text>
+  <text class="m c46" x="686.8" y="14.0">D</text>
+  <text class="m c46" x="686.8" y="24.5">}</text>
+  <text class="m c46" x="686.8" y="35.0">ア</text>
+  <text class="m c46" x="686.8" y="45.5">b</text>
+  <text class="m c46" x="686.8" y="56.0">エ</text>
+  <text class="m c46" x="686.8" y="66.5">テ</text>
+  <text class="m c46" x="686.8" y="77.0">ソ</text>
+  <text class="m c46" x="686.8" y="87.5">テ</text>
+  <text class="m c46" x="686.8" y="98.0">カ</text>
+  <text class="m c46" x="686.8" y="108.5">D</text>
+  <text class="m c46" x="686.8" y="119.0">e</text>
+  <text class="m c46" x="686.8" y="129.5">0</text>
+  <text class="m c46" x="686.8" y="140.0">+</text>
+  <text class="m c46" x="686.8" y="150.5">{</text>
+  <text class="m c46" x="686.8" y="161.0">b</text>
+  <text class="m mb c46" x="686.8" y="171.5">E</text>
+  <text class="m mb c46" x="686.8" y="182.0">イ</text>
+  <text class="m c46" x="686.8" y="192.5">サ</text>
+  <text class="m c47" x="701.6" y="14.0">B</text>
+  <text class="m c47" x="701.6" y="24.5">></text>
+  <text class="m c47" x="701.6" y="35.0">d</text>
+  <text class="m c47" x="701.6" y="45.5">=</text>
+  <text class="m c47" x="701.6" y="56.0">a</text>
+  <text class="m c47" x="701.6" y="66.5">イ</text>
+  <text class="m c47" x="701.6" y="77.0">シ</text>
+  <text class="m c47" x="701.6" y="87.5">タ</text>
+  <text class="m c47" x="701.6" y="98.0">}</text>
+  <text class="m c47" x="701.6" y="108.5">キ</text>
+  <text class="m c47" x="701.6" y="119.0">チ</text>
+  <text class="m c47" x="701.6" y="129.5">a</text>
+  <text class="m c47" x="701.6" y="140.0">d</text>
+  <text class="m mb c47" x="701.6" y="150.5">カ</text>
+  <text class="m mb c47" x="701.6" y="161.0">1</text>
+  <text class="m c47" x="701.6" y="171.5">=</text>
+  <text class="m c47" x="701.6" y="182.0"><</text>
+  <text class="m c47" x="701.6" y="192.5">セ</text>
+  <text class="m c48" x="716.4" y="14.0">ツ</text>
+  <text class="m c48" x="716.4" y="24.5">}</text>
+  <text class="m c48" x="716.4" y="35.0">0</text>
+  <text class="m c48" x="716.4" y="45.5">}</text>
+  <text class="m c48" x="716.4" y="56.0">E</text>
+  <text class="m c48" x="716.4" y="66.5">エ</text>
+  <text class="m c48" x="716.4" y="77.0">ス</text>
+  <text class="m mb c48" x="716.4" y="87.5">カ</text>
+  <text class="m mb c48" x="716.4" y="98.0">b</text>
+  <text class="m c48" x="716.4" y="108.5">カ</text>
+  <text class="m c48" x="716.4" y="119.0">/</text>
+  <text class="m c48" x="716.4" y="129.5">ク</text>
+  <text class="m c48" x="716.4" y="140.0">d</text>
+  <text class="m c48" x="716.4" y="150.5">チ</text>
+  <text class="m c48" x="716.4" y="161.0">e</text>
+  <text class="m c48" x="716.4" y="171.5">タ</text>
+  <text class="m c48" x="716.4" y="182.0">E</text>
+  <text class="m c48" x="716.4" y="192.5">c</text>
+  <text class="m c49" x="731.2" y="14.0">セ</text>
+  <text class="m c49" x="731.2" y="24.5">b</text>
+  <text class="m c49" x="731.2" y="35.0">}</text>
+  <text class="m c49" x="731.2" y="45.5">ク</text>
+  <text class="m c49" x="731.2" y="56.0">C</text>
+  <text class="m c49" x="731.2" y="66.5">サ</text>
+  <text class="m c49" x="731.2" y="77.0"><</text>
+  <text class="m c49" x="731.2" y="87.5">e</text>
+  <text class="m c49" x="731.2" y="98.0">キ</text>
+  <text class="m c49" x="731.2" y="108.5">ウ</text>
+  <text class="m c49" x="731.2" y="119.0">タ</text>
+  <text class="m c49" x="731.2" y="129.5">E</text>
+  <text class="m mb c49" x="731.2" y="140.0">ト</text>
+  <text class="m mb c49" x="731.2" y="150.5">e</text>
+  <text class="m c49" x="731.2" y="161.0">タ</text>
+  <text class="m c49" x="731.2" y="171.5">0</text>
+  <text class="m c49" x="731.2" y="182.0">チ</text>
+  <text class="m c49" x="731.2" y="192.5">ツ</text>
+  <text class="m c50" x="746.0" y="14.0">]</text>
+  <text class="m c50" x="746.0" y="24.5">+</text>
+  <text class="m c50" x="746.0" y="35.0">d</text>
+  <text class="m c50" x="746.0" y="45.5">ク</text>
+  <text class="m c50" x="746.0" y="56.0">a</text>
+  <text class="m c50" x="746.0" y="66.5">{</text>
+  <text class="m c50" x="746.0" y="77.0">c</text>
+  <text class="m c50" x="746.0" y="87.5">A</text>
+  <text class="m c50" x="746.0" y="98.0">ト</text>
+  <text class="m c50" x="746.0" y="108.5">}</text>
+  <text class="m c50" x="746.0" y="119.0">{</text>
+  <text class="m c50" x="746.0" y="129.5">C</text>
+  <text class="m c50" x="746.0" y="140.0">b</text>
+  <text class="m c50" x="746.0" y="150.5">テ</text>
+  <text class="m mb c50" x="746.0" y="161.0">サ</text>
+  <text class="m mb c50" x="746.0" y="171.5">セ</text>
+  <text class="m c50" x="746.0" y="182.0">[</text>
+  <text class="m c50" x="746.0" y="192.5">C</text>
+  <text class="m c51" x="760.8" y="14.0">E</text>
+  <text class="m c51" x="760.8" y="24.5">ア</text>
+  <text class="m c51" x="760.8" y="35.0">テ</text>
+  <text class="m c51" x="760.8" y="45.5">c</text>
+  <text class="m c51" x="760.8" y="56.0">C</text>
+  <text class="m c51" x="760.8" y="66.5">C</text>
+  <text class="m c51" x="760.8" y="77.0">+</text>
+  <text class="m c51" x="760.8" y="87.5">/</text>
+  <text class="m mb c51" x="760.8" y="98.0">ク</text>
+  <text class="m mb c51" x="760.8" y="108.5">d</text>
+  <text class="m c51" x="760.8" y="119.0">ア</text>
+  <text class="m c51" x="760.8" y="129.5">キ</text>
+  <text class="m c51" x="760.8" y="140.0">e</text>
+  <text class="m c51" x="760.8" y="150.5">]</text>
+  <text class="m c51" x="760.8" y="161.0">ト</text>
+  <text class="m c51" x="760.8" y="171.5">オ</text>
+  <text class="m c51" x="760.8" y="182.0">a</text>
+  <text class="m c51" x="760.8" y="192.5">オ</text>
+  <text class="m c52" x="775.6" y="14.0">b</text>
+  <text class="m c52" x="775.6" y="24.5">0</text>
+  <text class="m c52" x="775.6" y="35.0">ク</text>
+  <text class="m c52" x="775.6" y="45.5">E</text>
+  <text class="m c52" x="775.6" y="56.0">/</text>
+  <text class="m c52" x="775.6" y="66.5">ク</text>
+  <text class="m c52" x="775.6" y="77.0">ウ</text>
+  <text class="m c52" x="775.6" y="87.5">c</text>
+  <text class="m c52" x="775.6" y="98.0">ソ</text>
+  <text class="m c52" x="775.6" y="108.5">ト</text>
+  <text class="m c52" x="775.6" y="119.0">></text>
+  <text class="m c52" x="775.6" y="129.5">D</text>
+  <text class="m c52" x="775.6" y="140.0">/</text>
+  <text class="m mb c52" x="775.6" y="150.5">エ</text>
+  <text class="m mb c52" x="775.6" y="161.0">ト</text>
+  <text class="m c52" x="775.6" y="171.5">*</text>
+  <text class="m c52" x="775.6" y="182.0">{</text>
+  <text class="m c52" x="775.6" y="192.5">C</text>
+  <text class="m c53" x="790.4" y="14.0">=</text>
+  <text class="m c53" x="790.4" y="24.5">d</text>
+  <text class="m c53" x="790.4" y="35.0">{</text>
+  <text class="m c53" x="790.4" y="45.5">ア</text>
+  <text class="m c53" x="790.4" y="56.0">></text>
+  <text class="m c53" x="790.4" y="66.5">ウ</text>
+  <text class="m c53" x="790.4" y="77.0">セ</text>
+  <text class="m c53" x="790.4" y="87.5">=</text>
+  <text class="m c53" x="790.4" y="98.0">*</text>
+  <text class="m c53" x="790.4" y="108.5">チ</text>
+  <text class="m mb c53" x="790.4" y="119.0">ス</text>
+  <text class="m mb c53" x="790.4" y="129.5">エ</text>
+  <text class="m c53" x="790.4" y="140.0">F</text>
+  <text class="m c53" x="790.4" y="150.5">オ</text>
+  <text class="m c53" x="790.4" y="161.0">=</text>
+  <text class="m c53" x="790.4" y="171.5">オ</text>
+  <text class="m c53" x="790.4" y="182.0">a</text>
+  <text class="m c53" x="790.4" y="192.5">ケ</text>
+  <text class="m c54" x="805.2" y="14.0">1</text>
+  <text class="m c54" x="805.2" y="24.5">ア</text>
+  <text class="m c54" x="805.2" y="35.0">テ</text>
+  <text class="m c54" x="805.2" y="45.5">イ</text>
+  <text class="m c54" x="805.2" y="56.0">チ</text>
+  <text class="m c54" x="805.2" y="66.5">A</text>
+  <text class="m c54" x="805.2" y="77.0">B</text>
+  <text class="m c54" x="805.2" y="87.5">F</text>
+  <text class="m c54" x="805.2" y="98.0">ク</text>
+  <text class="m mb c54" x="805.2" y="108.5">セ</text>
+  <text class="m mb c54" x="805.2" y="119.0">f</text>
+  <text class="m c54" x="805.2" y="129.5">E</text>
+  <text class="m c54" x="805.2" y="140.0">[</text>
+  <text class="m c54" x="805.2" y="150.5">*</text>
+  <text class="m c54" x="805.2" y="161.0">コ</text>
+  <text class="m c54" x="805.2" y="171.5">ケ</text>
+  <text class="m c54" x="805.2" y="182.0">コ</text>
+  <text class="m c54" x="805.2" y="192.5">エ</text>
+  <text class="m c55" x="820.0" y="14.0">C</text>
+  <text class="m c55" x="820.0" y="24.5">></text>
+  <text class="m c55" x="820.0" y="35.0">*</text>
+  <text class="m c55" x="820.0" y="45.5">セ</text>
+  <text class="m c55" x="820.0" y="56.0">d</text>
+  <text class="m c55" x="820.0" y="66.5">]</text>
+  <text class="m c55" x="820.0" y="77.0">ク</text>
+  <text class="m c55" x="820.0" y="87.5">ス</text>
+  <text class="m c55" x="820.0" y="98.0">b</text>
+  <text class="m c55" x="820.0" y="108.5">=</text>
+  <text class="m c55" x="820.0" y="119.0">ソ</text>
+  <text class="m c55" x="820.0" y="129.5">b</text>
+  <text class="m c55" x="820.0" y="140.0">ソ</text>
+  <text class="m c55" x="820.0" y="150.5">+</text>
+  <text class="m mb c55" x="820.0" y="161.0">0</text>
+  <text class="m mb c55" x="820.0" y="171.5">b</text>
+  <text class="m c55" x="820.0" y="182.0">チ</text>
+  <text class="m c55" x="820.0" y="192.5">*</text>
+  <text class="m c56" x="834.8" y="14.0">ケ</text>
+  <text class="m c56" x="834.8" y="24.5">ウ</text>
+  <text class="m c56" x="834.8" y="35.0">a</text>
+  <text class="m c56" x="834.8" y="45.5">A</text>
+  <text class="m c56" x="834.8" y="56.0">]</text>
+  <text class="m c56" x="834.8" y="66.5">ツ</text>
+  <text class="m c56" x="834.8" y="77.0">=</text>
+  <text class="m c56" x="834.8" y="87.5">F</text>
+  <text class="m c56" x="834.8" y="98.0">ソ</text>
+  <text class="m c56" x="834.8" y="108.5">b</text>
+  <text class="m c56" x="834.8" y="119.0">ツ</text>
+  <text class="m c56" x="834.8" y="129.5">サ</text>
+  <text class="m c56" x="834.8" y="140.0">C</text>
+  <text class="m mb c56" x="834.8" y="150.5">c</text>
+  <text class="m mb c56" x="834.8" y="161.0">オ</text>
+  <text class="m c56" x="834.8" y="171.5">セ</text>
+  <text class="m c56" x="834.8" y="182.0">C</text>
+  <text class="m c56" x="834.8" y="192.5">[</text>
+  <text class="m c57" x="849.6" y="14.0">[</text>
+  <text class="m c57" x="849.6" y="24.5">チ</text>
+  <text class="m c57" x="849.6" y="35.0">チ</text>
+  <text class="m c57" x="849.6" y="45.5">1</text>
+  <text class="m c57" x="849.6" y="56.0">+</text>
+  <text class="m c57" x="849.6" y="66.5">D</text>
+  <text class="m c57" x="849.6" y="77.0">タ</text>
+  <text class="m c57" x="849.6" y="87.5">0</text>
+  <text class="m c57" x="849.6" y="98.0">[</text>
+  <text class="m c57" x="849.6" y="108.5">*</text>
+  <text class="m mb c57" x="849.6" y="119.0">イ</text>
+  <text class="m mb c57" x="849.6" y="129.5"><</text>
+  <text class="m c57" x="849.6" y="140.0">d</text>
+  <text class="m c57" x="849.6" y="150.5">チ</text>
+  <text class="m c57" x="849.6" y="161.0">ス</text>
+  <text class="m c57" x="849.6" y="171.5"><</text>
+  <text class="m c57" x="849.6" y="182.0">A</text>
+  <text class="m c57" x="849.6" y="192.5">ス</text>
+  <text class="m c58" x="864.4" y="14.0">サ</text>
+  <text class="m c58" x="864.4" y="24.5">></text>
+  <text class="m c58" x="864.4" y="35.0">ソ</text>
+  <text class="m c58" x="864.4" y="45.5">*</text>
+  <text class="m c58" x="864.4" y="56.0">+</text>
+  <text class="m c58" x="864.4" y="66.5">*</text>
+  <text class="m c58" x="864.4" y="77.0">キ</text>
+  <text class="m c58" x="864.4" y="87.5">=</text>
+  <text class="m c58" x="864.4" y="98.0">オ</text>
+  <text class="m c58" x="864.4" y="108.5">=</text>
+  <text class="m c58" x="864.4" y="119.0">/</text>
+  <text class="m c58" x="864.4" y="129.5">ア</text>
+  <text class="m c58" x="864.4" y="140.0">ツ</text>
+  <text class="m c58" x="864.4" y="150.5">a</text>
+  <text class="m c58" x="864.4" y="161.0">ア</text>
+  <text class="m mb c58" x="864.4" y="171.5">]</text>
+  <text class="m mb c58" x="864.4" y="182.0">B</text>
+  <text class="m c58" x="864.4" y="192.5">キ</text>
+  <text class="m c59" x="879.2" y="14.0">チ</text>
+  <text class="m c59" x="879.2" y="24.5">テ</text>
+  <text class="m c59" x="879.2" y="35.0">E</text>
+  <text class="m c59" x="879.2" y="45.5">コ</text>
+  <text class="m c59" x="879.2" y="56.0">サ</text>
+  <text class="m c59" x="879.2" y="66.5">キ</text>
+  <text class="m mb c59" x="879.2" y="77.0">{</text>
+  <text class="m mb c59" x="879.2" y="87.5">B</text>
+  <text class="m c59" x="879.2" y="98.0">f</text>
+  <text class="m c59" x="879.2" y="108.5">e</text>
+  <text class="m c59" x="879.2" y="119.0">タ</text>
+  <text class="m c59" x="879.2" y="129.5">ケ</text>
+  <text class="m c59" x="879.2" y="140.0">ソ</text>
+  <text class="m c59" x="879.2" y="150.5">c</text>
+  <text class="m c59" x="879.2" y="161.0">チ</text>
+  <text class="m c59" x="879.2" y="171.5">ト</text>
+  <text class="m c59" x="879.2" y="182.0">カ</text>
+  <text class="m c59" x="879.2" y="192.5">b</text>
+</svg>
