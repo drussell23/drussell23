@@ -30,6 +30,26 @@ For the past 12 months, I have been executing a solo build of **JARVIS** — a t
 
 ---
 
+<div align="center">
+
+### <img src="https://media.giphy.com/media/J5B1Y8QZnzXXbLQIBu/giphy.gif" width="30"> &nbsp; Now Vibing
+
+<a href="https://open.spotify.com/track/3XOalgusokruzA5ZBA2Qcb">
+  <img src="https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02095bca744b48a058767a8f48" width="180" style="border-radius:12px" alt="DS4EVER Album Art"/>
+</a>
+
+<br><br>
+
+<a href="https://open.spotify.com/track/3XOalgusokruzA5ZBA2Qcb">
+  <img src="https://img.shields.io/badge/%F0%9F%8E%B5_pushin_P-Gunna_ft._Future_&_Young_Thug-1DB954?style=for-the-badge&logo=spotify&logoColor=white" alt="Pushin P on Spotify"/>
+</a>
+
+<sub><b>DS4EVER</b> &nbsp;·&nbsp; Click to listen on Spotify</sub>
+
+</div>
+
+---
+
 ## <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="30"> Tech Stack
 
 <div align="center">
