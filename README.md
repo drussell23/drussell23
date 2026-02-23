@@ -96,17 +96,25 @@ The ML training backbone. A hybrid C++/Python engine that transforms raw telemet
 
 ## Stack
 
-**Languages:** Python, C++, TypeScript, Rust
+**Languages:** Python, C++, TypeScript, Rust, SQL
 
-**ML / Inference:** llama.cpp, llama-cpp-python, PyTorch, Transformers, GGUF quantization, LoRA, DPO, FSDP, LLaVA, ECAPA-TDNN, SentenceTransformers
+**ML / Inference:** PyTorch, Transformers, llama.cpp, llama-cpp-python, GGUF quantization, ONNX Runtime, CoreML Tools, SpeechBrain, scikit-learn, SentenceTransformers, HuggingFace Hub, safetensors, tiktoken, Numba (JIT), sympy
 
-**Infrastructure:** GCP (Compute Engine, Cloud SQL, Cloud Run), Docker, Terraform, systemd, CMake, pybind11
+**Training (ReactorCore):** LoRA, DPO, RLHF, FSDP, MAML (meta-learning), curriculum learning, federated learning, causal reasoning, world model training, online learning, active learning, EWC (Elastic Weight Consolidation)
 
-**Backend:** FastAPI, WebSocket, asyncio, asyncpg, Cloud SQL Proxy, circuit breakers, exponential backoff
+**Models / Vision:** LLaVA (multimodal), ECAPA-TDNN (speaker verification), Whisper (faster-whisper, openai-whisper), Porcupine (wake word), Piper TTS
 
-**Frontend:** React, Next.js, WebSocket real-time streaming
+**Vector / Data:** ChromaDB, FAISS, Redis, PostgreSQL (asyncpg, psycopg2), aiosqlite, NetworkX
 
-**Audio / Vision:** sounddevice, Whisper (faster-whisper), Piper TTS, speexdsp AEC, pyautogui, LLaVA multimodal
+**Infrastructure:** GCP (Compute Engine, Cloud SQL, Cloud Run, Secret Manager, Monitoring), Docker, Terraform, Kubernetes, systemd, CMake, pybind11
+
+**Backend:** FastAPI, uvicorn, uvloop, gRPC, Protobuf, asyncio, aiohttp, httpx, WebSocket, Cloud SQL Proxy, circuit breakers, exponential backoff, backpressure control
+
+**Observability:** OpenTelemetry (tracing + metrics + OTLP/gRPC export), structlog, psutil, Pydantic
+
+**Frontend:** React, Next.js, Framer Motion, Axios, WebSocket real-time streaming
+
+**Audio / Vision:** OpenCV, sounddevice, PyAudio, webrtcvad (VAD), speexdsp (AEC), librosa, pyautogui, LLaVA multimodal
 
 ---
 
