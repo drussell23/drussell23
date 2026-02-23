@@ -118,6 +118,16 @@ For the past 12 months, I have been executing a solo build of **JARVIS** — a t
 
 <div align="center">
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/drussell23/drussell23/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/drussell23/drussell23/output/github-snake.svg" />
+  <img alt="github-snake" src="https://raw.githubusercontent.com/drussell23/drussell23/output/github-snake-dark.svg" width="100%" />
+</picture>
+
+</div>
+
+<div align="center">
+
 <a href="https://github.com/ryo-ma/github-profile-trophy">
   <img src="https://github-profile-trophy-tawny.vercel.app/?username=drussell23&theme=tokyonight&no-frame=true&no-bg=true&column=7&margin-w=10" width="95%"/>
 </a>
