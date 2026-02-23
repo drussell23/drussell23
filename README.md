@@ -1,12 +1,24 @@
+<div align="center">
+
 # Derek J. Russell
 
 **AI Engineer | Computer Engineer | Autonomous Systems Architect**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/derek-j-russell/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/drussell23)
+[![Featured](https://img.shields.io/badge/Mustang_News-Featured-8B0000?style=for-the-badge)](https://mustangnews.net/10-years-in-the-making-one-cal-poly-students-unique-path-to-an-engineering-degree/)
+
+</div>
+
+---
 
 I design, build, and deploy production-grade AI ecosystems from bare metal to cloud inference. My work sits at the intersection of systems engineering, machine learning infrastructure, and real-time intelligent automation.
 
 For the past 12 months, I have been executing a solo build of **JARVIS** — a three-repository, multi-process autonomous AI operating system spanning Python, C++, Rust, Swift, Objective-C, and TypeScript. The system orchestrates 60+ asynchronous agents across a neural mesh, routes inference dynamically between local Apple Silicon and GCP, performs real-time voice biometric authentication, controls macOS at the native API level, and continuously trains its own models through a self-improving feedback loop.
 
-**3,900+ commits. 2.5 million lines of code. One engineer.**
+```
+3,900+ commits  ·  2.5 million lines of code  ·  11 languages  ·  One engineer
+```
 
 ---
 
@@ -42,18 +54,28 @@ JARVIS is not a chatbot wrapper. It is a distributed AI operating system compose
 
 The central operating system and control plane. A custom Python kernel (`unified_supervisor.py`, 50K+ lines) that boots, coordinates, and monitors the entire ecosystem through a 7-zone initialization architecture with parallel dependency resolution.
 
-**Agent Architecture:**
+<details>
+<summary><b>Agent Architecture</b></summary>
+
 - **Neural Mesh** — 16+ specialized agents (activity recognition, adaptive resource governor, context tracker, error analyzer, goal inference, Google Workspace, health monitor, memory, pattern recognition, predictive planning, spatial awareness, visual monitor, web search, coordinator) with asynchronous message passing, capability-based routing, and cross-agent data flow
 - **Autonomous Agent Runtime** — multi-step goal decomposition, agentic task execution, tool orchestration, error recovery, and intervention decision engine with human-in-the-loop approval for destructive actions
 - **AGI OS Coordinator** — proactive event stream, notification bridge, owner identity service, voice approval manager, and intelligent startup announcer
 
-**Voice and Authentication:**
+</details>
+
+<details>
+<summary><b>Voice and Authentication</b></summary>
+
 - **Real-time voice biometric authentication** via ECAPA-TDNN speaker verification with cloud/local hybrid inference and multi-factor fusion (voice + proximity + behavioral)
 - **Real-time voice conversation** — full-duplex audio (simultaneous mic + speaker), acoustic echo cancellation (speexdsp), streaming STT (faster-whisper), adaptive turn detection, barge-in control, and sliding 20-turn context window
 - **Wake word detection** (Porcupine/Picovoice), Apple Watch Bluetooth proximity auth, continuous learning voice profiles
 - **Unified speech state management** — STT hallucination guard, voice pipeline orchestration, parallel model loading
 
-**Vision and Spatial Intelligence:**
+</details>
+
+<details>
+<summary><b>Vision and Spatial Intelligence</b></summary>
+
 - **Never-skip screen capture** — two-phase monitoring (always-capture + conditional-analysis), self-hosted LLaVA multimodal analysis, Claude Vision escalation
 - **Ghost Display** — virtual macOS display for non-intrusive background automation, Ghost Hands orchestrator for autonomous visual workflows
 - **Claude Computer Use** — automated mouse, keyboard, and screenshot interaction via Anthropic's Computer Use API
@@ -61,13 +83,21 @@ The central operating system and control plane. A custom Python kernel (`unified
 - **YOLO + Claude hybrid vision** — object detection with LLM-powered semantic understanding
 - **Rust vision core** — native performance for fast image processing, bloom filter networks, and sliding window analysis
 
-**macOS Native Integration (Swift / Objective-C / Rust):**
+</details>
+
+<details>
+<summary><b>macOS Native Integration (Swift / Objective-C / Rust)</b></summary>
+
 - **Swift bridge** (203 files) — CommandClassifier, SystemControl (preferences, security, clipboard, filesystem), PerformanceCore, ScreenCapture, WeatherKit, CoreLocation GPS
 - **Objective-C voice unlock daemon** — JARVISVoiceAuthenticator, JARVISVoiceMonitor, permission manager, launchd service integration
 - **Rust performance layer** — PyO3 bindings for memory pool management, quantized ML inference, vision fast processor, command classifier, health predictor; ARM64 SIMD assembly optimizations
 - **CoreML acceleration** — on-device intent classification, voice processing
 
-**Infrastructure and Reliability:**
+</details>
+
+<details>
+<summary><b>Infrastructure and Reliability</b></summary>
+
 - **Parallel initializer** with cooperative cancellation, adaptive EMA-based deadlines, dependency propagation, and atomic state persistence
 - **CPU-pressure-aware cloud shifting** — automatic workload offload to GCP when local resources are constrained
 - **Enterprise hardening** — dependency injection container, enterprise process manager, system hardening, governance, Cloud SQL with race-condition-proof proxy management, TLS-safe connection factories, distributed lock manager
@@ -76,7 +106,11 @@ The central operating system and control plane. A custom Python kernel (`unified
 - **Cost tracking and rate limiting** — GCP cost optimization with Bayesian confidence fusion, intelligent rate orchestration
 - **File integrity guardian** — pre-commit integrity verification across the codebase
 
-**Intelligence and Learning:**
+</details>
+
+<details>
+<summary><b>Intelligence and Learning</b></summary>
+
 - **Google Workspace Agent** — Gmail read/search/draft, Google Calendar, natural language intent routing via tiered command router
 - **Proactive intelligence** — predictive suggestions, proactive vision monitoring, proactive communication, emotional intelligence module
 - **RAG pipeline** — ChromaDB vector store, FAISS similarity search, embedding service, long-term memory system
@@ -85,6 +119,8 @@ The central operating system and control plane. A custom Python kernel (`unified
 - **Web research service** — autonomous web search and information synthesis
 - **A/B testing framework** — vision pipeline experimentation
 - **Repository intelligence** — code ownership analysis, dependency analyzer, API contract analyzer, AST transformer, cross-repo refactoring engine
+
+</details>
 
 ### JARVIS-Prime — The Cognitive Core
 
@@ -101,9 +137,7 @@ The inference engine and reasoning layer. A production-ready model serving syste
 - **Reasoning engine activation** — chain-of-thought scaffolding (CoT/ToT/self-reflection) for high-complexity requests above configurable thresholds
 - **APARS protocol** (Adaptive Progress-Aware Readiness System) — 6-phase startup with real-time health reporting to the supervisor
 - **LLaVA vision server** — multimodal inference on port 8001 with OpenAI-compatible API, semaphore serialization, queue depth cap
-- **Deployment feedback loop** — writes deployment status to cross-repo shared state for ReactorCore to consume
-- **Post-deployment probation monitor** — 30-minute health probing with automatic commit or rollback, emergency rollback on 5x error rate spike
-- **Telemetry capture** — structured JSONL interaction logging (model_id, task_type, latency, partial responses from disconnected clients)
+- **Telemetry capture** — structured JSONL interaction logging with deployment feedback loop and post-deployment probation monitoring
 
 ### ReactorCore — The Forge
 
@@ -120,9 +154,7 @@ The ML training backbone. A hybrid C++/Python engine that transforms raw telemet
 - **Native C++ training kernels** via CMake/pybind11/cpp-httplib for performance-critical operations
 - **Atomic experience snapshots** — buffer drain under async lock, JSONL with DataHash for dataset versioning
 - **PrimeConnector** — WebSocket path rotation, health polling fallback, contract path discovery for cross-repo communication
-- **SafeScout orchestrator** — topic-based learning queue with priority/category normalization
-- **Pipeline event logger** — structured JSONL events with correlation/causation IDs for cross-repo observability
-- **Cross-repo integration** — Ghost Display state reader, cloud mode detection, Trinity Unified Loop Manager, Docker state for training jobs
+- **Cross-repo integration** — Ghost Display state reader, cloud mode detection, Trinity Unified Loop Manager, pipeline event logger with correlation IDs
 
 ---
 
@@ -151,7 +183,26 @@ The ML training backbone. A hybrid C++/Python engine that transforms raw telemet
 
 ---
 
-## Stack
+## Tech Stack
+
+<div align="center">
+
+### Languages
+[![Languages](https://skillicons.dev/icons?i=py,cpp,rust,swift,ts,js,bash,html,css&theme=dark)](https://skillicons.dev)
+
+### ML, Inference and Data
+[![ML](https://skillicons.dev/icons?i=pytorch,tensorflow,opencv,sklearn,anaconda&theme=dark)](https://skillicons.dev)
+
+### Infrastructure and Cloud
+[![Infra](https://skillicons.dev/icons?i=gcp,docker,kubernetes,terraform,redis,postgres,sqlite,nginx,cmake,githubactions&theme=dark)](https://skillicons.dev)
+
+### Backend and Frontend
+[![Backend](https://skillicons.dev/icons?i=fastapi,react,nextjs,nodejs,vscode,git,github,linux,apple,md&theme=dark)](https://skillicons.dev)
+
+</div>
+
+<details>
+<summary><b>Full Stack Inventory (text)</b></summary>
 
 **Languages:** Python, C++, Rust, Swift, Objective-C, TypeScript, JavaScript, SQL, Shell/Bash, AppleScript, HTML/CSS, ARM64 Assembly
 
@@ -181,6 +232,21 @@ The ML training backbone. A hybrid C++/Python engine that transforms raw telemet
 
 **Audio / Vision:** OpenCV, sounddevice, PyAudio, webrtcvad (VAD), speexdsp (AEC), librosa, pyautogui, LLaVA multimodal, YOLO object detection
 
+</details>
+
+---
+
+## GitHub Stats
+
+<div align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=drussell23&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" alt="GitHub Stats" height="180"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=drussell23&layout=compact&theme=tokyonight&hide_border=true&langs_count=10" alt="Top Languages" height="180"/>
+
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=drussell23&theme=tokyonight&hide_border=true" alt="GitHub Streak"/>
+
+</div>
+
 ---
 
 ## Background
@@ -191,10 +257,10 @@ JARVIS is what happens when that level of persistence meets engineering capabili
 
 ---
 
-## Contact
+<div align="center">
 
-**LinkedIn:** [in/derek-j-russell](https://www.linkedin.com/in/derek-j-russell/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/derek-j-russell/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-000000?style=flat-square&logo=vercel)](https://github.com/drussell23/JARVIS-Portfolio)
+[![Article](https://img.shields.io/badge/Mustang_News-Read_Feature-8B0000?style=flat-square)](https://mustangnews.net/10-years-in-the-making-one-cal-poly-students-unique-path-to-an-engineering-degree/)
 
-**GitHub:** [drussell23](https://github.com/drussell23)
-
-**Featured:** [Mustang News — "10 years in the making"](https://mustangnews.net/10-years-in-the-making-one-cal-poly-students-unique-path-to-an-engineering-degree/)
+</div>
