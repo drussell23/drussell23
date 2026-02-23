@@ -96,23 +96,31 @@ The ML training backbone. A hybrid C++/Python engine that transforms raw telemet
 
 ## Stack
 
-**Languages:** Python, C++, TypeScript, Rust, SQL
+**Languages:** Python, C++, Rust, Swift, Objective-C, TypeScript, JavaScript, SQL, Shell/Bash, AppleScript, HTML/CSS
 
-**ML / Inference:** PyTorch, Transformers, llama.cpp, llama-cpp-python, GGUF quantization, ONNX Runtime, CoreML Tools, SpeechBrain, scikit-learn, SentenceTransformers, HuggingFace Hub, safetensors, tiktoken, Numba (JIT), sympy
+**ML / Inference:** PyTorch, Transformers, llama.cpp, llama-cpp-python, GGUF quantization, ONNX Runtime, CoreML Tools, SpeechBrain, scikit-learn, SentenceTransformers, HuggingFace Hub, safetensors, tiktoken, Numba (JIT), sympy, LangChain
 
 **Training (ReactorCore):** LoRA, DPO, RLHF, FSDP, MAML (meta-learning), curriculum learning, federated learning, causal reasoning, world model training, online learning, active learning, EWC (Elastic Weight Consolidation)
 
 **Models / Vision:** LLaVA (multimodal), ECAPA-TDNN (speaker verification), Whisper (faster-whisper, openai-whisper), Porcupine (wake word), Piper TTS
 
-**Vector / Data:** ChromaDB, FAISS, Redis, PostgreSQL (asyncpg, psycopg2), aiosqlite, NetworkX
+**LLM APIs:** Anthropic Claude API, OpenAI API (chat completions, embeddings)
 
-**Infrastructure:** GCP (Compute Engine, Cloud SQL, Cloud Run, Secret Manager, Monitoring), Docker, Terraform, Kubernetes, systemd, CMake, pybind11
+**Rust Ecosystem:** PyO3, ndarray, rayon (parallelism), parking_lot, DashMap (concurrent maps), crossbeam (lock-free channels), serde, mimalloc (allocator), image crate
+
+**Swift / macOS Native:** Swift Package Manager, CoreLocation, WeatherKit, AppKit, Foundation, Quartz/CoreGraphics, Accessibility API, pyobjc, launchd (service daemons), osascript (AppleScript bridge)
+
+**Vector / Data:** ChromaDB, FAISS, Redis, PostgreSQL (asyncpg, psycopg2), SQLite (aiosqlite), NetworkX
+
+**Infrastructure:** GCP (Compute Engine, Cloud SQL, Cloud Run, Secret Manager, Monitoring), Docker, docker-compose, Terraform (modular: compute, network, security, storage, monitoring, budget), Kubernetes, systemd, CMake, pybind11
+
+**CI/CD:** GitHub Actions (20+ workflows: CI/CD pipeline, CodeQL analysis, e2e testing, deployment, database validation, file integrity), git worktrees
 
 **Backend:** FastAPI, uvicorn, uvloop, gRPC, Protobuf, asyncio, aiohttp, httpx, WebSocket, Cloud SQL Proxy, circuit breakers, exponential backoff, backpressure control
 
 **Observability:** OpenTelemetry (tracing + metrics + OTLP/gRPC export), structlog, psutil, Pydantic
 
-**Frontend:** React, Next.js, Framer Motion, Axios, WebSocket real-time streaming
+**Frontend:** React 19, Next.js, Framer Motion, Axios, WebSocket real-time streaming
 
 **Audio / Vision:** OpenCV, sounddevice, PyAudio, webrtcvad (VAD), speexdsp (AEC), librosa, pyautogui, LLaVA multimodal
 
