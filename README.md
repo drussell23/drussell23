@@ -1,32 +1,116 @@
 <div align="center">
 
-# Derek J. Russell
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1b27,100:24283b&height=230&section=header&text=Derek%20J.%20Russell&fontSize=48&fontColor=70a5fd&fontAlignY=35&desc=AI%20Engineer%20%7C%20Computer%20Engineer%20%7C%20Autonomous%20Systems%20Architect&descSize=18&descColor=a9b1d6&descAlignY=55&animation=fadeIn" width="100%"/>
 
-**AI Engineer | Computer Engineer | Autonomous Systems Architect**
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=3000&pause=1000&color=70A5FD&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=80&lines=3%2C900%2B+commits+%C2%B7+2.5M+lines+of+code+%C2%B7+11+languages;Building+production-grade+autonomous+AI+infrastructure)](https://github.com/drussell23)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/derek-j-russell/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/drussell23)
 [![Featured](https://img.shields.io/badge/Mustang_News-Featured-8B0000?style=for-the-badge)](https://mustangnews.net/10-years-in-the-making-one-cal-poly-students-unique-path-to-an-engineering-degree/)
+[![Profile Views](https://komarev.com/ghpvc/?username=drussell23&style=for-the-badge&color=1a1b27&label=PROFILE+VIEWS)](https://github.com/drussell23)
 
 </div>
 
 ---
 
-I design, build, and deploy production-grade AI ecosystems from bare metal to cloud inference. My work sits at the intersection of systems engineering, machine learning infrastructure, and real-time intelligent automation.
+<div align="center">
+
+> *I design, build, and deploy production-grade AI ecosystems from bare metal to cloud inference.*
+> *My work sits at the intersection of systems engineering, machine learning infrastructure, and real-time intelligent automation.*
+
+</div>
 
 For the past 12 months, I have been executing a solo build of **JARVIS** — a three-repository, multi-process autonomous AI operating system spanning Python, C++, Rust, Swift, Objective-C, and TypeScript. The system orchestrates 60+ asynchronous agents across a neural mesh, routes inference dynamically between local Apple Silicon and GCP, performs real-time voice biometric authentication, controls macOS at the native API level, and continuously trains its own models through a self-improving feedback loop.
 
-```
-3,900+ commits  ·  2.5 million lines of code  ·  11 languages  ·  One engineer
-```
+---
+
+## <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="30"> Tech Stack
+
+<div align="center">
+
+#### Languages
+
+[![Languages](https://skillicons.dev/icons?i=py,cpp,rust,swift,ts,js,bash,html,css&theme=dark)](https://skillicons.dev)
+
+#### ML, Inference and Data
+
+[![ML](https://skillicons.dev/icons?i=pytorch,tensorflow,opencv,sklearn,anaconda&theme=dark)](https://skillicons.dev)
+
+#### Infrastructure and Cloud
+
+[![Infra](https://skillicons.dev/icons?i=gcp,docker,kubernetes,terraform,redis,postgres,sqlite,nginx,cmake,githubactions&theme=dark)](https://skillicons.dev)
+
+#### Backend and Frontend
+
+[![Stack](https://skillicons.dev/icons?i=fastapi,react,nextjs,nodejs,vscode,git,github,linux,apple,md&theme=dark)](https://skillicons.dev)
+
+</div>
+
+<details>
+<summary><b>Full Stack Inventory (text)</b></summary>
+<br>
+
+| Category | Technologies |
+|----------|-------------|
+| **Languages** | Python, C++, Rust, Swift, Objective-C, TypeScript, JavaScript, SQL, Shell/Bash, AppleScript, HTML/CSS, ARM64 Assembly |
+| **ML / Inference** | PyTorch, Transformers, llama.cpp, llama-cpp-python, GGUF quantization, ONNX Runtime, CoreML Tools, SpeechBrain, scikit-learn, SentenceTransformers, HuggingFace Hub, safetensors, tiktoken, Numba (JIT), sympy, LangChain, YOLO |
+| **Training** | LoRA, DPO, RLHF, FSDP, MAML (meta-learning), curriculum learning, federated learning, causal reasoning, world model training, online learning, active learning, EWC |
+| **Models / Vision** | LLaVA (multimodal), ECAPA-TDNN (speaker verification), Whisper (faster-whisper, openai-whisper), Porcupine/Picovoice (wake word), Piper TTS, OmniParser (OCR) |
+| **LLM APIs** | Anthropic Claude API (chat, vision, computer use), OpenAI API (chat completions, embeddings) |
+| **Rust** | PyO3, ndarray, rayon, parking_lot, DashMap, crossbeam, serde, mimalloc, image crate, ARM64 SIMD |
+| **Swift / macOS** | Swift Package Manager, CoreLocation, WeatherKit, AppKit, Foundation, Quartz/CoreGraphics, Accessibility API, AVFoundation, pyobjc, launchd, osascript, yabai |
+| **Vector / Data** | ChromaDB, FAISS, Redis, PostgreSQL (asyncpg, psycopg2), SQLite (aiosqlite), NetworkX, bloom filters |
+| **Infrastructure** | GCP (Compute Engine, Cloud SQL, Cloud Run, Secret Manager, Monitoring), Docker, docker-compose, Terraform, Kubernetes, systemd, CMake, pybind11, cpp-httplib |
+| **CI/CD** | GitHub Actions (20+ workflows), git worktrees |
+| **Backend** | FastAPI, uvicorn, uvloop, gRPC, Protobuf, asyncio, aiohttp, httpx, WebSocket, Cloud SQL Proxy, circuit breakers, exponential backoff, distributed locks, epoch fencing |
+| **Observability** | OpenTelemetry (tracing + metrics + OTLP/gRPC export), structlog, psutil, Pydantic, JSONL telemetry pipeline |
+| **Frontend** | React 19, Next.js, Framer Motion, Axios, WebSocket real-time streaming |
+| **Audio / Vision** | OpenCV, sounddevice, PyAudio, webrtcvad (VAD), speexdsp (AEC), librosa, pyautogui |
+
+</details>
 
 ---
 
-## The JARVIS Ecosystem
+## <img src="https://media.giphy.com/media/W5eoZHPpUx9sapR0eu/giphy.gif" width="30"> GitHub Stats
+
+<div align="center">
+
+<a href="https://github.com/drussell23">
+  <img height="180" src="https://github-readme-stats-sigma-five.vercel.app/api?username=drussell23&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&icon_color=bf91f3&text_color=a9b1d6&count_private=true&include_all_commits=true" />
+</a>
+<a href="https://github.com/drussell23">
+  <img height="180" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=drussell23&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&text_color=a9b1d6&langs_count=10" />
+</a>
+
+<br>
+
+<a href="https://github.com/drussell23">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=drussell23&theme=tokyonight&hide_border=true&background=0d1117&stroke=1a1b27&ring=70a5fd&fire=bf91f3&currStreakLabel=a9b1d6&sideLabels=a9b1d6&currStreakNum=70a5fd&sideNums=70a5fd&dates=545c7e" />
+</a>
+
+<br>
+
+<a href="https://github.com/drussell23">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=drussell23&bg_color=0d1117&color=a9b1d6&line=70a5fd&point=bf91f3&area=true&area_color=70a5fd&hide_border=true" width="95%"/>
+</a>
+
+</div>
+
+<div align="center">
+
+<a href="https://github.com/ryo-ma/github-profile-trophy">
+  <img src="https://github-profile-trophy.vercel.app/?username=drussell23&theme=tokyonight&no-frame=true&no-bg=true&column=7&margin-w=10" width="95%"/>
+</a>
+
+</div>
+
+---
+
+## <img src="https://media.giphy.com/media/VgCDAzcKvsR6OM0uWg/giphy.gif" width="30"> The JARVIS Ecosystem
 
 JARVIS is not a chatbot wrapper. It is a distributed AI operating system composed of three interdependent repositories — each a standalone production system, together forming a self-improving autonomous intelligence.
 
-### Architecture
+<div align="center">
 
 ```
                          UNIFIED SUPERVISOR KERNEL
@@ -48,14 +132,15 @@ JARVIS is not a chatbot wrapper. It is a distributed AI operating system compose
      Autonomous agent loop   Hollow Client mode       Federated learning
 ```
 
-### JARVIS — The Body
+</div>
 
-[`drussell23/JARVIS`](https://github.com/drussell23/JARVIS)
+### <img src="https://img.shields.io/badge/JARVIS-The_Body-70a5fd?style=flat-square" /> &nbsp; [`drussell23/JARVIS`](https://github.com/drussell23/JARVIS)
 
 The central operating system and control plane. A custom Python kernel (`unified_supervisor.py`, 50K+ lines) that boots, coordinates, and monitors the entire ecosystem through a 7-zone initialization architecture with parallel dependency resolution.
 
 <details>
 <summary><b>Agent Architecture</b></summary>
+<br>
 
 - **Neural Mesh** — 16+ specialized agents (activity recognition, adaptive resource governor, context tracker, error analyzer, goal inference, Google Workspace, health monitor, memory, pattern recognition, predictive planning, spatial awareness, visual monitor, web search, coordinator) with asynchronous message passing, capability-based routing, and cross-agent data flow
 - **Autonomous Agent Runtime** — multi-step goal decomposition, agentic task execution, tool orchestration, error recovery, and intervention decision engine with human-in-the-loop approval for destructive actions
@@ -65,6 +150,7 @@ The central operating system and control plane. A custom Python kernel (`unified
 
 <details>
 <summary><b>Voice and Authentication</b></summary>
+<br>
 
 - **Real-time voice biometric authentication** via ECAPA-TDNN speaker verification with cloud/local hybrid inference and multi-factor fusion (voice + proximity + behavioral)
 - **Real-time voice conversation** — full-duplex audio (simultaneous mic + speaker), acoustic echo cancellation (speexdsp), streaming STT (faster-whisper), adaptive turn detection, barge-in control, and sliding 20-turn context window
@@ -75,6 +161,7 @@ The central operating system and control plane. A custom Python kernel (`unified
 
 <details>
 <summary><b>Vision and Spatial Intelligence</b></summary>
+<br>
 
 - **Never-skip screen capture** — two-phase monitoring (always-capture + conditional-analysis), self-hosted LLaVA multimodal analysis, Claude Vision escalation
 - **Ghost Display** — virtual macOS display for non-intrusive background automation, Ghost Hands orchestrator for autonomous visual workflows
@@ -87,6 +174,7 @@ The central operating system and control plane. A custom Python kernel (`unified
 
 <details>
 <summary><b>macOS Native Integration (Swift / Objective-C / Rust)</b></summary>
+<br>
 
 - **Swift bridge** (203 files) — CommandClassifier, SystemControl (preferences, security, clipboard, filesystem), PerformanceCore, ScreenCapture, WeatherKit, CoreLocation GPS
 - **Objective-C voice unlock daemon** — JARVISVoiceAuthenticator, JARVISVoiceMonitor, permission manager, launchd service integration
@@ -97,6 +185,7 @@ The central operating system and control plane. A custom Python kernel (`unified
 
 <details>
 <summary><b>Infrastructure and Reliability</b></summary>
+<br>
 
 - **Parallel initializer** with cooperative cancellation, adaptive EMA-based deadlines, dependency propagation, and atomic state persistence
 - **CPU-pressure-aware cloud shifting** — automatic workload offload to GCP when local resources are constrained
@@ -110,6 +199,7 @@ The central operating system and control plane. A custom Python kernel (`unified
 
 <details>
 <summary><b>Intelligence and Learning</b></summary>
+<br>
 
 - **Google Workspace Agent** — Gmail read/search/draft, Google Calendar, natural language intent routing via tiered command router
 - **Proactive intelligence** — predictive suggestions, proactive vision monitoring, proactive communication, emotional intelligence module
@@ -122,9 +212,7 @@ The central operating system and control plane. A custom Python kernel (`unified
 
 </details>
 
-### JARVIS-Prime — The Cognitive Core
-
-[`drussell23/JARVIS-Prime`](https://github.com/drussell23/JARVIS-Prime)
+### <img src="https://img.shields.io/badge/JARVIS--Prime-The_Cognitive_Core-bf91f3?style=flat-square" /> &nbsp; [`drussell23/JARVIS-Prime`](https://github.com/drussell23/JARVIS-Prime)
 
 The inference engine and reasoning layer. A production-ready model serving system that dynamically routes queries to specialist models based on task-type classification.
 
@@ -139,9 +227,7 @@ The inference engine and reasoning layer. A production-ready model serving syste
 - **LLaVA vision server** — multimodal inference on port 8001 with OpenAI-compatible API, semaphore serialization, queue depth cap
 - **Telemetry capture** — structured JSONL interaction logging with deployment feedback loop and post-deployment probation monitoring
 
-### ReactorCore — The Forge
-
-[`drussell23/JARVIS-Reactor`](https://github.com/drussell23/JARVIS-Reactor)
+### <img src="https://img.shields.io/badge/ReactorCore-The_Forge-bb9af7?style=flat-square" /> &nbsp; [`drussell23/JARVIS-Reactor`](https://github.com/drussell23/JARVIS-Reactor)
 
 The ML training backbone. A hybrid C++/Python engine that transforms raw telemetry into improved models through an automated training pipeline with deployment safety gates.
 
@@ -183,72 +269,6 @@ The ML training backbone. A hybrid C++/Python engine that transforms raw telemet
 
 ---
 
-## Tech Stack
-
-<div align="center">
-
-### Languages
-[![Languages](https://skillicons.dev/icons?i=py,cpp,rust,swift,ts,js,bash,html,css&theme=dark)](https://skillicons.dev)
-
-### ML, Inference and Data
-[![ML](https://skillicons.dev/icons?i=pytorch,tensorflow,opencv,sklearn,anaconda&theme=dark)](https://skillicons.dev)
-
-### Infrastructure and Cloud
-[![Infra](https://skillicons.dev/icons?i=gcp,docker,kubernetes,terraform,redis,postgres,sqlite,nginx,cmake,githubactions&theme=dark)](https://skillicons.dev)
-
-### Backend and Frontend
-[![Backend](https://skillicons.dev/icons?i=fastapi,react,nextjs,nodejs,vscode,git,github,linux,apple,md&theme=dark)](https://skillicons.dev)
-
-</div>
-
-<details>
-<summary><b>Full Stack Inventory (text)</b></summary>
-
-**Languages:** Python, C++, Rust, Swift, Objective-C, TypeScript, JavaScript, SQL, Shell/Bash, AppleScript, HTML/CSS, ARM64 Assembly
-
-**ML / Inference:** PyTorch, Transformers, llama.cpp, llama-cpp-python, GGUF quantization, ONNX Runtime, CoreML Tools, SpeechBrain, scikit-learn, SentenceTransformers, HuggingFace Hub, safetensors, tiktoken, Numba (JIT), sympy, LangChain, YOLO
-
-**Training (ReactorCore):** LoRA, DPO, RLHF, FSDP, MAML (meta-learning), curriculum learning, federated learning, causal reasoning, world model training, online learning, active learning, EWC (Elastic Weight Consolidation)
-
-**Models / Vision:** LLaVA (multimodal), ECAPA-TDNN (speaker verification), Whisper (faster-whisper, openai-whisper), Porcupine/Picovoice (wake word), Piper TTS, OmniParser (OCR)
-
-**LLM APIs:** Anthropic Claude API (chat, vision, computer use), OpenAI API (chat completions, embeddings)
-
-**Rust Ecosystem:** PyO3, ndarray, rayon (parallelism), parking_lot, DashMap (concurrent maps), crossbeam (lock-free channels), serde, mimalloc (allocator), image crate, ARM64 SIMD
-
-**Swift / macOS Native:** Swift Package Manager, CoreLocation, WeatherKit, AppKit, Foundation, Quartz/CoreGraphics, Accessibility API, AVFoundation (video capture), pyobjc, launchd (service daemons), osascript (AppleScript bridge), yabai (tiling WM)
-
-**Vector / Data:** ChromaDB, FAISS, Redis, PostgreSQL (asyncpg, psycopg2), SQLite (aiosqlite), NetworkX, bloom filters
-
-**Infrastructure:** GCP (Compute Engine, Cloud SQL, Cloud Run, Secret Manager, Monitoring), Docker, docker-compose, Terraform (modular: compute, network, security, storage, monitoring, budget), Kubernetes, systemd, CMake, pybind11, cpp-httplib
-
-**CI/CD:** GitHub Actions (20+ workflows: CI/CD pipeline, CodeQL analysis, e2e testing, deployment, database validation, file integrity), git worktrees
-
-**Backend:** FastAPI, uvicorn, uvloop, gRPC, Protobuf, asyncio, aiohttp, httpx, WebSocket, Cloud SQL Proxy, circuit breakers, exponential backoff, backpressure control, distributed locks, epoch fencing
-
-**Observability:** OpenTelemetry (tracing + metrics + OTLP/gRPC export), structlog, psutil, Pydantic, JSONL telemetry pipeline
-
-**Frontend:** React 19, Next.js, Framer Motion, Axios, WebSocket real-time streaming
-
-**Audio / Vision:** OpenCV, sounddevice, PyAudio, webrtcvad (VAD), speexdsp (AEC), librosa, pyautogui, LLaVA multimodal, YOLO object detection
-
-</details>
-
----
-
-## GitHub Stats
-
-<div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=drussell23&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" alt="GitHub Stats" height="180"/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=drussell23&layout=compact&theme=tokyonight&hide_border=true&langs_count=10" alt="Top Languages" height="180"/>
-
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=drussell23&theme=tokyonight&hide_border=true" alt="GitHub Streak"/>
-
-</div>
-
----
-
 ## Background
 
 I graduated from Cal Poly San Luis Obispo with a B.S. in Computer Engineering after a [10-year non-traditional academic path](https://mustangnews.net/10-years-in-the-making-one-cal-poly-students-unique-path-to-an-engineering-degree/) that started in remedial algebra at community college. I retook courses, studied through the loss of family, and spent most of my twenties earning a degree that others finish in four years. The path was not conventional. The outcome was.
@@ -259,8 +279,9 @@ JARVIS is what happens when that level of persistence meets engineering capabili
 
 <div align="center">
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/derek-j-russell/)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-000000?style=flat-square&logo=vercel)](https://github.com/drussell23/JARVIS-Portfolio)
-[![Article](https://img.shields.io/badge/Mustang_News-Read_Feature-8B0000?style=flat-square)](https://mustangnews.net/10-years-in-the-making-one-cal-poly-students-unique-path-to-an-engineering-degree/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/derek-j-russell/)
+[![Article](https://img.shields.io/badge/Mustang_News-Read_My_Feature-8B0000?style=for-the-badge)](https://mustangnews.net/10-years-in-the-making-one-cal-poly-students-unique-path-to-an-engineering-degree/)
 
 </div>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1b27,100:24283b&height=120&section=footer" width="100%"/>
