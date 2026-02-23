@@ -114,6 +114,12 @@ For the past 12 months, I have been executing a solo build of **JARVIS** — a t
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=drussell23&bg_color=0d1117&color=a9b1d6&line=70a5fd&point=bf91f3&area=true&area_color=70a5fd&hide_border=true" width="95%"/>
 </a>
 
+<br>
+
+<a href="https://github.com/drussell23">
+  <img src="./profile-3d-contrib/profile-night-rainbow.svg" width="95%" alt="3D Contribution Calendar"/>
+</a>
+
 </div>
 
 <div align="center">
@@ -130,6 +136,18 @@ For the past 12 months, I have been executing a solo build of **JARVIS** — a t
 
 <a href="https://github.com/ryo-ma/github-profile-trophy">
   <img src="https://github-profile-trophy-tawny.vercel.app/?username=drussell23&theme=tokyonight&no-frame=true&no-bg=true&column=7&margin-w=10" width="95%"/>
+</a>
+
+</div>
+
+---
+
+## <img src="https://media.giphy.com/media/3oKIPEqDGUULpEU0aQ/giphy.gif" width="30"> Metrics Dashboard
+
+<div align="center">
+
+<a href="https://github.com/drussell23">
+  <img src="./github-metrics.svg" width="95%" alt="GitHub Metrics Dashboard"/>
 </a>
 
 </div>
