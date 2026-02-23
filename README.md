@@ -71,7 +71,16 @@ For the past 12 months, I have been executing a solo build of **JARVIS** — a t
 
 #### Languages
 
-[![Languages](https://skillicons.dev/icons?i=py,cpp,rust,swift,ts,js,bash,html,css&theme=dark)](https://skillicons.dev)
+[![Languages](https://skillicons.dev/icons?i=py,cpp,c,rust,swift,ts,js,bash,html,css&theme=dark)](https://skillicons.dev)
+
+![Objective-C](https://img.shields.io/badge/Objective--C-438EFF?style=flat-square&logo=apple&logoColor=white)
+![ARM64 Assembly](https://img.shields.io/badge/ARM64_Assembly-0091BD?style=flat-square&logo=arm&logoColor=white)
+![Metal Shading](https://img.shields.io/badge/Metal_Shading-333333?style=flat-square&logo=apple&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
+![AppleScript](https://img.shields.io/badge/AppleScript-888888?style=flat-square&logo=apple&logoColor=white)
+![Protobuf](https://img.shields.io/badge/Protobuf-4285F4?style=flat-square&logo=google&logoColor=white)
+![HCL](https://img.shields.io/badge/HCL%2FTerraform-7B42BC?style=flat-square&logo=terraform&logoColor=white)
+![CUDA](https://img.shields.io/badge/CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white)
 
 #### ML, Inference and Data
 
@@ -93,12 +102,12 @@ For the past 12 months, I have been executing a solo build of **JARVIS** — a t
 
 | Category | Technologies |
 |----------|-------------|
-| **Languages** | Python, C++, Rust, Swift, Objective-C, TypeScript, JavaScript, SQL, Shell/Bash, AppleScript, HTML/CSS, ARM64 Assembly |
+| **Languages** | Python, C, C++, Rust, Swift, Objective-C, Objective-C++, TypeScript, JavaScript, SQL, Shell/Bash, ARM64 Assembly (NEON SIMD), Metal Shading Language, AppleScript, Protobuf, HCL/Terraform, CUDA, HTML/CSS |
 | **ML / Inference** | PyTorch, Transformers, llama.cpp, llama-cpp-python, GGUF quantization, ONNX Runtime, CoreML Tools, SpeechBrain, scikit-learn, SentenceTransformers, HuggingFace Hub, safetensors, tiktoken, Numba (JIT), sympy, LangChain, YOLO |
 | **Training** | LoRA, DPO, RLHF, FSDP, MAML (meta-learning), curriculum learning, federated learning, causal reasoning, world model training, online learning, active learning, EWC |
 | **Models / Vision** | LLaVA (multimodal), ECAPA-TDNN (speaker verification), Whisper (faster-whisper, openai-whisper), Porcupine/Picovoice (wake word), Piper TTS, OmniParser (OCR) |
 | **LLM APIs** | Anthropic Claude API (chat, vision, computer use), OpenAI API (chat completions, embeddings) |
-| **Rust** | PyO3, ndarray, rayon, parking_lot, DashMap, crossbeam, serde, mimalloc, image crate, ARM64 SIMD |
+| **Rust** | PyO3, ndarray, rayon, parking_lot, DashMap, crossbeam, serde, mimalloc, image crate, Metal (GPU compute), tokio, zstd, lz4, candle (on-device ML) |
 | **Swift / macOS** | Swift Package Manager, CoreLocation, WeatherKit, AppKit, Foundation, Quartz/CoreGraphics, Accessibility API, AVFoundation, pyobjc, launchd, osascript, yabai |
 | **Vector / Data** | ChromaDB, FAISS, Redis, PostgreSQL (asyncpg, psycopg2), SQLite (aiosqlite), NetworkX, bloom filters |
 | **Infrastructure** | GCP (Compute Engine, Cloud SQL, Cloud Run, Secret Manager, Monitoring), Docker, docker-compose, Terraform, Kubernetes, systemd, CMake, pybind11, cpp-httplib |
@@ -106,7 +115,8 @@ For the past 12 months, I have been executing a solo build of **JARVIS** — a t
 | **Backend** | FastAPI, uvicorn, uvloop, gRPC, Protobuf, asyncio, aiohttp, httpx, WebSocket, Cloud SQL Proxy, circuit breakers, exponential backoff, distributed locks, epoch fencing |
 | **Observability** | OpenTelemetry (tracing + metrics + OTLP/gRPC export), structlog, psutil, Pydantic, JSONL telemetry pipeline |
 | **Frontend** | React 19, Next.js, Framer Motion, Axios, WebSocket real-time streaming |
-| **Audio / Vision** | OpenCV, sounddevice, PyAudio, webrtcvad (VAD), speexdsp (AEC), librosa, pyautogui |
+| **Audio / Vision** | OpenCV, sounddevice, PyAudio, webrtcvad (VAD), Silero VAD, speexdsp (AEC), librosa, pyautogui, CoreML VAD |
+| **C++ (ReactorCore)** | Custom `mlforge` ML library: KD-trees, graph structures, trie, matrix ops, linear/logistic regression, decision trees, neural nets, model serialization, deployment API |
 
 </details>
 
@@ -123,6 +133,50 @@ For the past 12 months, I have been executing a solo build of **JARVIS** — a t
 [![Watch Full Demo](https://img.shields.io/badge/Watch_Full_Demo-Context_Awareness-70a5fd?style=for-the-badge&logo=googlechrome&logoColor=white)](https://docs.google.com/videos/d/1inRKtPeCSqKbTvJfUnmulTkzJ4PX-HkqaIwWBpAUGdA/edit)
 
 </div>
+
+---
+
+## <img src="https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif" width="30"> Data Structures & Algorithms
+
+Every component below is production code running in the JARVIS ecosystem — not academic exercises.
+
+<details>
+<summary><b>Data Structures (40+ types)</b></summary>
+<br>
+
+| Category | Structures | Implementation |
+|----------|-----------|----------------|
+| **Trees** | Quadtree (spatial indexing), KD-Tree (nearest neighbor), Trie (prefix search), DAG (startup dependency graph), Scene Graph, Knowledge Graph, Process Tree | Python + Rust + C++ |
+| **Graphs** | Reasoning Graph, Dependency Graph, Multi-Space Context Graph, Window Relationship Graph, Service Mesh Discovery Graph, LangGraph state machines | Python |
+| **Hash-Based** | Bloom Filters (probabilistic membership), LSH Semantic Cache, LRU Cache, TTL Cache, Consistent Hashing, DashMap (lock-free concurrent) | Python + Rust + Swift |
+| **Queues & Buffers** | Priority Queue, Bounded Queue, Ring Buffer, Circular Buffer, Work-Stealing Queue, Zero-Copy IPC (mmap), Lock-Free SPSC Queue | Python + Rust + JS |
+| **Concurrent** | Arc\<Mutex\<>>, RwLock, DashMap, mpsc channels, Vector Clock, CRDT, Distributed Lock, asyncio.Queue | Rust + Python |
+| **Matrices** | Matrix2D, Matrix3D (row-major), Memory Pool, Slab Allocator, Zero-Copy Buffers, Object Recycler | Rust + C++ |
+| **State** | Finite State Machine, Event Bus, Event Store, Sliding Window, Bounded Collections | Python |
+
+</details>
+
+<details>
+<summary><b>Algorithms (50+ implementations)</b></summary>
+<br>
+
+| Category | Algorithms | Where |
+|----------|-----------|-------|
+| **Resilience** | Circuit Breaker (5 variants), Exponential Backoff w/ Jitter, Graceful Degradation, Self-Healing, Leader Election, Distributed Locking, Distributed Transactions, Distributed Dedup | JARVIS + Prime |
+| **Scheduling** | Round Robin, Token Bucket, Leaky Bucket, Sliding Window Rate Limiter, Work Stealing, Backpressure Control, Adaptive ML-Based Rate Limiting | All three repos |
+| **Graph / Search** | Topological Sort (DAG), BFS/DFS (dependency resolution), A\* Pathfinding (vision navigation), K-Nearest Neighbor (KD-Tree) | JARVIS + Reactor |
+| **ML Training** | LoRA/QLoRA, DPO (preference optimization), RLHF (PPO pipeline), FSDP (parameter sharding), MAML/Reptile (meta-learning), Federated Learning (FedAvg, FedProx, Byzantine-robust), Curriculum Learning, Causal Reasoning (do-calculus), Online Learning w/ EWC, World Model Training (Dreamer/MuZero-inspired) | ReactorCore |
+| **ML Inference** | Quantized INT8/INT4 Inference, Cosine Similarity, Locality-Sensitive Hashing, Embeddings/Vector Search, Anomaly Detection, Pattern Recognition, Goal Inference, Activity Recognition, Tiered Complexity Routing | JARVIS + Prime |
+| **Signal Processing** | VAD (WebRTC + Silero + CoreML), MFCC/Mel Filterbanks, Spectrogram Analysis, Anti-Spoofing Detection, Barge-In Detection, ECAPA-TDNN Speaker Verification | JARVIS |
+| **Compression** | Zstd, LZ4, Gzip/Zlib, Custom Vision Compression | Rust + Python |
+| **Cryptography** | HMAC, JWT, Secure Password Hashing, File Integrity Checksums | JARVIS |
+| **Caching** | LRU Eviction, TTL Eviction, Predictive Cache Warming (EWMA + time-series), LSH Semantic Cache, Bloom Filter Negative Cache | All three repos |
+| **Evolutionary** | Genetic Algorithm (Ouroboros self-programming loop) | JARVIS |
+| **Concurrency** | Deadlock Prevention, CPU Affinity Pinning, Parallel DAG Initialization, Zero-Copy mmap IPC, Lock-Free Channels | JARVIS + Prime |
+| **GPU** | Metal Compute Shaders, ARM64 NEON SIMD Intrinsics | JARVIS (Rust + C + Assembly) |
+| **C++ ML** | Linear Regression (Ridge/Lasso), Logistic Regression (gradient descent), Decision Tree (Gini impurity), Feedforward Neural Net (backpropagation), Matrix Serialization | ReactorCore (mlforge) |
+
+</details>
 
 ---
 
