@@ -4,7 +4,7 @@
 
 I design, build, and deploy production-grade AI ecosystems from bare metal to cloud inference. My work sits at the intersection of systems engineering, machine learning infrastructure, and real-time intelligent automation.
 
-For the past 12 months, I have been executing a solo build of **JARVIS** — a three-repository, multi-process autonomous AI operating system spanning Python, C++, Rust, and TypeScript. The system orchestrates 60+ asynchronous agents, routes inference dynamically between local Apple Silicon and GCP, and continuously trains its own models through a self-improving feedback loop.
+For the past 12 months, I have been executing a solo build of **JARVIS** — a three-repository, multi-process autonomous AI operating system spanning Python, C++, Rust, Swift, Objective-C, and TypeScript. The system orchestrates 60+ asynchronous agents across a neural mesh, routes inference dynamically between local Apple Silicon and GCP, performs real-time voice biometric authentication, controls macOS at the native API level, and continuously trains its own models through a self-improving feedback loop.
 
 **3,900+ commits. 2.5 million lines of code. One engineer.**
 
@@ -23,29 +23,68 @@ JARVIS is not a chatbot wrapper. It is a distributed AI operating system compose
               +---------------------+---------------------+
               |                     |                     |
          JARVIS (Body)       JARVIS-Prime (Mind)    ReactorCore (Forge)
-         Python / Rust        Python / GGUF          C++ / Python
+         Python/Rust/Swift    Python / GGUF          C++ / Python
          Port 8010            Port 8000-8001         Port 8090
               |                     |                     |
-     macOS integration     LLM inference routing    ML training engine
-     60+ agent mesh        11 specialist models     LoRA / DPO / FSDP
-     Voice biometrics      GCP golden image         GCP Spot VM recovery
-     Ghost Display         Vision (LLaVA)           Deployment gate
-     Computer use          Circuit breakers         Model lineage
+     macOS native control    LLM inference routing    ML training engine
+     60+ agent neural mesh   11 specialist models     LoRA / DPO / FSDP
+     Voice biometrics        GCP golden image         GCP Spot VM recovery
+     Ghost Display           Vision (LLaVA)           Deployment gate
+     Computer use            Circuit breakers         Model lineage
+     Google Workspace        Reasoning engine         Active learning
+     Rust performance layer  Neural Switchboard       Causal discovery
+     Autonomous agent loop   Hollow Client mode       Federated learning
 ```
 
 ### JARVIS — The Body
 
 [`drussell23/JARVIS`](https://github.com/drussell23/JARVIS)
 
-The central operating system and control plane. A custom Python kernel (`unified_supervisor.py`, 50K+ lines) that boots, coordinates, and monitors the entire ecosystem through a 7-zone initialization architecture.
+The central operating system and control plane. A custom Python kernel (`unified_supervisor.py`, 50K+ lines) that boots, coordinates, and monitors the entire ecosystem through a 7-zone initialization architecture with parallel dependency resolution.
 
-- **60+ agent communication mesh** with asynchronous message passing, capability-based routing, and cross-agent data flow
-- **Real-time voice biometric authentication** via ECAPA-TDNN speaker verification with cloud/local hybrid inference
-- **Vision pipeline** with never-skip screen capture, self-hosted LLaVA multimodal analysis, and Ghost Display for non-intrusive background automation
-- **Parallel initializer** with cooperative cancellation, adaptive EMA-based deadlines, and dependency propagation
+**Agent Architecture:**
+- **Neural Mesh** — 16+ specialized agents (activity recognition, adaptive resource governor, context tracker, error analyzer, goal inference, Google Workspace, health monitor, memory, pattern recognition, predictive planning, spatial awareness, visual monitor, web search, coordinator) with asynchronous message passing, capability-based routing, and cross-agent data flow
+- **Autonomous Agent Runtime** — multi-step goal decomposition, agentic task execution, tool orchestration, error recovery, and intervention decision engine with human-in-the-loop approval for destructive actions
+- **AGI OS Coordinator** — proactive event stream, notification bridge, owner identity service, voice approval manager, and intelligent startup announcer
+
+**Voice and Authentication:**
+- **Real-time voice biometric authentication** via ECAPA-TDNN speaker verification with cloud/local hybrid inference and multi-factor fusion (voice + proximity + behavioral)
+- **Real-time voice conversation** — full-duplex audio (simultaneous mic + speaker), acoustic echo cancellation (speexdsp), streaming STT (faster-whisper), adaptive turn detection, barge-in control, and sliding 20-turn context window
+- **Wake word detection** (Porcupine/Picovoice), Apple Watch Bluetooth proximity auth, continuous learning voice profiles
+- **Unified speech state management** — STT hallucination guard, voice pipeline orchestration, parallel model loading
+
+**Vision and Spatial Intelligence:**
+- **Never-skip screen capture** — two-phase monitoring (always-capture + conditional-analysis), self-hosted LLaVA multimodal analysis, Claude Vision escalation
+- **Ghost Display** — virtual macOS display for non-intrusive background automation, Ghost Hands orchestrator for autonomous visual workflows
+- **Claude Computer Use** — automated mouse, keyboard, and screenshot interaction via Anthropic's Computer Use API
+- **OCR / OmniParser** — screen text extraction, window analysis, workspace name detection, multi-monitor and multi-space intelligence via yabai window manager
+- **YOLO + Claude hybrid vision** — object detection with LLM-powered semantic understanding
+- **Rust vision core** — native performance for fast image processing, bloom filter networks, and sliding window analysis
+
+**macOS Native Integration (Swift / Objective-C / Rust):**
+- **Swift bridge** (203 files) — CommandClassifier, SystemControl (preferences, security, clipboard, filesystem), PerformanceCore, ScreenCapture, WeatherKit, CoreLocation GPS
+- **Objective-C voice unlock daemon** — JARVISVoiceAuthenticator, JARVISVoiceMonitor, permission manager, launchd service integration
+- **Rust performance layer** — PyO3 bindings for memory pool management, quantized ML inference, vision fast processor, command classifier, health predictor; ARM64 SIMD assembly optimizations
+- **CoreML acceleration** — on-device intent classification, voice processing
+
+**Infrastructure and Reliability:**
+- **Parallel initializer** with cooperative cancellation, adaptive EMA-based deadlines, dependency propagation, and atomic state persistence
 - **CPU-pressure-aware cloud shifting** — automatic workload offload to GCP when local resources are constrained
-- **Enterprise hardening** — Cloud SQL with race-condition-proof proxy management, TLS-safe connection factories, atomic state persistence
+- **Enterprise hardening** — dependency injection container, enterprise process manager, system hardening, governance, Cloud SQL with race-condition-proof proxy management, TLS-safe connection factories, distributed lock manager
 - **Three-tier inference routing**: GCP Golden Image (primary) → Local Apple Silicon (fallback) → Claude API (emergency)
+- **Trinity event bus** — cross-repo IPC hub, heartbeat publishing, knowledge graph, state management, process coordination
+- **Cost tracking and rate limiting** — GCP cost optimization with Bayesian confidence fusion, intelligent rate orchestration
+- **File integrity guardian** — pre-commit integrity verification across the codebase
+
+**Intelligence and Learning:**
+- **Google Workspace Agent** — Gmail read/search/draft, Google Calendar, natural language intent routing via tiered command router
+- **Proactive intelligence** — predictive suggestions, proactive vision monitoring, proactive communication, emotional intelligence module
+- **RAG pipeline** — ChromaDB vector store, FAISS similarity search, embedding service, long-term memory system
+- **Chain-of-thought / reasoning graph engine** — LangGraph-based multi-step reasoning with conditional routing and reflection loops
+- **Ouroboros** — self-programming engine for autonomous codebase analysis and improvement
+- **Web research service** — autonomous web search and information synthesis
+- **A/B testing framework** — vision pipeline experimentation
+- **Repository intelligence** — code ownership analysis, dependency analyzer, API contract analyzer, AST transformer, cross-repo refactoring engine
 
 ### JARVIS-Prime — The Cognitive Core
 
@@ -56,10 +95,15 @@ The inference engine and reasoning layer. A production-ready model serving syste
 - **11 specialist GGUF models** (~40.4 GB) pre-baked into a GCP golden image with ~30-second cold starts
 - **Task-type routing** — math queries hit Qwen2.5-7B, code queries hit DeepCoder, simple queries hit a 2.2 GB fast model, vision hits LLaVA
 - **GCP Model Swap Coordinator** with intelligent hot-swapping, per-model configuration, and inference validation
+- **Neural Switchboard v98.1** — stable public API facade over routing and orchestration with WebSocket integration contracts
 - **Hollow Client mode** for memory-constrained hardware — strict lazy imports, zero ML dependencies at startup on 16 GB machines
 - **Continuous learning hook** — post-inference experience recording for Elastic Weight Consolidation via ReactorCore
 - **Reasoning engine activation** — chain-of-thought scaffolding (CoT/ToT/self-reflection) for high-complexity requests above configurable thresholds
 - **APARS protocol** (Adaptive Progress-Aware Readiness System) — 6-phase startup with real-time health reporting to the supervisor
+- **LLaVA vision server** — multimodal inference on port 8001 with OpenAI-compatible API, semaphore serialization, queue depth cap
+- **Deployment feedback loop** — writes deployment status to cross-repo shared state for ReactorCore to consume
+- **Post-deployment probation monitor** — 30-minute health probing with automatic commit or rollback, emergency rollback on 5x error rate spike
+- **Telemetry capture** — structured JSONL interaction logging (model_id, task_type, latency, partial responses from disconnected clients)
 
 ### ReactorCore — The Forge
 
@@ -67,13 +111,18 @@ The inference engine and reasoning layer. A production-ready model serving syste
 
 The ML training backbone. A hybrid C++/Python engine that transforms raw telemetry into improved models through an automated training pipeline with deployment safety gates.
 
-- **Full training pipeline**: telemetry ingestion → active learning selection → gatekeeper evaluation → LoRA SFT → GGUF export → deployment gate → probation monitoring
+- **Full training pipeline**: telemetry ingestion → active learning selection → gatekeeper evaluation → LoRA SFT → GGUF export → deployment gate → probation monitoring → feedback loop
 - **DeploymentGate** validates model integrity before deployment; rejects corrupt or degenerate outputs
 - **Post-deployment probation** — 30-minute health monitoring window with automatic commit or rollback based on live inference quality
 - **Model lineage tracking** — full provenance chain (hash, parent model, training method, evaluation scores, gate decision) in append-only JSONL
-- **Tier-2/Tier-3 runtime orchestration** — curriculum learning, meta-learning, causal discovery with correlation-based fallback
+- **Tier-2/Tier-3 runtime orchestration** — curriculum learning, meta-learning (MAML), causal discovery with correlation-based fallback, world model training
 - **GCP Spot VM auto-recovery** with training checkpoint persistence and 60% cost reduction over on-demand instances
-- **Native C++ training kernels** via CMake/pybind11 for performance-critical operations
+- **Native C++ training kernels** via CMake/pybind11/cpp-httplib for performance-critical operations
+- **Atomic experience snapshots** — buffer drain under async lock, JSONL with DataHash for dataset versioning
+- **PrimeConnector** — WebSocket path rotation, health polling fallback, contract path discovery for cross-repo communication
+- **SafeScout orchestrator** — topic-based learning queue with priority/category normalization
+- **Pipeline event logger** — structured JSONL events with correlation/causation IDs for cross-repo observability
+- **Cross-repo integration** — Ghost Display state reader, cloud mode detection, Trinity Unified Loop Manager, Docker state for training jobs
 
 ---
 
@@ -82,47 +131,55 @@ The ML training backbone. A hybrid C++/Python engine that transforms raw telemet
 | Metric | Value |
 |--------|-------|
 | **Total commits** | 3,900+ across 3 repositories |
-| **Codebase** | ~2.5 million lines (Python, C++, TypeScript, Rust) |
+| **Codebase** | ~2.5 million lines across 11 languages |
 | **Build duration** | 12 months, solo |
 | **Unified kernel** | 50,000+ lines in a single orchestration file |
-| **Agent mesh** | 60+ concurrent asynchronous agents |
+| **Neural Mesh agents** | 16+ specialized agents with async message passing |
 | **Models served** | 11 specialist GGUF models via task-type routing |
 | **Inference tiers** | GCP Golden Image → Local Metal GPU → Claude API |
-| **Training pipeline** | Automated: telemetry → training → deployment → probation → feedback |
-| **Voice auth** | ECAPA-TDNN biometric verification with hybrid cloud/local inference |
-| **Cloud infrastructure** | GCP (Compute Engine, Cloud SQL, Cloud Run), Spot VM auto-recovery |
+| **Training pipeline** | Automated: telemetry → active learning → gatekeeper → training → GGUF export → deployment gate → probation → feedback |
+| **Voice auth** | Multi-factor: ECAPA-TDNN biometric + Apple Watch proximity + behavioral analysis |
+| **Vision pipeline** | Never-skip capture, LLaVA self-hosted, Claude escalation, YOLO hybrid, OCR/OmniParser |
+| **Swift components** | 203 files — system control, command classifier, screen capture, GPS, weather |
+| **Rust crates** | 5 Cargo workspaces — memory pool, vision processor, ML inference, SIMD optimizations |
+| **Terraform modules** | 7 modules (compute, network, security, storage, monitoring, budget, Spot templates) |
+| **Dockerfiles** | 6 (backend, backend-slim, frontend, training, cloud, GCP inference) |
+| **GitHub Actions** | 20+ workflows (CI/CD, CodeQL, e2e testing, deployment, database validation, file integrity) |
+| **macOS integration** | Native Swift/ObjC daemons, yabai WM, Ghost Display, multi-space/multi-monitor, launchd services |
+| **Cloud infrastructure** | GCP (Compute Engine, Cloud SQL, Cloud Run, Secret Manager, Monitoring), Spot VM auto-recovery |
+| **Google Workspace** | Gmail read/search/draft, Calendar, natural language routing via tiered command router |
 
 ---
 
 ## Stack
 
-**Languages:** Python, C++, Rust, Swift, Objective-C, TypeScript, JavaScript, SQL, Shell/Bash, AppleScript, HTML/CSS
+**Languages:** Python, C++, Rust, Swift, Objective-C, TypeScript, JavaScript, SQL, Shell/Bash, AppleScript, HTML/CSS, ARM64 Assembly
 
-**ML / Inference:** PyTorch, Transformers, llama.cpp, llama-cpp-python, GGUF quantization, ONNX Runtime, CoreML Tools, SpeechBrain, scikit-learn, SentenceTransformers, HuggingFace Hub, safetensors, tiktoken, Numba (JIT), sympy, LangChain
+**ML / Inference:** PyTorch, Transformers, llama.cpp, llama-cpp-python, GGUF quantization, ONNX Runtime, CoreML Tools, SpeechBrain, scikit-learn, SentenceTransformers, HuggingFace Hub, safetensors, tiktoken, Numba (JIT), sympy, LangChain, YOLO
 
 **Training (ReactorCore):** LoRA, DPO, RLHF, FSDP, MAML (meta-learning), curriculum learning, federated learning, causal reasoning, world model training, online learning, active learning, EWC (Elastic Weight Consolidation)
 
-**Models / Vision:** LLaVA (multimodal), ECAPA-TDNN (speaker verification), Whisper (faster-whisper, openai-whisper), Porcupine (wake word), Piper TTS
+**Models / Vision:** LLaVA (multimodal), ECAPA-TDNN (speaker verification), Whisper (faster-whisper, openai-whisper), Porcupine/Picovoice (wake word), Piper TTS, OmniParser (OCR)
 
-**LLM APIs:** Anthropic Claude API, OpenAI API (chat completions, embeddings)
+**LLM APIs:** Anthropic Claude API (chat, vision, computer use), OpenAI API (chat completions, embeddings)
 
-**Rust Ecosystem:** PyO3, ndarray, rayon (parallelism), parking_lot, DashMap (concurrent maps), crossbeam (lock-free channels), serde, mimalloc (allocator), image crate
+**Rust Ecosystem:** PyO3, ndarray, rayon (parallelism), parking_lot, DashMap (concurrent maps), crossbeam (lock-free channels), serde, mimalloc (allocator), image crate, ARM64 SIMD
 
-**Swift / macOS Native:** Swift Package Manager, CoreLocation, WeatherKit, AppKit, Foundation, Quartz/CoreGraphics, Accessibility API, pyobjc, launchd (service daemons), osascript (AppleScript bridge)
+**Swift / macOS Native:** Swift Package Manager, CoreLocation, WeatherKit, AppKit, Foundation, Quartz/CoreGraphics, Accessibility API, AVFoundation (video capture), pyobjc, launchd (service daemons), osascript (AppleScript bridge), yabai (tiling WM)
 
-**Vector / Data:** ChromaDB, FAISS, Redis, PostgreSQL (asyncpg, psycopg2), SQLite (aiosqlite), NetworkX
+**Vector / Data:** ChromaDB, FAISS, Redis, PostgreSQL (asyncpg, psycopg2), SQLite (aiosqlite), NetworkX, bloom filters
 
-**Infrastructure:** GCP (Compute Engine, Cloud SQL, Cloud Run, Secret Manager, Monitoring), Docker, docker-compose, Terraform (modular: compute, network, security, storage, monitoring, budget), Kubernetes, systemd, CMake, pybind11
+**Infrastructure:** GCP (Compute Engine, Cloud SQL, Cloud Run, Secret Manager, Monitoring), Docker, docker-compose, Terraform (modular: compute, network, security, storage, monitoring, budget), Kubernetes, systemd, CMake, pybind11, cpp-httplib
 
 **CI/CD:** GitHub Actions (20+ workflows: CI/CD pipeline, CodeQL analysis, e2e testing, deployment, database validation, file integrity), git worktrees
 
-**Backend:** FastAPI, uvicorn, uvloop, gRPC, Protobuf, asyncio, aiohttp, httpx, WebSocket, Cloud SQL Proxy, circuit breakers, exponential backoff, backpressure control
+**Backend:** FastAPI, uvicorn, uvloop, gRPC, Protobuf, asyncio, aiohttp, httpx, WebSocket, Cloud SQL Proxy, circuit breakers, exponential backoff, backpressure control, distributed locks, epoch fencing
 
-**Observability:** OpenTelemetry (tracing + metrics + OTLP/gRPC export), structlog, psutil, Pydantic
+**Observability:** OpenTelemetry (tracing + metrics + OTLP/gRPC export), structlog, psutil, Pydantic, JSONL telemetry pipeline
 
 **Frontend:** React 19, Next.js, Framer Motion, Axios, WebSocket real-time streaming
 
-**Audio / Vision:** OpenCV, sounddevice, PyAudio, webrtcvad (VAD), speexdsp (AEC), librosa, pyautogui, LLaVA multimodal
+**Audio / Vision:** OpenCV, sounddevice, PyAudio, webrtcvad (VAD), speexdsp (AEC), librosa, pyautogui, LLaVA multimodal, YOLO object detection
 
 ---
 
