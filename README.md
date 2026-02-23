@@ -2,6 +2,12 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1b27,100:24283b&height=230&section=header&text=Derek%20J.%20Russell&fontSize=48&fontColor=70a5fd&fontAlignY=35&desc=AI%20Engineer%20%7C%20Computer%20Engineer%20%7C%20Autonomous%20Systems%20Architect&descSize=18&descColor=a9b1d6&descAlignY=55&animation=fadeIn" width="100%"/>
 
+<br>
+
+<img src="./assets/jarvis-ui.png" width="90%" alt="JARVIS Interface — Autonomous AI Operating System"/>
+
+<br>
+
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3000&pause=1000&color=70A5FD&center=true&vCenter=true&multiline=true&repeat=true&width=820&height=80&lines=3%2C900%2B+commits+%C2%B7+2.5M+lines+of+code+%C2%B7+11+languages;Building+production-grade+autonomous+AI+infrastructure)](https://github.com/drussell23)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/derek-j-russell/)
@@ -68,6 +74,20 @@ For the past 12 months, I have been executing a solo build of **JARVIS** — a t
 | **Audio / Vision** | OpenCV, sounddevice, PyAudio, webrtcvad (VAD), speexdsp (AEC), librosa, pyautogui |
 
 </details>
+
+---
+
+## <img src="https://media.giphy.com/media/l0HlNaQ6gWfllcjDO/giphy.gif" width="30"> Demo
+
+<div align="center">
+
+<img src="./assets/jarvis-demo.gif" width="90%" alt="JARVIS Context Awareness Demo"/>
+
+<br><br>
+
+[![Watch Full Demo](https://img.shields.io/badge/Watch_Full_Demo-Context_Awareness-70a5fd?style=for-the-badge&logo=googlechrome&logoColor=white)](https://docs.google.com/videos/d/1inRKtPeCSqKbTvJfUnmulTkzJ4PX-HkqaIwWBpAUGdA/edit)
+
+</div>
 
 ---
 
