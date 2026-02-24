@@ -8,7 +8,7 @@
   <img src="./assets/name-animated.svg" width="860" alt="Derek J. Russell header" />
 </a>
 
-<br><br>
+<br>
 
 <img src="./assets/jarvis-ui.png" width="90%" alt="JARVIS Interface — Autonomous AI Operating System"/>
 
