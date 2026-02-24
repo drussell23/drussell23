@@ -419,6 +419,69 @@ flowchart LR
     style RES fill:#24283b,stroke:#545c7e,stroke-width:1px,color:#a9b1d6
 ```
 
+### GCP Hybrid Cloud Spot Architecture
+
+- **Purpose:** Run high-throughput inference and training on GCP while preserving local fallback and cost control.
+- **Problem:** On-demand cloud is expensive at scale, while local-only inference cannot absorb peak load or large-model demand.
+- **Core Challenge:** Balance latency, uptime, and spend when Spot VMs can be preempted without warning.
+- **What This Solves:** Introduces hybrid execution with preemption-aware orchestration, checkpoint recovery, and automatic failover to local/API tiers.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a1b27', 'primaryTextColor': '#a9b1d6', 'lineColor': '#545c7e', 'fontSize': '13px', 'fontFamily': 'JetBrains Mono, monospace' }}}%%
+
+flowchart LR
+    REQ["Inference / Training Request"] --> ORCH["Hybrid Orchestrator"]
+    ORCH --> SPOT["GCP Spot VM Pool<br/><i>primary cost-optimized execution</i>"]
+    ORCH --> LOCAL["Local Apple Silicon Tier<br/><i>low-latency fallback</i>"]
+    ORCH --> API["Claude API Tier<br/><i>emergency overflow</i>"]
+
+    SPOT --> PREEMPT{"Preempted?"}
+    PREEMPT -->|"no"| RUN["Run Workload"]
+    PREEMPT -->|"yes"| RECOVER["Resume From Checkpoint"]
+    RECOVER --> RUN
+
+    RUN --> TELE["Telemetry + Cost Signals"]
+    TELE --> ORCH
+    RUN --> RES["Response / Model Artifact"]
+    LOCAL --> RES
+    API --> RES
+
+    style ORCH fill:#1a1b27,stroke:#70a5fd,stroke-width:2px,color:#70a5fd
+    style SPOT fill:#1a1b27,stroke:#bf91f3,stroke-width:2px,color:#bf91f3
+    style LOCAL fill:#1a1b27,stroke:#7dcfff,stroke-width:2px,color:#7dcfff
+    style API fill:#1a1b27,stroke:#bb9af7,stroke-width:2px,color:#bb9af7
+    style PREEMPT fill:#24283b,stroke:#545c7e,stroke-width:1px,color:#a9b1d6
+```
+
+### Golden Image Architecture (Model-Ready Compute)
+
+- **Purpose:** Eliminate repeated cold setup by pre-baking model runtimes and dependencies into immutable machine images.
+- **Problem:** Dynamic provisioning causes long startup times, dependency drift, and inconsistent behavior across nodes.
+- **Core Challenge:** Keep images reproducible and secure while continuously shipping model/runtime updates.
+- **What This Solves:** Establishes an immutable golden-image pipeline with validation gates and rollout controls for consistent low-latency boot.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a1b27', 'primaryTextColor': '#a9b1d6', 'lineColor': '#545c7e', 'fontSize': '13px', 'fontFamily': 'JetBrains Mono, monospace' }}}%%
+
+flowchart LR
+    SRC["Model + Runtime Source"] --> BUILD["Image Builder Pipeline"]
+    BUILD --> BAKE["Bake Golden Image<br/><i>models + deps + startup contracts</i>"]
+    BAKE --> VALIDATE["Validation Gate<br/><i>health, integrity, startup SLA</i>"]
+    VALIDATE -->|"pass"| REG["Image Registry"]
+    VALIDATE -->|"fail"| REJECT["Reject Build"]
+
+    REG --> SCALE["Autoscaled GCP Inference Nodes"]
+    SCALE --> PRIME["JARVIS-Prime Router"]
+    PRIME --> MON["Observability + Drift Monitoring"]
+    MON --> BUILD
+
+    style BUILD fill:#1a1b27,stroke:#70a5fd,stroke-width:2px,color:#70a5fd
+    style BAKE fill:#1a1b27,stroke:#bf91f3,stroke-width:2px,color:#bf91f3
+    style VALIDATE fill:#1a1b27,stroke:#7dcfff,stroke-width:2px,color:#7dcfff
+    style REG fill:#1a1b27,stroke:#bb9af7,stroke-width:2px,color:#bb9af7
+    style REJECT fill:#1a1b27,stroke:#f7768e,stroke-width:2px,color:#f7768e
+```
+
 ### Execution Planes (Control / Data / Model)
 
 - **Purpose:** Separate operational concerns into control, data, and model planes for clearer ownership and safer evolution.
