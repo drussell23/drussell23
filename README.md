@@ -404,6 +404,106 @@ flowchart LR
     style RES fill:#24283b,stroke:#545c7e,stroke-width:1px,color:#a9b1d6
 ```
 
+### Execution Planes (Control / Data / Model)
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a1b27', 'primaryTextColor': '#a9b1d6', 'lineColor': '#545c7e', 'fontSize': '13px', 'fontFamily': 'JetBrains Mono, monospace' }}}%%
+
+flowchart TB
+    subgraph CONTROL["🛡️ Control Plane"]
+        C1["Policy Engine"]
+        C2["Auth + Approval Gates"]
+        C3["Secrets + Key Management"]
+        C4["Kill Switch + Guardrails"]
+    end
+
+    subgraph DATA["📦 Data Plane"]
+        D1["JARVIS Runtime Events"]
+        D2["Redis + Cloud SQL State"]
+        D3["ChromaDB / FAISS Memory"]
+        D4["JSONL Telemetry + Lineage"]
+    end
+
+    subgraph MODEL["🧠 Model Plane"]
+        M1["Prime Inference Router"]
+        M2["Tiered Execution (GCP/Local/Claude)"]
+        M3["Reactor Training Pipeline"]
+        M4["Deployment Gate + Probation"]
+    end
+
+    CONTROL -->|"policy constraints"| DATA
+    CONTROL -->|"permit / deny"| MODEL
+    DATA -->|"context + telemetry"| MODEL
+    MODEL -->|"decisions + artifacts"| DATA
+    MODEL -->|"health + risk signals"| CONTROL
+
+    style CONTROL fill:#0d1117,stroke:#70a5fd,stroke-width:2px,color:#a9b1d6
+    style DATA fill:#0d1117,stroke:#bf91f3,stroke-width:2px,color:#a9b1d6
+    style MODEL fill:#0d1117,stroke:#bb9af7,stroke-width:2px,color:#a9b1d6
+```
+
+### Safety & Governance Path
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a1b27', 'primaryTextColor': '#a9b1d6', 'lineColor': '#545c7e', 'fontSize': '13px', 'fontFamily': 'JetBrains Mono, monospace' }}}%%
+
+flowchart LR
+    IN["Incoming Action"] --> CLASS["Risk Classifier"]
+    CLASS -->|"low risk"| AUTO["Auto Execute"]
+    CLASS -->|"medium risk"| SAFE["Safe Mode + Limits"]
+    CLASS -->|"high risk"| HITL["Human Approval Required"]
+
+    SAFE --> EXEC["Controlled Execution"]
+    HITL -->|"approved"| EXEC
+    HITL -->|"denied"| BLOCK["Blocked + Logged"]
+
+    EXEC --> MON["Runtime Monitor"]
+    MON -->|"policy violation"| TRIP["Circuit Breaker Trip"]
+    TRIP --> FB["Fallback Route / Degrade Gracefully"]
+    MON -->|"healthy"| OK["Commit Result"]
+
+    BLOCK --> AUD["Audit Trail"]
+    FB --> AUD
+    OK --> AUD
+
+    style IN fill:#24283b,stroke:#545c7e,stroke-width:1px,color:#a9b1d6
+    style CLASS fill:#1a1b27,stroke:#70a5fd,stroke-width:2px,color:#70a5fd
+    style HITL fill:#1a1b27,stroke:#ffb86c,stroke-width:2px,color:#ffb86c
+    style TRIP fill:#1a1b27,stroke:#f7768e,stroke-width:2px,color:#f7768e
+    style AUD fill:#1a1b27,stroke:#bb9af7,stroke-width:2px,color:#bb9af7
+```
+
+### Observability & Closed-Loop Learning
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a1b27', 'primaryTextColor': '#a9b1d6', 'lineColor': '#545c7e', 'fontSize': '13px', 'fontFamily': 'JetBrains Mono, monospace' }}}%%
+
+flowchart LR
+    RUN["Live Inference + Agent Runtime"] --> OTEL["OpenTelemetry Traces/Metrics"]
+    RUN --> LOGS["Structured JSONL Logs"]
+    RUN --> COST["LangFuse + Helicone + PostHog"]
+
+    OTEL --> HUB["Unified Observability Hub"]
+    LOGS --> HUB
+    COST --> HUB
+
+    HUB --> ALERT["Anomaly/Regression Detection"]
+    ALERT -->|"critical"| ROLLBACK["Auto Rollback / Gate Fail"]
+    ALERT -->|"acceptable"| CURATE["Telemetry Curation"]
+
+    CURATE --> TRAIN["Reactor Training (LoRA/DPO/RLHF)"]
+    TRAIN --> GATE["Deployment Gate + Probation"]
+    GATE -->|"pass"| PRIME["Prime Model Registry"]
+    GATE -->|"fail"| ROLLBACK
+
+    PRIME --> RUN
+
+    style RUN fill:#1a1b27,stroke:#70a5fd,stroke-width:2px,color:#70a5fd
+    style HUB fill:#1a1b27,stroke:#bf91f3,stroke-width:2px,color:#bf91f3
+    style TRAIN fill:#1a1b27,stroke:#bb9af7,stroke-width:2px,color:#bb9af7
+    style ROLLBACK fill:#1a1b27,stroke:#f7768e,stroke-width:2px,color:#f7768e
+```
+
 ---
 
 <div align="center">
