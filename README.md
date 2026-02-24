@@ -8,10 +8,6 @@
 
 <br>
 
-<img src="./assets/greeting-matrix.svg" width="90%" alt="Matrix-style greeting banner"/>
-
-<br><br>
-
 <img src="./assets/jarvis-ui.png" width="90%" alt="JARVIS Interface — Autonomous AI Operating System"/>
 
 <br>
