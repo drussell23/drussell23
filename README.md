@@ -176,6 +176,13 @@ For the past 12 months, I have been executing a solo build of **JARVIS** — a t
 
 <br><br>
 
+<img src="./assets/jarvis-startup-screen.png" width="90%" alt="JARVIS startup interface screenshot"/>
+
+<br>
+<sub><b>JARVIS Boot Sequence Interface</b> &nbsp;·&nbsp; System startup telemetry and cognitive engine warmup state</sub>
+
+<br><br>
+
 [![Watch Full Demo](https://img.shields.io/badge/Watch_Full_Demo-Context_Awareness-70a5fd?style=for-the-badge&logo=googlechrome&logoColor=white)](https://docs.google.com/videos/d/1inRKtPeCSqKbTvJfUnmulTkzJ4PX-HkqaIwWBpAUGdA/edit)
 
 </div>
