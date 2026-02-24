@@ -10,6 +10,10 @@
 
 <br>
 
+<sub><span style="color:#39FF14; letter-spacing:0.08em;">AI ENGINEER · COMPUTER ENGINEER · SYSTEMS ARCHITECT</span></sub>
+
+<br><br>
+
 <img src="./assets/jarvis-ui.png" width="90%" alt="JARVIS Interface — Autonomous AI Operating System"/>
 
 <br>
