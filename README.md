@@ -5,7 +5,7 @@
 <br>
 
 <a href="https://github.com/drussell23">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=38&duration=2800&pause=1200&color=39FF14&center=true&vCenter=true&multiline=true&repeat=true&width=900&height=90&lines=DEREK+J.+RUSSELL;AI+ENGINEER+%C2%B7+COMPUTER+ENGINEER+%C2%B7+SYSTEMS+ARCHITECT" alt="Derek J. Russell typing header" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=32&duration=2800&pause=1200&color=39FF14&center=true&vCenter=true&repeat=true&width=760&height=70&lines=DEREK+J.+RUSSELL" alt="Derek J. Russell typing header" />
 </a>
 
 <br>
