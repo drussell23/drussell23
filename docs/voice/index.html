@@ -7,19 +7,20 @@
   <style>
     :root {
       --bg: #020806;
-      --panel: rgba(8, 20, 12, 0.85);
+      --panel: rgba(8, 20, 12, 0.9);
       --accent: #39ff14;
       --accent-dim: #1f8f37;
       --text: #c8ffc0;
       --muted: #7dcf79;
+      --warn: #f6b94a;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       min-height: 100vh;
       background:
-        radial-gradient(circle at 50% 40%, rgba(57,255,20,0.09), transparent 46%),
-        radial-gradient(circle at 50% 10%, #0d2314, var(--bg) 60%);
+        radial-gradient(circle at 50% 35%, rgba(57,255,20,0.11), transparent 42%),
+        radial-gradient(circle at 50% 10%, #102a17, var(--bg) 60%);
       color: var(--text);
       font-family: "JetBrains Mono", "Courier New", monospace;
       display: grid;
@@ -27,12 +28,12 @@
       padding: 18px;
     }
     .shell {
-      width: min(920px, 96vw);
-      border: 1px solid rgba(57,255,20,0.28);
+      width: min(980px, 96vw);
+      border: 1px solid rgba(57,255,20,0.3);
       border-radius: 16px;
-      background: linear-gradient(180deg, rgba(9,25,14,0.88), rgba(4,10,7,0.95));
-      box-shadow: 0 0 32px rgba(57,255,20,0.13), inset 0 0 22px rgba(57,255,20,0.06);
-      padding: 22px;
+      background: linear-gradient(180deg, rgba(9,25,14,0.9), rgba(4,10,7,0.96));
+      box-shadow: 0 0 34px rgba(57,255,20,0.14), inset 0 0 22px rgba(57,255,20,0.08);
+      padding: 22px 22px 18px;
       position: relative;
       overflow: hidden;
     }
@@ -50,37 +51,59 @@
       pointer-events: none;
     }
     h1 {
-      margin: 0 0 10px;
+      margin: 0;
       color: var(--accent);
       text-transform: uppercase;
-      font-size: clamp(1.5rem, 4vw, 2.5rem);
-      letter-spacing: 0.08em;
-      text-shadow: 0 0 12px rgba(57,255,20,0.45);
+      font-size: clamp(1.45rem, 4vw, 2.4rem);
+      letter-spacing: 0.1em;
+      text-align: center;
+      text-shadow: 0 0 13px rgba(57,255,20,0.45);
     }
     .sub {
-      margin: 0 0 16px;
-      color: #a4e99f;
+      margin: 10px auto 16px;
+      color: #a8e7a4;
       line-height: 1.55;
+      max-width: 840px;
+      text-align: center;
+      font-size: 0.95rem;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 20px;
-      align-items: center;
+
+    .stage {
+      border: 1px solid rgba(57,255,20,0.26);
+      border-radius: 12px;
+      background: var(--panel);
+      padding: 16px;
     }
-    @media (max-width: 860px) {
-      .grid { grid-template-columns: 1fr; }
+
+    .jarvis-title {
+      text-align: center;
+      color: var(--accent);
+      margin: 0;
+      letter-spacing: 0.28em;
+      font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(57,255,20,0.5);
+    }
+    .mode {
+      text-align: center;
+      margin-top: 4px;
+      color: #7fd983;
+      letter-spacing: 0.18em;
+      font-size: 0.78rem;
+      text-transform: uppercase;
     }
 
     .reactor-wrap {
+      margin-top: 8px;
       display: grid;
       place-items: center;
-      min-height: 280px;
+      min-height: 300px;
     }
     .reactor {
       position: relative;
-      width: 260px;
-      height: 260px;
+      width: 290px;
+      height: 290px;
       border-radius: 50%;
       display: grid;
       place-items: center;
@@ -91,18 +114,34 @@
       border: 2px solid rgba(57,255,20,0.35);
       animation: pulse 2.4s ease-in-out infinite;
     }
-    .r1 { width: 72px; height: 72px; animation-delay: 0s; }
-    .r2 { width: 124px; height: 124px; animation-delay: 0.25s; }
-    .r3 { width: 176px; height: 176px; animation-delay: 0.5s; }
-    .r4 { width: 232px; height: 232px; animation-delay: 0.75s; }
+    .r1 { width: 78px; height: 78px; animation-delay: 0s; }
+    .r2 { width: 132px; height: 132px; animation-delay: 0.2s; }
+    .r3 { width: 188px; height: 188px; animation-delay: 0.45s; }
+    .r4 { width: 246px; height: 246px; animation-delay: 0.7s; }
+    .r5 { width: 286px; height: 286px; animation-delay: 0.95s; border-color: rgba(57,255,20,0.2); }
+
     .core {
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      background: radial-gradient(circle, #95ff8a 0%, #39ff14 55%, #208f2b 100%);
-      box-shadow: 0 0 18px rgba(57,255,20,0.8), 0 0 42px rgba(57,255,20,0.45);
+      background: radial-gradient(circle, #b4ffa5 0%, #39ff14 52%, #1e8f2b 100%);
+      box-shadow: 0 0 20px rgba(57,255,20,0.85), 0 0 52px rgba(57,255,20,0.45);
       animation: corePulse 1.8s ease-in-out infinite;
       z-index: 2;
+    }
+    .progress-num {
+      margin-top: 8px;
+      color: var(--accent);
+      font-size: 2.1rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-shadow: 0 0 10px rgba(57,255,20,0.45);
+    }
+    .eta {
+      color: #79cb78;
+      font-size: 0.76rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
     }
     .reactor-label {
       margin-top: 8px;
@@ -113,36 +152,52 @@
       text-align: center;
     }
     @keyframes pulse {
-      0%, 100% { transform: scale(0.98); opacity: 0.5; }
+      0%, 100% { transform: scale(0.985); opacity: 0.56; }
       50% { transform: scale(1); opacity: 1; }
     }
     @keyframes corePulse {
       0%, 100% { transform: scale(0.95); }
-      50% { transform: scale(1.07); }
+      50% { transform: scale(1.09); }
     }
 
-    .panel {
-      border: 1px solid rgba(57,255,20,0.25);
-      border-radius: 10px;
-      padding: 12px;
-      background: var(--panel);
-    }
     .bootline {
-      margin: 0 0 8px;
+      margin: 14px 0 8px;
       color: #9df198;
       font-size: 0.88rem;
       min-height: 1.4em;
+      text-align: center;
+    }
+    .bootbar {
+      height: 10px;
+      width: 100%;
+      border-radius: 999px;
+      border: 1px solid rgba(57,255,20,0.3);
+      background: rgba(8,20,12,0.9);
+      overflow: hidden;
+    }
+    .bootbar-fill {
+      height: 100%;
+      width: 20%;
+      background: linear-gradient(90deg, #f6b94a 0%, #39ff14 65%);
+      box-shadow: 0 0 12px rgba(57,255,20,0.35);
+      transition: width 0.45s ease;
+    }
+
+    .controls {
+      margin-top: 14px;
+      display: grid;
+      gap: 10px;
     }
     .btn-row {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
       align-items: center;
-      margin: 10px 0 8px;
+      justify-content: center;
     }
     .btn {
       border: 1px solid rgba(57,255,20,0.6);
-      background: rgba(18,52,25,0.7);
+      background: rgba(18,52,25,0.72);
       color: var(--accent);
       padding: 10px 14px;
       border-radius: 8px;
@@ -150,7 +205,7 @@
       cursor: pointer;
       letter-spacing: 0.03em;
     }
-    .btn:hover { background: rgba(27,70,33,0.8); }
+    .btn:hover { background: rgba(27,70,33,0.82); }
     select, input {
       border: 1px solid rgba(57,255,20,0.4);
       background: rgba(8,20,12,0.95);
@@ -159,20 +214,25 @@
       padding: 10px;
       min-width: 180px;
     }
+    .script {
+      width: min(760px, 100%);
+      margin: 0 auto;
+    }
     .status {
       color: var(--accent);
       min-height: 1.3em;
-      margin-top: 6px;
+      margin-top: 2px;
       font-size: 0.93rem;
+      text-align: center;
     }
     .hint {
-      margin-top: 8px;
+      margin-top: 6px;
       color: #86c987;
       font-size: 0.84rem;
       line-height: 1.45;
+      text-align: center;
     }
     .tiny {
-      margin-top: 10px;
       color: #6bb06b;
       font-size: 0.76rem;
       letter-spacing: 0.08em;
@@ -184,40 +244,48 @@
   <main class="shell">
     <h1>JARVIS Voice Experience</h1>
     <p class="sub">
-      Futuristic visitor intro for Derek J. Russell's profile. Reactor core initializes first, then JARVIS
-      introduces the creator, ecosystem, and mission. Best experienced with the <strong>Daniel</strong> voice.
+      Reactor-centered startup sequence modeled after the main JARVIS interface. Launch intro to hear
+      a creator and ecosystem briefing in JARVIS voice.
     </p>
 
-    <div class="grid">
-      <section class="reactor-wrap">
+    <section class="stage">
+      <p class="jarvis-title">J.A.R.V.I.S.</p>
+      <p class="mode">Startup Sequence Initialized</p>
+
+      <div class="reactor-wrap">
         <div class="reactor" aria-hidden="true">
+          <div class="ring r5"></div>
           <div class="ring r4"></div>
           <div class="ring r3"></div>
           <div class="ring r2"></div>
           <div class="ring r1"></div>
           <div class="core"></div>
         </div>
+        <div id="progressNum" class="progress-num">23%</div>
+        <div class="eta">ETA --</div>
         <div class="reactor-label">Reactor Core Active</div>
-      </section>
+      </div>
 
-      <section class="panel">
-        <p id="bootline" class="bootline">[BOOT] Initializing JARVIS reactor core...</p>
-        <label for="intro" class="tiny">Intro Script</label>
-        <input id="intro" type="text" />
+      <p id="bootline" class="bootline">[BOOT] Initializing JARVIS reactor core...</p>
+      <div class="bootbar">
+        <div id="bootFill" class="bootbar-fill"></div>
+      </div>
 
+      <div class="controls">
+        <input id="intro" class="script" type="text" />
         <div class="btn-row">
-          <button id="startBtn" class="btn">Start JARVIS Intro</button>
+          <button id="startBtn" class="btn">Play JARVIS Voice</button>
           <button id="stopBtn" class="btn">Stop</button>
           <label for="voiceSelect" class="tiny">Voice</label>
           <select id="voiceSelect"></select>
         </div>
-        <div id="status" class="status"></div>
-        <p class="hint">
-          If speech does not start automatically, click <strong>Start JARVIS Intro</strong> once.
-          Browser audio policies may require a user gesture.
-        </p>
-      </section>
-    </div>
+      </div>
+
+      <div id="status" class="status"></div>
+      <p class="hint">
+        If speech does not auto-start, click <strong>Play JARVIS Voice</strong>. Browser audio policy may require a user gesture.
+      </p>
+    </section>
   </main>
 
   <script>
@@ -237,9 +305,12 @@
     const voiceSelect = document.getElementById("voiceSelect");
     const startBtn = document.getElementById("startBtn");
     const stopBtn = document.getElementById("stopBtn");
+    const bootFillEl = document.getElementById("bootFill");
+    const progressNumEl = document.getElementById("progressNum");
 
     const synth = window.speechSynthesis;
     let voices = [];
+    let progress = 23;
 
     introInput.value = DEFAULT_SCRIPT;
 
@@ -247,14 +318,23 @@
       statusEl.textContent = text;
     }
 
-    function updateBootline(idx) {
+    function updateBootline() {
       const lines = [
         "[BOOT] Initializing JARVIS reactor core...",
         "[BOOT] Calibrating neural mesh...",
         "[BOOT] Syncing Prime + Reactor telemetry...",
+        "[BOOT] Validating response pipeline...",
         "[BOOT] Voice synthesis online."
       ];
-      bootlineEl.textContent = lines[idx % lines.length];
+      const idx = Math.floor(Math.random() * lines.length);
+      bootlineEl.textContent = lines[idx];
+    }
+
+    function tickProgress() {
+      progress += Math.random() < 0.65 ? 1 : 0;
+      if (progress > 99) progress = 23;
+      progressNumEl.textContent = `${progress}%`;
+      bootFillEl.style.width = `${progress}%`;
     }
 
     function loadVoices() {
@@ -296,7 +376,7 @@
 
       utter.onstart = () => setStatus(`JARVIS speaking with: ${utter.voice ? utter.voice.name : "default voice"}`);
       utter.onend = () => setStatus("Intro complete.");
-      utter.onerror = () => setStatus("Speech blocked or failed. Click Start JARVIS Intro.");
+      utter.onerror = () => setStatus("Speech blocked or failed. Click Play JARVIS Voice.");
       synth.speak(utter);
     }
 
@@ -306,11 +386,10 @@
       setStatus("Stopped.");
     });
 
-    let bootTick = 0;
     setInterval(() => {
-      bootTick += 1;
-      updateBootline(bootTick);
-    }, 2400);
+      updateBootline();
+      tickProgress();
+    }, 1900);
 
     loadVoices();
     if (typeof speechSynthesis !== "undefined" && speechSynthesis.onvoiceschanged !== undefined) {
@@ -320,7 +399,7 @@
     if (AUTO_PLAY) {
       setTimeout(() => {
         speakScript();
-      }, 700);
+      }, 900);
     }
   </script>
 </body>
