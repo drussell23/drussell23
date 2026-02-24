@@ -18,7 +18,7 @@
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/drussell23)
 [![Featured](https://img.shields.io/badge/Mustang_News-Featured-8B0000?style=for-the-badge)](https://mustangnews.net/10-years-in-the-making-one-cal-poly-students-unique-path-to-an-engineering-degree/)
 [![Profile Views](https://komarev.com/ghpvc/?username=drussell23&style=for-the-badge&color=1a1b27&label=PROFILE+VIEWS)](https://github.com/drussell23)
-[![Play JARVIS Voice](https://img.shields.io/badge/Play_JARVIS_Voice-Daniel-39FF14?style=for-the-badge&logo=soundcloud&logoColor=black)](https://drussell23.github.io/drussell23/voice/)
+[![Play JARVIS Voice](https://img.shields.io/badge/Play_JARVIS_Voice-Daniel-39FF14?style=for-the-badge&logo=soundcloud&logoColor=black)](https://drussell23.github.io/drussell23/voice/?autoplay=1)
 
 </div>
 

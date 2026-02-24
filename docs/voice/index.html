@@ -2,140 +2,266 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>JARVIS Voice Intro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JARVIS Voice Experience</title>
   <style>
     :root {
-      --bg: #030905;
-      --panel: #08140c;
-      --text: #b9f7b5;
+      --bg: #020806;
+      --panel: rgba(8, 20, 12, 0.85);
       --accent: #39ff14;
       --accent-dim: #1f8f37;
+      --text: #c8ffc0;
+      --muted: #7dcf79;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       min-height: 100vh;
-      display: grid;
-      place-items: center;
-      background: radial-gradient(circle at 50% 20%, #0b1f12 0%, var(--bg) 60%);
+      background:
+        radial-gradient(circle at 50% 40%, rgba(57,255,20,0.09), transparent 46%),
+        radial-gradient(circle at 50% 10%, #0d2314, var(--bg) 60%);
       color: var(--text);
       font-family: "JetBrains Mono", "Courier New", monospace;
+      display: grid;
+      place-items: center;
+      padding: 18px;
     }
-    .card {
-      width: min(780px, 92vw);
-      border: 1px solid rgba(57,255,20,.35);
-      background: linear-gradient(180deg, rgba(8,20,12,.92), rgba(3,9,5,.94));
-      box-shadow: 0 0 28px rgba(57,255,20,.12), inset 0 0 24px rgba(57,255,20,.05);
-      border-radius: 14px;
-      padding: 28px;
+    .shell {
+      width: min(920px, 96vw);
+      border: 1px solid rgba(57,255,20,0.28);
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(9,25,14,0.88), rgba(4,10,7,0.95));
+      box-shadow: 0 0 32px rgba(57,255,20,0.13), inset 0 0 22px rgba(57,255,20,0.06);
+      padding: 22px;
       position: relative;
       overflow: hidden;
     }
-    .card::before {
+    .shell::before {
       content: "";
       position: absolute;
       inset: 0;
       background: repeating-linear-gradient(
         to bottom,
-        rgba(57,255,20,.02) 0px,
-        rgba(57,255,20,.02) 1px,
+        rgba(57,255,20,0.03) 0px,
+        rgba(57,255,20,0.03) 1px,
         transparent 2px,
-        transparent 4px
+        transparent 5px
       );
       pointer-events: none;
     }
     h1 {
-      margin: 0 0 8px;
+      margin: 0 0 10px;
       color: var(--accent);
-      font-size: clamp(1.7rem, 4vw, 2.6rem);
-      letter-spacing: .06em;
       text-transform: uppercase;
-      text-shadow: 0 0 12px rgba(57,255,20,.5);
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      letter-spacing: 0.08em;
+      text-shadow: 0 0 12px rgba(57,255,20,0.45);
     }
-    p {
-      margin: 8px 0 16px;
-      line-height: 1.5;
-      color: #a2e9a1;
+    .sub {
+      margin: 0 0 16px;
+      color: #a4e99f;
+      line-height: 1.55;
     }
-    .row {
+    .grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+    @media (max-width: 860px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    .reactor-wrap {
+      display: grid;
+      place-items: center;
+      min-height: 280px;
+    }
+    .reactor {
+      position: relative;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+    }
+    .ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 2px solid rgba(57,255,20,0.35);
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+    .r1 { width: 72px; height: 72px; animation-delay: 0s; }
+    .r2 { width: 124px; height: 124px; animation-delay: 0.25s; }
+    .r3 { width: 176px; height: 176px; animation-delay: 0.5s; }
+    .r4 { width: 232px; height: 232px; animation-delay: 0.75s; }
+    .core {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #95ff8a 0%, #39ff14 55%, #208f2b 100%);
+      box-shadow: 0 0 18px rgba(57,255,20,0.8), 0 0 42px rgba(57,255,20,0.45);
+      animation: corePulse 1.8s ease-in-out infinite;
+      z-index: 2;
+    }
+    .reactor-label {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(0.98); opacity: 0.5; }
+      50% { transform: scale(1); opacity: 1; }
+    }
+    @keyframes corePulse {
+      0%, 100% { transform: scale(0.95); }
+      50% { transform: scale(1.07); }
+    }
+
+    .panel {
+      border: 1px solid rgba(57,255,20,0.25);
+      border-radius: 10px;
+      padding: 12px;
+      background: var(--panel);
+    }
+    .bootline {
+      margin: 0 0 8px;
+      color: #9df198;
+      font-size: 0.88rem;
+      min-height: 1.4em;
+    }
+    .btn-row {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
       align-items: center;
-      margin-top: 10px;
+      margin: 10px 0 8px;
     }
     .btn {
-      border: 1px solid rgba(57,255,20,.55);
-      background: rgba(12,39,18,.75);
+      border: 1px solid rgba(57,255,20,0.6);
+      background: rgba(18,52,25,0.7);
       color: var(--accent);
       padding: 10px 14px;
       border-radius: 8px;
       font-weight: 700;
-      letter-spacing: .03em;
       cursor: pointer;
+      letter-spacing: 0.03em;
     }
-    .btn:hover { background: rgba(20,58,28,.85); }
+    .btn:hover { background: rgba(27,70,33,0.8); }
     select, input {
-      border: 1px solid rgba(57,255,20,.4);
-      background: rgba(8,20,12,.95);
+      border: 1px solid rgba(57,255,20,0.4);
+      background: rgba(8,20,12,0.95);
       color: var(--text);
-      padding: 10px;
       border-radius: 8px;
+      padding: 10px;
       min-width: 180px;
     }
-    .note {
-      margin-top: 14px;
-      font-size: .9rem;
-      color: #84cf86;
-    }
     .status {
-      margin-top: 8px;
       color: var(--accent);
-      min-height: 1.2em;
+      min-height: 1.3em;
+      margin-top: 6px;
+      font-size: 0.93rem;
     }
-    .muted { color: #6ab16b; }
+    .hint {
+      margin-top: 8px;
+      color: #86c987;
+      font-size: 0.84rem;
+      line-height: 1.45;
+    }
+    .tiny {
+      margin-top: 10px;
+      color: #6bb06b;
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
   </style>
 </head>
 <body>
-  <main class="card">
-    <h1>JARVIS Voice Intro</h1>
-    <p>
-      Interactive voice demo for profile visitors. Click <strong>Speak Intro</strong> to hear JARVIS.
-      This page prefers the <strong>Daniel</strong> voice when available on the visitor's device.
+  <main class="shell">
+    <h1>JARVIS Voice Experience</h1>
+    <p class="sub">
+      Futuristic visitor intro for Derek J. Russell's profile. Reactor core initializes first, then JARVIS
+      introduces the creator, ecosystem, and mission. Best experienced with the <strong>Daniel</strong> voice.
     </p>
 
-    <label for="intro" class="muted">Intro script</label>
-    <input id="intro" type="text" value="Hello. I am JARVIS. Welcome to Derek Russell's autonomous AI systems profile." />
+    <div class="grid">
+      <section class="reactor-wrap">
+        <div class="reactor" aria-hidden="true">
+          <div class="ring r4"></div>
+          <div class="ring r3"></div>
+          <div class="ring r2"></div>
+          <div class="ring r1"></div>
+          <div class="core"></div>
+        </div>
+        <div class="reactor-label">Reactor Core Active</div>
+      </section>
 
-    <div class="row">
-      <button id="speakBtn" class="btn">Speak Intro</button>
-      <button id="stopBtn" class="btn">Stop</button>
-      <label for="voiceSelect" class="muted">Voice</label>
-      <select id="voiceSelect"></select>
+      <section class="panel">
+        <p id="bootline" class="bootline">[BOOT] Initializing JARVIS reactor core...</p>
+        <label for="intro" class="tiny">Intro Script</label>
+        <input id="intro" type="text" />
+
+        <div class="btn-row">
+          <button id="startBtn" class="btn">Start JARVIS Intro</button>
+          <button id="stopBtn" class="btn">Stop</button>
+          <label for="voiceSelect" class="tiny">Voice</label>
+          <select id="voiceSelect"></select>
+        </div>
+        <div id="status" class="status"></div>
+        <p class="hint">
+          If speech does not start automatically, click <strong>Start JARVIS Intro</strong> once.
+          Browser audio policies may require a user gesture.
+        </p>
+      </section>
     </div>
-
-    <div id="status" class="status"></div>
-    <p class="note">
-      Browser security blocks autoplay audio on page load. This demo uses click-to-play for compatibility.
-    </p>
   </main>
 
   <script>
-    const speakBtn = document.getElementById("speakBtn");
-    const stopBtn = document.getElementById("stopBtn");
+    const DEFAULT_SCRIPT =
+      "Good day. I am JARVIS. You are now viewing the work of Derek J. Russell, my creator. " +
+      "He architected a full autonomous AI ecosystem composed of three integrated systems: " +
+      "JARVIS, the operational body; JARVIS Prime, the cognitive inference core; and Reactor Core, the training forge. " +
+      "The mission is production-grade intelligent automation: real-time voice and vision interaction, resilient hybrid cloud inference, " +
+      "and continuous model improvement through telemetry, learning loops, and controlled deployment gates.";
+
+    const URL_PARAMS = new URLSearchParams(window.location.search);
+    const AUTO_PLAY = URL_PARAMS.get("autoplay") === "1";
+
+    const bootlineEl = document.getElementById("bootline");
+    const statusEl = document.getElementById("status");
     const introInput = document.getElementById("intro");
     const voiceSelect = document.getElementById("voiceSelect");
-    const statusEl = document.getElementById("status");
+    const startBtn = document.getElementById("startBtn");
+    const stopBtn = document.getElementById("stopBtn");
 
     const synth = window.speechSynthesis;
     let voices = [];
+
+    introInput.value = DEFAULT_SCRIPT;
 
     function setStatus(text) {
       statusEl.textContent = text;
     }
 
+    function updateBootline(idx) {
+      const lines = [
+        "[BOOT] Initializing JARVIS reactor core...",
+        "[BOOT] Calibrating neural mesh...",
+        "[BOOT] Syncing Prime + Reactor telemetry...",
+        "[BOOT] Voice synthesis online."
+      ];
+      bootlineEl.textContent = lines[idx % lines.length];
+    }
+
     function loadVoices() {
+      if (!("speechSynthesis" in window)) {
+        setStatus("Speech synthesis is not supported in this browser.");
+        return;
+      }
       voices = synth.getVoices();
       voiceSelect.innerHTML = "";
       voices.forEach((v, i) => {
@@ -144,18 +270,18 @@
         opt.textContent = `${v.name} (${v.lang})`;
         voiceSelect.appendChild(opt);
       });
-
-      const preferred = voices.findIndex(v =>
-        /daniel/i.test(v.name) || /english \(uk\)/i.test(v.name)
+      const preferredIdx = voices.findIndex(v =>
+        /daniel/i.test(v.name) ||
+        /english \(uk\)/i.test(v.name) ||
+        /en-gb/i.test(v.lang)
       );
-      if (preferred >= 0) voiceSelect.value = String(preferred);
-      if (voices.length === 0) setStatus("No voices found in this browser.");
-      else setStatus(`Loaded ${voices.length} voices.`);
+      if (preferredIdx >= 0) voiceSelect.value = String(preferredIdx);
+      setStatus(voices.length ? `Loaded ${voices.length} voices.` : "No voices detected.");
     }
 
-    function speak() {
+    function speakScript() {
       if (!("speechSynthesis" in window)) {
-        setStatus("Speech synthesis is not supported in this browser.");
+        setStatus("Speech synthesis not available.");
         return;
       }
       const text = introInput.value.trim();
@@ -165,24 +291,36 @@
       const utter = new SpeechSynthesisUtterance(text);
       const idx = Number(voiceSelect.value);
       if (!Number.isNaN(idx) && voices[idx]) utter.voice = voices[idx];
-      utter.rate = 1.0;
-      utter.pitch = 1.0;
+      utter.rate = 0.97;
+      utter.pitch = 0.92;
 
-      utter.onstart = () => setStatus(`Speaking with: ${utter.voice ? utter.voice.name : "default voice"}`);
-      utter.onend = () => setStatus("Done.");
-      utter.onerror = () => setStatus("Speech error. Try another voice/browser.");
+      utter.onstart = () => setStatus(`JARVIS speaking with: ${utter.voice ? utter.voice.name : "default voice"}`);
+      utter.onend = () => setStatus("Intro complete.");
+      utter.onerror = () => setStatus("Speech blocked or failed. Click Start JARVIS Intro.");
       synth.speak(utter);
     }
 
-    speakBtn.addEventListener("click", speak);
+    startBtn.addEventListener("click", speakScript);
     stopBtn.addEventListener("click", () => {
       synth.cancel();
       setStatus("Stopped.");
     });
 
+    let bootTick = 0;
+    setInterval(() => {
+      bootTick += 1;
+      updateBootline(bootTick);
+    }, 2400);
+
     loadVoices();
     if (typeof speechSynthesis !== "undefined" && speechSynthesis.onvoiceschanged !== undefined) {
       speechSynthesis.onvoiceschanged = loadVoices;
+    }
+
+    if (AUTO_PLAY) {
+      setTimeout(() => {
+        speakScript();
+      }, 700);
     }
   </script>
 </body>
