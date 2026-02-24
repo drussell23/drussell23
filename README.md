@@ -8,11 +8,7 @@
 
 <br>
 
-<img src="https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif" width="36"/>
-<br>
-<b>Hey there, I'm Derek</b>
-<br>
-<sub>I design, build, and deploy production-grade AI ecosystems from bare metal to cloud inference.</sub>
+<img src="./assets/greeting-matrix.svg" width="90%" alt="Matrix-style greeting banner"/>
 
 <br><br>
 

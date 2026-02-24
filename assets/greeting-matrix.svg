@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 120">
+  <defs>
+    <linearGradient id="greetGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e8f39"/>
+      <stop offset="50%" stop-color="#39ff14"/>
+      <stop offset="100%" stop-color="#1e8f39"/>
+    </linearGradient>
+    <linearGradient id="scan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#39ff14" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#39ff14" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#39ff14" stop-opacity="0"/>
+      <animateTransform attributeName="gradientTransform" type="translate" from="-1 0" to="1 0" dur="4s" repeatCount="indefinite"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-80%" width="140%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.3" result="g1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4.5" result="g2"/>
+      <feMerge>
+        <feMergeNode in="g2"/>
+        <feMergeNode in="g1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <style>
+    @keyframes pulse {
+      0%, 100% { opacity: 0.9; }
+      50% { opacity: 1; }
+    }
+    @keyframes reveal {
+      from { opacity: 0; letter-spacing: 6px; }
+      to { opacity: 1; letter-spacing: 2px; }
+    }
+    .bg { fill: #020704; }
+    .label {
+      font-family: "Courier New", monospace;
+      font-size: 11px;
+      fill: #7adf7a;
+      letter-spacing: 4px;
+    }
+    .title {
+      font-family: "Arial Black", "Segoe UI", "Trebuchet MS", sans-serif;
+      font-size: 40px;
+      font-weight: 900;
+      fill: url(#greetGreen);
+      filter: url(#softGlow);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      animation: pulse 2.7s ease-in-out infinite;
+    }
+    .subtitle {
+      font-family: "JetBrains Mono", "Courier New", monospace;
+      font-size: 14px;
+      fill: #9de8a2;
+      opacity: 0;
+      animation: reveal 0.9s ease-out 0.15s forwards;
+    }
+    .rule {
+      stroke: #39ff14;
+      stroke-opacity: 0.45;
+      stroke-width: 1;
+    }
+  </style>
+  <rect class="bg" width="900" height="120"/>
+  <text class="label" x="24" y="18">MATRIX SESSION: ACTIVE</text>
+  <line class="rule" x1="24" y1="24" x2="876" y2="24"/>
+
+  <text class="title" x="450" y="66" text-anchor="middle">HEY THERE, I'M DEREK</text>
+  <rect x="110" y="36" width="680" height="40" fill="url(#scan)"/>
+
+  <text class="subtitle" x="450" y="99" text-anchor="middle">I DESIGN, BUILD, AND DEPLOY PRODUCTION-GRADE AI ECOSYSTEMS.</text>
+</svg>
