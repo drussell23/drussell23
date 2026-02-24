@@ -12,7 +12,7 @@
 
 <br>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3000&pause=1000&color=70A5FD&center=true&vCenter=true&multiline=true&repeat=true&width=820&height=80&lines=3%2C900%2B+commits+%C2%B7+2.5M+lines+of+code+%C2%B7+11+languages;Building+production-grade+autonomous+AI+infrastructure)](https://github.com/drussell23)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3000&pause=1000&color=39FF14&center=true&vCenter=true&multiline=true&repeat=true&width=820&height=80&lines=3%2C900%2B+commits+%C2%B7+2.5M+lines+of+code+%C2%B7+11+languages;Building+production-grade+autonomous+AI+infrastructure)](https://github.com/drussell23)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/derek-j-russell/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/drussell23)
