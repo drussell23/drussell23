@@ -307,6 +307,11 @@ JARVIS is not a chatbot wrapper. It is a distributed AI operating system compose
 
 ### System Architecture
 
+- **Purpose:** Define the three-system operating model (`JARVIS`, `JARVIS-Prime`, `ReactorCore`) under one unified kernel.
+- **Problem:** Most AI systems stop at a single model endpoint and fail at end-to-end autonomy, coordination, and lifecycle management.
+- **Core Challenge:** Keep orchestration, inference, and training decoupled enough to scale independently while still behaving like one product.
+- **What This Solves:** Creates a durable systems contract: `JARVIS` runs operations, `Prime` serves intelligence, `Reactor` continuously improves intelligence.
+
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a1b27', 'primaryTextColor': '#a9b1d6', 'primaryBorderColor': '#70a5fd', 'lineColor': '#545c7e', 'secondaryColor': '#24283b', 'tertiaryColor': '#1a1b27', 'fontSize': '14px', 'fontFamily': 'JetBrains Mono, monospace' }}}%%
 
@@ -357,6 +362,11 @@ flowchart TD
 
 ### Data Flow
 
+- **Purpose:** Show the runtime request path from multimodal inputs to routed inference and back to user-visible action.
+- **Problem:** Input streams (voice, screen, command) are heterogeneous and require different model strategies and latencies.
+- **Core Challenge:** Route by task type in real time while capturing high-quality telemetry for future model improvement.
+- **What This Solves:** Demonstrates a closed execution path where each response both serves the user now and improves the system later.
+
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a1b27', 'primaryTextColor': '#a9b1d6', 'lineColor': '#545c7e', 'fontSize': '13px', 'fontFamily': 'JetBrains Mono, monospace' }}}%%
 
@@ -385,6 +395,11 @@ flowchart LR
 
 ### Three-Tier Inference Routing
 
+- **Purpose:** Define a deterministic fallback ladder for reliability under changing infrastructure and hardware conditions.
+- **Problem:** A single inference backend is a single point of failure (downtime, cold starts, local resource pressure, API outages).
+- **Core Challenge:** Preserve quality and uptime while controlling cost and avoiding hard dependency on any one execution tier.
+- **What This Solves:** Guarantees service continuity through policy-based failover: `GCP` -> `Local Metal` -> `Claude API`.
+
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a1b27', 'primaryTextColor': '#a9b1d6', 'lineColor': '#545c7e', 'fontSize': '13px', 'fontFamily': 'JetBrains Mono, monospace' }}}%%
 
@@ -405,6 +420,11 @@ flowchart LR
 ```
 
 ### Execution Planes (Control / Data / Model)
+
+- **Purpose:** Separate operational concerns into control, data, and model planes for clearer ownership and safer evolution.
+- **Problem:** Without plane separation, policy, state, and model behavior become tightly coupled and brittle during scale-out.
+- **Core Challenge:** Enforce governance and safety globally while allowing model and data pipelines to move quickly.
+- **What This Solves:** Makes architecture auditable and composable: control governs, data persists context, models execute decisions.
 
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a1b27', 'primaryTextColor': '#a9b1d6', 'lineColor': '#545c7e', 'fontSize': '13px', 'fontFamily': 'JetBrains Mono, monospace' }}}%%
@@ -444,6 +464,11 @@ flowchart TB
 
 ### Safety & Governance Path
 
+- **Purpose:** Document the decision policy from risk classification to approval, execution, blocking, and audit.
+- **Problem:** Autonomous systems can perform high-impact actions where incorrect execution is costly or irreversible.
+- **Core Challenge:** Balance autonomy and velocity with explicit human control boundaries for high-risk operations.
+- **What This Solves:** Provides a predictable safety envelope: low-risk auto-exec, medium-risk constrained mode, high-risk human-in-the-loop.
+
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a1b27', 'primaryTextColor': '#a9b1d6', 'lineColor': '#545c7e', 'fontSize': '13px', 'fontFamily': 'JetBrains Mono, monospace' }}}%%
 
@@ -474,6 +499,11 @@ flowchart LR
 ```
 
 ### Observability & Closed-Loop Learning
+
+- **Purpose:** Show how runtime signals become training data, deployment decisions, and measurable model upgrades.
+- **Problem:** Teams often collect telemetry but fail to operationalize it into safe, repeatable improvement cycles.
+- **Core Challenge:** Detect regressions early, gate bad models, and continuously retrain without destabilizing production.
+- **What This Solves:** Establishes a true learning loop: observe -> detect -> curate -> train -> gate/probation -> deploy or rollback.
 
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a1b27', 'primaryTextColor': '#a9b1d6', 'lineColor': '#545c7e', 'fontSize': '13px', 'fontFamily': 'JetBrains Mono, monospace' }}}%%
