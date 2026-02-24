@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JARVIS Voice Intro</title>
+  <style>
+    :root {
+      --bg: #030905;
+      --panel: #08140c;
+      --text: #b9f7b5;
+      --accent: #39ff14;
+      --accent-dim: #1f8f37;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at 50% 20%, #0b1f12 0%, var(--bg) 60%);
+      color: var(--text);
+      font-family: "JetBrains Mono", "Courier New", monospace;
+    }
+    .card {
+      width: min(780px, 92vw);
+      border: 1px solid rgba(57,255,20,.35);
+      background: linear-gradient(180deg, rgba(8,20,12,.92), rgba(3,9,5,.94));
+      box-shadow: 0 0 28px rgba(57,255,20,.12), inset 0 0 24px rgba(57,255,20,.05);
+      border-radius: 14px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(57,255,20,.02) 0px,
+        rgba(57,255,20,.02) 1px,
+        transparent 2px,
+        transparent 4px
+      );
+      pointer-events: none;
+    }
+    h1 {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: clamp(1.7rem, 4vw, 2.6rem);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      text-shadow: 0 0 12px rgba(57,255,20,.5);
+    }
+    p {
+      margin: 8px 0 16px;
+      line-height: 1.5;
+      color: #a2e9a1;
+    }
+    .row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .btn {
+      border: 1px solid rgba(57,255,20,.55);
+      background: rgba(12,39,18,.75);
+      color: var(--accent);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-weight: 700;
+      letter-spacing: .03em;
+      cursor: pointer;
+    }
+    .btn:hover { background: rgba(20,58,28,.85); }
+    select, input {
+      border: 1px solid rgba(57,255,20,.4);
+      background: rgba(8,20,12,.95);
+      color: var(--text);
+      padding: 10px;
+      border-radius: 8px;
+      min-width: 180px;
+    }
+    .note {
+      margin-top: 14px;
+      font-size: .9rem;
+      color: #84cf86;
+    }
+    .status {
+      margin-top: 8px;
+      color: var(--accent);
+      min-height: 1.2em;
+    }
+    .muted { color: #6ab16b; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>JARVIS Voice Intro</h1>
+    <p>
+      Interactive voice demo for profile visitors. Click <strong>Speak Intro</strong> to hear JARVIS.
+      This page prefers the <strong>Daniel</strong> voice when available on the visitor's device.
+    </p>
+
+    <label for="intro" class="muted">Intro script</label>
+    <input id="intro" type="text" value="Hello. I am JARVIS. Welcome to Derek Russell's autonomous AI systems profile." />
+
+    <div class="row">
+      <button id="speakBtn" class="btn">Speak Intro</button>
+      <button id="stopBtn" class="btn">Stop</button>
+      <label for="voiceSelect" class="muted">Voice</label>
+      <select id="voiceSelect"></select>
+    </div>
+
+    <div id="status" class="status"></div>
+    <p class="note">
+      Browser security blocks autoplay audio on page load. This demo uses click-to-play for compatibility.
+    </p>
+  </main>
+
+  <script>
+    const speakBtn = document.getElementById("speakBtn");
+    const stopBtn = document.getElementById("stopBtn");
+    const introInput = document.getElementById("intro");
+    const voiceSelect = document.getElementById("voiceSelect");
+    const statusEl = document.getElementById("status");
+
+    const synth = window.speechSynthesis;
+    let voices = [];
+
+    function setStatus(text) {
+      statusEl.textContent = text;
+    }
+
+    function loadVoices() {
+      voices = synth.getVoices();
+      voiceSelect.innerHTML = "";
+      voices.forEach((v, i) => {
+        const opt = document.createElement("option");
+        opt.value = String(i);
+        opt.textContent = `${v.name} (${v.lang})`;
+        voiceSelect.appendChild(opt);
+      });
+
+      const preferred = voices.findIndex(v =>
+        /daniel/i.test(v.name) || /english \(uk\)/i.test(v.name)
+      );
+      if (preferred >= 0) voiceSelect.value = String(preferred);
+      if (voices.length === 0) setStatus("No voices found in this browser.");
+      else setStatus(`Loaded ${voices.length} voices.`);
+    }
+
+    function speak() {
+      if (!("speechSynthesis" in window)) {
+        setStatus("Speech synthesis is not supported in this browser.");
+        return;
+      }
+      const text = introInput.value.trim();
+      if (!text) return;
+
+      synth.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      const idx = Number(voiceSelect.value);
+      if (!Number.isNaN(idx) && voices[idx]) utter.voice = voices[idx];
+      utter.rate = 1.0;
+      utter.pitch = 1.0;
+
+      utter.onstart = () => setStatus(`Speaking with: ${utter.voice ? utter.voice.name : "default voice"}`);
+      utter.onend = () => setStatus("Done.");
+      utter.onerror = () => setStatus("Speech error. Try another voice/browser.");
+      synth.speak(utter);
+    }
+
+    speakBtn.addEventListener("click", speak);
+    stopBtn.addEventListener("click", () => {
+      synth.cancel();
+      setStatus("Stopped.");
+    });
+
+    loadVoices();
+    if (typeof speechSynthesis !== "undefined" && speechSynthesis.onvoiceschanged !== undefined) {
+      speechSynthesis.onvoiceschanged = loadVoices;
+    }
+  </script>
+</body>
+</html>
