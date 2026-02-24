@@ -48,9 +48,9 @@
     .scan { fill: url(#scanline); }
     .subtitle {
       font-family: "Courier New", monospace;
-      font-size: 12px;
+      font-size: 14px;
       fill: #7adf7a;
-      letter-spacing: 8px;
+      letter-spacing: 4px;
       opacity: 0;
       animation: reveal 0.8s ease-out 0.2s forwards;
     }
@@ -65,5 +65,5 @@
   <line class="rule" x1="170" y1="80" x2="630" y2="80"/>
   <text class="name" x="400" y="62" text-anchor="middle">DEREK J. RUSSELL</text>
   <rect class="scan" x="130" y="31" width="540" height="40"/>
-  <text class="subtitle" x="400" y="112" text-anchor="middle">AI ENGINEER · COMPUTER ENGINEER · SYSTEMS ARCHITECT</text>
+  <text class="subtitle" x="400" y="111" text-anchor="middle">AI ENGINEER · COMPUTER ENGINEER · SYSTEMS ARCHITECT</text>
 </svg>

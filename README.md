@@ -5,12 +5,8 @@
 <br>
 
 <a href="https://github.com/drussell23">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=32&duration=2800&pause=1200&color=39FF14&center=true&vCenter=true&repeat=true&width=760&height=70&lines=DEREK+J.+RUSSELL" alt="Derek J. Russell typing header" />
+  <img src="./assets/name-animated.svg" width="860" alt="Derek J. Russell header" />
 </a>
-
-<br>
-
-<sub><span style="color:#39FF14; letter-spacing:0.08em;">AI ENGINEER · COMPUTER ENGINEER · SYSTEMS ARCHITECT</span></sub>
 
 <br><br>
 
