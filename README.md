@@ -648,17 +648,10 @@ flowchart TB
 <summary><b>Purpose, Problem, Challenge, Solution</b></summary>
 <br>
 
-<<<<<<< HEAD
-- **Purpose:** Govern all memory consumers (models, displays, agents) through a lease-based broker with typed pressure tiers and deterministic shedding policies.
-- **Problem:** On Apple Silicon's Unified Memory Architecture (UMA), CPU, GPU framebuffers, and ML models share the same 16GB pool. The GPU compositor is invisible to `psutil` process RSS, causing silent memory exhaustion and swap thrashing.
-- **Core Challenge:** Make every byte visible, governed, and pressure-responsive — including the ghost display's framebuffer (~32MB at 1080p) — without hardcoding thresholds or breaking under crash recovery.
-- **What This Solves:** Components request memory leases before consuming resources. The broker enforces budgets, triggers pressure-driven shedding, and recovers leaked leases after crashes. The display resolution adapts automatically to memory pressure rather than running at full resolution until the system swaps.
-=======
 - **Purpose:** Govern shared Apple Silicon UMA memory with explicit, lease-based control across model loads, display surfaces, and agent runtime.
 - **Problem:** GPU/compositor pressure is often invisible to process-level memory metrics, so systems can appear healthy while heading into swap thrash.
 - **Core Challenge:** Coordinate memory decisions across heterogeneous consumers while preventing flapping and preserving critical capabilities.
 - **What This Solves:** Introduces deterministic memory governance with pressure-aware lease grants, stepwise shedding, and crash-safe lease reconciliation.
->>>>>>> 1dee070 (Refresh profile architecture docs and refine memory control plane presentation.)
 
 </details>
 
@@ -666,60 +659,6 @@ flowchart TB
 %%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a1b27', 'primaryTextColor': '#a9b1d6', 'primaryBorderColor': '#70a5fd', 'lineColor': '#545c7e', 'secondaryColor': '#24283b', 'tertiaryColor': '#1a1b27', 'fontSize': '13px', 'fontFamily': 'JetBrains Mono, monospace' }}}%%
 
 flowchart TB
-<<<<<<< HEAD
-    subgraph MCP["🧠 Memory Control Plane"]
-        direction TB
-        QUANT["MemoryQuantizer<br/><i>psutil sampling · typed MemorySnapshot</i>"]
-        BROKER["MemoryBudgetBroker<br/><i>lease grants · epoch fencing · crash recovery</i>"]
-        SNAP["MemorySnapshot (frozen)<br/><i>27 fields · PressureTier · ThrashState</i>"]
-
-        QUANT -->|"immutable snapshot"| SNAP
-        SNAP -->|"tier + headroom"| BROKER
-    end
-
-    subgraph CONSUMERS["📦 Lease Holders"]
-        direction TB
-        MODELS["Model Loaders<br/><i>LLM · ECAPA · Vision</i>"]
-        DISPLAY["Ghost Display<br/><i>display:ghost@v1</i>"]
-        AGENTS["Agent Runtime<br/><i>Neural Mesh agents</i>"]
-    end
-
-    subgraph DPC["🖥️ DisplayPressureController"]
-        direction TB
-        SM["State Machine<br/><i>9 states · one-step invariant</i>"]
-        SHED["Shedding Ladder<br/><i>1080p → 900p → 720p → 576p → off</i>"]
-        FLAP["Flap Guards<br/><i>30s dwell · 6/hr rate limit · quarantine</i>"]
-        CAL["Calibration<br/><i>before/after delta · per-resolution EMA</i>"]
-    end
-
-    BROKER -->|"grant / deny / preempt"| CONSUMERS
-    BROKER -->|"pressure notification"| DPC
-    DPC -->|"amend_lease_bytes()"| BROKER
-    DPC -->|"set_resolution / disconnect"| CLI["BetterDisplay CLI"]
-    DISPLAY -.->|"lease: 32MB → 22MB → 14MB → 9MB → 0"| BROKER
-
-    BROKER -->|"8 DISPLAY_* events"| TEL["Telemetry Pipeline"]
-    BROKER -->|"reconcile_stale_leases()"| CRASH["Crash Recovery<br/><i>query CLI · restore or reclaim</i>"]
-
-    style MCP fill:#0d1117,stroke:#70a5fd,stroke-width:2px,color:#a9b1d6
-    style CONSUMERS fill:#0d1117,stroke:#bf91f3,stroke-width:2px,color:#a9b1d6
-    style DPC fill:#0d1117,stroke:#bb9af7,stroke-width:2px,color:#a9b1d6
-    style CLI fill:#24283b,stroke:#545c7e,stroke-width:1px,color:#a9b1d6
-    style TEL fill:#24283b,stroke:#545c7e,stroke-width:1px,color:#a9b1d6
-    style CRASH fill:#24283b,stroke:#545c7e,stroke-width:1px,color:#a9b1d6
-```
-
-**Key design decisions:**
-
-- **Lease-based governance** — Components request memory leases (`broker.request()`) before consuming resources; the broker tracks committed bytes with epoch-fenced grants
-- **6 pressure tiers** — ABUNDANT → OPTIMAL → ELEVATED → CONSTRAINED → CRITICAL → EMERGENCY, each with a multiplier (1.0 → 0.3) governing grant aggressiveness
-- **One-step shedding invariant** — Even under EMERGENCY pressure, the display only degrades one level per evaluation (never jumps ACTIVE → DISCONNECTED)
-- **Two-phase action protocol** — Every display transition follows PREPARE → APPLY → VERIFY → COMMIT/ROLLBACK with CLI verification
-- **Dependency-aware disconnect** — Before disconnecting the display, the controller checks all active leases for `requires_display: true` metadata
-- **Calibrated UMA accounting** — Static compositor estimates are replaced over time by observed before/after memory deltas using exponential moving averages
-- **13 env-configurable knobs** — Dwell timers, rate limits, failure budgets, quarantine durations, scale/refresh factors — zero hardcoded magic numbers
-- **196 tests** (72 new for display integration) covering unit, behavioral, and integration scenarios
-=======
     subgraph OBS["📊 UMA Observability"]
         Q["MemoryQuantizer<br/><i>system + process sampling</i>"]
         S["Frozen MemorySnapshot<br/><i>headroom, pressure tier, thrash state</i>"]
@@ -780,7 +719,6 @@ flowchart TB
 - **Closed-loop observability** — Broker and controller events feed telemetry so memory policy can be calibrated over time.
 
 </details>
->>>>>>> 1dee070 (Refresh profile architecture docs and refine memory control plane presentation.)
 
 ### Safety & Governance Path
 
