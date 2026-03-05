@@ -329,6 +329,94 @@ flowchart TD
     G -->|"fail"| RB["Rollback"]
 ```
 
+### Triple Authority Resolution — Status Overview
+
+Three repos previously made independent lifecycle decisions (restart/health/kill), which created restart storms, readiness split-brain, and contract drift. This architecture is now unified under a single root authority model.
+
+```mermaid
+flowchart TD
+    U["UNIFIED SUPERVISOR<br/>Root Control Plane"] --> W["RootAuthorityWatcher<br/>Policy Brain"]
+    U --> O["ProcessOrchestrator<br/>Execution Plane"]
+    O --> P["JARVIS-Prime<br/>managed mode"]
+    O --> R["Reactor-Core<br/>managed mode"]
+
+    W -->|LifecycleVerdict| O
+    O -->|ExecutionResult| W
+    P -->|health + drain contract| W
+    R -->|health + drain contract| W
+
+    W --> H{"Handshake Gate"}
+    H -->|"schema N/N-1 + capability hash pass"| READY["ALIVE/READY"]
+    H -->|"contract mismatch"| REJECT["REJECTED"]
+
+    W --> E["Escalation Engine"]
+    E --> D["drain"]
+    E --> T["SIGTERM"]
+    E --> K["process-group SIGKILL"]
+```
+
+<details>
+<summary><b>What we built (21 tasks, 5 waves, 3 repos)</b></summary>
+<br>
+
+- **Wave 0 — Foundation types:** canonical lifecycle contracts (`LifecycleAction`, `SubsystemState`, `ProcessIdentity`, `LifecycleVerdict`, policy/timeout structures) + managed-mode contract + golden conformance tests
+- **Wave 1 — Root authority watcher:** lifecycle state machine ownership, verdict emission, incident dedup, and policy/execution separation via `VerdictExecutor`
+- **Wave 2 — Prime/Reactor conformance:** managed-mode behavior (`JARVIS_ROOT_MANAGED`), health envelope enrichment, authenticated `/lifecycle/drain`
+- **Wave 3 — Orchestrator integration + shadow mode:** `ProcessOrchestrator` adapter methods wired; active crash watch (`proc.wait`) + jittered health polling
+- **Wave 4 — Activation hardening:** active verdict dispatch, contract hash gating at boot handshake, policy delegation hooks for restart/health ownership
+
+</details>
+
+<details>
+<summary><b>What this resolved</b></summary>
+<br>
+
+- **Restart storms:** single restart policy with budgeted windows and deduplication
+- **Readiness split-brain:** unified two-field liveness/readiness state ownership
+- **Contract drift:** cross-repo managed-mode parity with conformance tests and compatibility gates
+- **Crash blind spots:** ms-latency process-exit detection plus health-path observability
+- **Competing supervisors:** Prime/Reactor demoted to managed mode while root authority owns lifecycle decisions
+- **Escalation ambiguity:** deterministic kill ladder (`drain -> SIGTERM -> process-group SIGKILL`)
+- **PID reuse risk:** identity validation strengthened via multi-factor `ProcessIdentity`
+- **Control-plane auth gaps:** HMAC-authenticated lifecycle commands and session-aware checks
+
+</details>
+
+<details>
+<summary><b>Production rollout path (remaining ops work)</b></summary>
+<br>
+
+1. **Shadow soak:** run in `shadow` mode and verify decision parity against legacy behavior  
+2. **Per-subsystem activation:** promote one subsystem at a time (`reactor-core` then `jarvis-prime`)  
+3. **Final policy cut-wire:** fully bypass legacy autonomous monitor decisions when delegation flags are enabled  
+4. **CI anti-drift:** enforce cross-repo parity checks for managed-mode contract files on every PR
+
+</details>
+
+<details>
+<summary><b>Hidden profile bullet packs (copy-ready)</b></summary>
+<br>
+
+**Ultra-short TL;DR**
+- **Triple Authority Fixed:** one root control plane governs restart/readiness/lifecycle
+- **Safe by Contract:** managed-mode + authenticated lifecycle endpoints + handshake gating
+- **Staged Rollout:** shadow parity -> subsystem activation -> full active cutover
+
+**Recruiter-friendly**
+- **Architecture leadership:** unified three competing supervisors into one production control plane
+- **Reliability outcome:** removed restart storms and readiness split-brain via centralized lifecycle policy
+- **Security hardening:** added authenticated lifecycle controls and contract-gated activation
+- **Operational rigor:** designed staged rollout for safe production adoption
+
+**Infra-architect**
+- **Control-plane convergence:** root watcher owns lifecycle state transitions across Body/Prime/Reactor
+- **Policy/execution isolation:** watcher emits verdicts; orchestrator executes side effects
+- **Deterministic escalation:** bounded `drain -> term -> group-kill` with race-safe identity checks
+- **Protocol hardening:** schema/capability handshake gates + managed-mode health/drain envelopes
+- **Progressive activation:** shadow validation, per-subsystem enablement, legacy path retirement
+
+</details>
+
 ### System Architecture
 
 <details>
@@ -895,7 +983,7 @@ Native C++ Training Kernels
 <br>
 
 - **Never-skip screen capture** — two-phase monitoring (always-capture + conditional-analysis), self-hosted LLaVA multimodal analysis, Claude Vision escalation
-- **Ghost Display** — virtual macOS display for non-intrusive background automation, Ghost Hands orchestrator for autonomous visual workflows, Memory Control Plane lease (`display:ghost@v1`) with pressure-driven resolution shedding and crash recovery
+- **Ghost Display** — virtual macOS display for non-intrusive background automation, Ghost Hands orchestrator for autonomous visual workflows
 - **Claude Computer Use** — automated mouse, keyboard, and screenshot interaction via Anthropic's Computer Use API
 - **OCR / OmniParser** — screen text extraction, window analysis, workspace name detection, multi-monitor and multi-space intelligence via yabai window manager
 - **YOLO + Claude hybrid vision** — object detection with LLM-powered semantic understanding
@@ -918,8 +1006,6 @@ Native C++ Training Kernels
 <summary><b>Infrastructure and Reliability</b></summary>
 <br>
 
-- **Memory Control Plane** — lease-based memory governance with `MemoryBudgetBroker`, typed `PressureTier` snapshots, pressure observer pattern, atomic lease amendment, and crash recovery via durable lease persistence
-- **DisplayPressureController** — state machine for pressure-driven ghost display resolution shedding (1080p → 576p → disconnect) with two-phase action protocol, flap guards (dwell/cooldown/rate-limit/quarantine), dependency-aware disconnect, and calibrated UMA memory accounting via before/after EMA
 - **Parallel initializer** with cooperative cancellation, adaptive EMA-based deadlines, dependency propagation, and atomic state persistence
 - **CPU-pressure-aware cloud shifting** — automatic workload offload to GCP when local resources are constrained
 - **Enterprise hardening** — dependency injection container, enterprise process manager, system hardening, governance, Cloud SQL with race-condition-proof proxy management, TLS-safe connection factories, distributed lock manager
