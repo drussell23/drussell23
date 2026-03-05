@@ -417,6 +417,78 @@ flowchart TD
 
 </details>
 
+### Disease 1: God File / Monolith Paradox
+
+`unified_supervisor.py` grew into a ~96K-line orchestration monolith with multiple high-impact domains in one file. The risk is not just size; it is **coupling density**: local edits can create non-local regressions.
+
+```mermaid
+flowchart TD
+    E["Single Entry Point<br/>python3 unified_supervisor.py"] --> S["Kernel Shell (thin)"]
+    S --> R["Domain Controller Registry"]
+
+    R --> L["Lifecycle Controller"]
+    R --> H["Health Controller"]
+    R --> W["Workflow Controller"]
+    R --> M["Resource Controller"]
+    R --> X["Self-Healing Controller"]
+    R --> A["AGI/Training Controller"]
+
+    L --> C["Contract Boundaries<br/>typed interfaces + DTOs"]
+    H --> C
+    W --> C
+    M --> C
+    X --> C
+    A --> C
+
+    C --> T["Isolated Domain Tests"]
+    C --> O["Cross-Domain Observability"]
+```
+
+<details>
+<summary><b>Why this is dangerous</b></summary>
+<br>
+
+- **Reasoning collapse:** too many orthogonal responsibilities in one file
+- **Test isolation gap:** difficult to unit-test a single subsystem without broad kernel context
+- **High merge friction:** concentrated edit surface increases conflict rate
+- **Refactor risk:** tooling and human review quality degrade as coupling grows
+- **Mandate conflict:** monolith bottleneck violates "no single structural choke point"
+
+</details>
+
+<details>
+<summary><b>Structural cure path</b></summary>
+<br>
+
+1. **Preserve single boot command** while shrinking policy from the shell  
+2. **Extract domain controllers** behind protocol boundaries  
+3. **Replace direct cross-calls** with typed contract interfaces  
+4. **Enforce isolation tests** per domain before integration tests  
+5. **Ship in waves with parity gates** to avoid behavioral drift
+
+</details>
+
+<details>
+<summary><b>Hidden profile bullets (copy-ready)</b></summary>
+<br>
+
+**Ultra-short TL;DR**
+- **Monolith Risk Neutralized (in progress):** convert a 96K-line supervisor choke point into contract-bounded controllers
+- **Single Entry Point Preserved:** one boot command, modular internals
+- **Safer Evolution:** isolation tests + parity-gated extraction waves
+
+**Recruiter-friendly**
+- **Architecture insight:** identified the monolith paradox as the largest systemic reliability and velocity risk
+- **Execution strategy:** designed a phased decomposition that keeps runtime stable while reducing coupling
+- **Engineering rigor:** paired extraction with contract boundaries and isolation testing to prevent regressions
+
+**Infra-architect**
+- **Kernel shell model:** retain entrypoint authority but move domain policy to controller registry
+- **Protocol-first decomposition:** typed interfaces replace direct cross-domain invocation
+- **Risk-managed migration:** parity validation, observability gates, and staged rollout per domain
+
+</details>
+
 ### System Architecture
 
 <details>
