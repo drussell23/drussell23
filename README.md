@@ -300,6 +300,35 @@ Every component below is production code running in the JARVIS ecosystem — not
 
 JARVIS is not a chatbot wrapper. It is a distributed AI operating system composed of three interdependent repositories — each a standalone production system, together forming a self-improving autonomous intelligence.
 
+### Hero Architecture (TL;DR)
+
+- **Single command control plane:** `python3 unified_supervisor.py` boots Body, Mind, and Forge with deterministic lifecycle ownership
+- **Trinity operating model:** `JARVIS` executes, `JARVIS-Prime` reasons/routes, `ReactorCore` trains and redeploys
+- **Reliability-first inference:** policy-based failover from GCP golden image to local Apple Silicon to API fallback
+- **Closed learning loop:** runtime telemetry flows to Reactor training, then gated deployment returns improved models to Prime
+- **Native autonomy stack:** async agent mesh, Google Workspace workflows, voice biometrics, and vision-driven macOS control
+- **Safety by design:** policy gates, contract checks, kill-switch controls, circuit breakers, and probation-based rollback
+
+```mermaid
+flowchart TD
+    K["UNIFIED SUPERVISOR<br/>single control plane"] --> B["JARVIS (Body)<br/>agents + tools + execution"]
+    K --> P["JARVIS-Prime (Mind)<br/>routing + reasoning"]
+    K --> R["ReactorCore (Forge)<br/>training + deployment gates"]
+
+    B <--> P
+    P --> R
+    R --> P
+    B --> R
+
+    P --> T1["Tier 1: GCP Golden Image"]
+    T1 -->|"degraded"| T2["Tier 2: Local Apple Silicon"]
+    T2 -->|"degraded"| T3["Tier 3: API Fallback"]
+
+    R --> G["Gate + Probation"]
+    G -->|"pass"| P
+    G -->|"fail"| RB["Rollback"]
+```
+
 ### System Architecture
 
 <details>
@@ -432,6 +461,63 @@ flowchart LR
     style RES fill:#24283b,stroke:#545c7e,stroke-width:1px,color:#a9b1d6
 ```
 
+### Trinity Autonomy Wiring (Phase 2)
+
+<details>
+<summary><b>Purpose, Problem, Challenge, Solution</b></summary>
+<br>
+
+- **Purpose:** Wire autonomy lifecycle events through the Trinity loop so the system can learn from its own autonomous actions.
+- **Problem:** JARVIS Body performs autonomous actions (Google Workspace agent) but the outcomes are not captured as structured training signals.
+- **Core Challenge:** Events must be strictly validated, deduplicated, and classified before reaching the training pipeline — malformed or replayed events would corrupt model weights.
+- **What This Solves:** Creates a closed feedback loop where autonomous actions generate training data, improving future autonomy decisions without manual intervention.
+
+</details>
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a1b27', 'primaryTextColor': '#a9b1d6', 'lineColor': '#545c7e', 'fontSize': '13px', 'fontFamily': 'JetBrains Mono, monospace' }}}%%
+
+flowchart TD
+    AGENT["🤖 Google Workspace Agent<br/><i>execute_task()</i>"]
+
+    AGENT -->|"7 event types"| EMIT["📡 _emit_autonomy_event()<br/><i>strict metadata schema</i>"]
+    EMIT -->|"token-bucket<br/>rate limiter"| FWD["🔀 CrossRepoExperienceForwarder<br/><i>forward_autonomy_event()</i>"]
+
+    FWD -->|"ExperienceEvent<br/>(type=METRIC)"| ING["🔬 AutonomyEventIngestor"]
+
+    ING --> V{"Validate<br/>7 required keys?"}
+    V -->|"❌ malformed"| Q["🗃️ Quarantine<br/><i>disk-based · 7d retention</i>"]
+    V -->|"✅ valid"| D{"Deduplicate<br/>composite key?"}
+    D -->|"duplicate"| SKIP["⏭️ Skip"]
+    D -->|"unique"| CLS["🏷️ AutonomyEventClassifier"]
+
+    CLS -->|"committed / failed"| TRAIN["🔥 UnifiedPipeline<br/><i>DPO / LoRA training</i>"]
+    CLS -->|"infrastructure /<br/>excluded"| EXCLUDE["📊 Metrics Only<br/><i>no training</i>"]
+
+    AGENT <-.->|"autonomy_policy /<br/>action_plan"| PRIME["💭 JARVIS-Prime<br/><i>policy gate</i>"]
+
+    SUP["🛡️ Supervisor Boot"] -->|"check_autonomy_contracts()"| COMPAT{"Schema<br/>Compatible?"}
+    COMPAT -->|"✅ pass"| FULL["Full Autonomy Mode"]
+    COMPAT -->|"❌ mismatch"| RO["Read-Only Mode"]
+
+    style AGENT fill:#1a1b27,stroke:#70a5fd,stroke-width:2px,color:#70a5fd
+    style PRIME fill:#1a1b27,stroke:#bf91f3,stroke-width:2px,color:#bf91f3
+    style ING fill:#1a1b27,stroke:#bb9af7,stroke-width:2px,color:#bb9af7
+    style TRAIN fill:#1a1b27,stroke:#9ece6a,stroke-width:2px,color:#9ece6a
+    style Q fill:#1a1b27,stroke:#f7768e,stroke-width:2px,color:#f7768e
+    style SUP fill:#1a1b27,stroke:#e0af68,stroke-width:2px,color:#e0af68
+```
+
+**How it works:**
+
+- **Body emits 7 canonical events** — Every autonomous action (email send, calendar create, doc edit) emits a lifecycle event: `intent_written` (about to execute), `committed` (success), `failed` (error), `policy_denied` (blocked by Prime), `deduplicated` (suppressed duplicate), `superseded` (stale intent), `no_journal_lease` (fail-closed safety)
+- **Strict metadata schema** — Each event carries 7 required keys (`autonomy_event_type`, `autonomy_schema_version`, `idempotency_key`, `trace_id`, `correlation_id`, `action`, `request_kind`). Malformed events are quarantined to disk, never silently coerced
+- **Token-bucket rate limiter** — Prevents replay storms during startup reconciliation (default: 50 events/second)
+- **Effectively-once semantics** — Deduplication by composite key `(idempotency_key, autonomy_event_type, trace_id)` with a 50K sliding window
+- **Centralized classification** — `AutonomyEventClassifier` is the single source of truth: only `committed` and `failed` are trainable; infrastructure events are excluded from training but retained for observability
+- **Boot contract validation** — Supervisor checks schema version compatibility across all three repos at startup. Any mismatch degrades to read-only autonomy mode (no autonomous writes)
+- **Prime as policy gate** — Body attaches `autonomy_policy` (allowed/denied actions, risk thresholds) to commands; Prime validates and returns structured `action_plan` with `policy_compatible` flag
+
 ### GCP Hybrid Cloud Spot Architecture
 
 <details>
@@ -562,10 +648,17 @@ flowchart TB
 <summary><b>Purpose, Problem, Challenge, Solution</b></summary>
 <br>
 
+<<<<<<< HEAD
 - **Purpose:** Govern all memory consumers (models, displays, agents) through a lease-based broker with typed pressure tiers and deterministic shedding policies.
 - **Problem:** On Apple Silicon's Unified Memory Architecture (UMA), CPU, GPU framebuffers, and ML models share the same 16GB pool. The GPU compositor is invisible to `psutil` process RSS, causing silent memory exhaustion and swap thrashing.
 - **Core Challenge:** Make every byte visible, governed, and pressure-responsive — including the ghost display's framebuffer (~32MB at 1080p) — without hardcoding thresholds or breaking under crash recovery.
 - **What This Solves:** Components request memory leases before consuming resources. The broker enforces budgets, triggers pressure-driven shedding, and recovers leaked leases after crashes. The display resolution adapts automatically to memory pressure rather than running at full resolution until the system swaps.
+=======
+- **Purpose:** Govern shared Apple Silicon UMA memory with explicit, lease-based control across model loads, display surfaces, and agent runtime.
+- **Problem:** GPU/compositor pressure is often invisible to process-level memory metrics, so systems can appear healthy while heading into swap thrash.
+- **Core Challenge:** Coordinate memory decisions across heterogeneous consumers while preventing flapping and preserving critical capabilities.
+- **What This Solves:** Introduces deterministic memory governance with pressure-aware lease grants, stepwise shedding, and crash-safe lease reconciliation.
+>>>>>>> 1dee070 (Refresh profile architecture docs and refine memory control plane presentation.)
 
 </details>
 
@@ -573,6 +666,7 @@ flowchart TB
 %%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a1b27', 'primaryTextColor': '#a9b1d6', 'primaryBorderColor': '#70a5fd', 'lineColor': '#545c7e', 'secondaryColor': '#24283b', 'tertiaryColor': '#1a1b27', 'fontSize': '13px', 'fontFamily': 'JetBrains Mono, monospace' }}}%%
 
 flowchart TB
+<<<<<<< HEAD
     subgraph MCP["🧠 Memory Control Plane"]
         direction TB
         QUANT["MemoryQuantizer<br/><i>psutil sampling · typed MemorySnapshot</i>"]
@@ -625,6 +719,68 @@ flowchart TB
 - **Calibrated UMA accounting** — Static compositor estimates are replaced over time by observed before/after memory deltas using exponential moving averages
 - **13 env-configurable knobs** — Dwell timers, rate limits, failure budgets, quarantine durations, scale/refresh factors — zero hardcoded magic numbers
 - **196 tests** (72 new for display integration) covering unit, behavioral, and integration scenarios
+=======
+    subgraph OBS["📊 UMA Observability"]
+        Q["MemoryQuantizer<br/><i>system + process sampling</i>"]
+        S["Frozen MemorySnapshot<br/><i>headroom, pressure tier, thrash state</i>"]
+        Q --> S
+    end
+
+    subgraph BROKER["🧠 MemoryBudgetBroker"]
+        B1["Lease Manager<br/><i>grant / deny / preempt</i>"]
+        B2["Budget Engine<br/><i>tier multipliers + safety reserve</i>"]
+        B3["Recovery Ledger<br/><i>epoch fencing + stale lease reclaim</i>"]
+    end
+
+    subgraph CONSUMERS["📦 Lease Holders"]
+        M["Model Loaders<br/><i>LLM, vision, speaker ID</i>"]
+        A["Agent Runtime<br/><i>mesh workers + queues</i>"]
+        D["Ghost Display<br/><i>display:ghost@v1</i>"]
+    end
+
+    subgraph CONTROL["🖥️ DisplayPressureController"]
+        C1["Policy State Machine<br/><i>one-step downgrade invariant</i>"]
+        C2["Shedding Ladder<br/><i>1080p -> 900p -> 720p -> 576p -> off</i>"]
+        C3["Flap Guards<br/><i>dwell, cooldown, rate limits</i>"]
+    end
+
+    S -->|"pressure tier + headroom"| B2
+    B2 --> B1
+    B3 --> B1
+    B1 -->|"lease outcomes"| M
+    B1 -->|"lease outcomes"| A
+    B1 -->|"lease outcomes"| D
+
+    B1 -->|"pressure signal"| C1
+    C1 --> C2
+    C2 -->|"resolution action"| D
+    C1 --> C3
+    C3 -->|"allow / delay"| C2
+
+    D -->|"amend_lease_bytes"| B1
+    B1 -->|"events + decisions"| T["Telemetry Pipeline"]
+    T -->|"drift + anomaly feedback"| Q
+
+    style OBS fill:#0d1117,stroke:#70a5fd,stroke-width:2px,color:#a9b1d6
+    style BROKER fill:#0d1117,stroke:#bf91f3,stroke-width:2px,color:#a9b1d6
+    style CONSUMERS fill:#0d1117,stroke:#bb9af7,stroke-width:2px,color:#a9b1d6
+    style CONTROL fill:#0d1117,stroke:#7dcfff,stroke-width:2px,color:#a9b1d6
+    style T fill:#24283b,stroke:#545c7e,stroke-width:1px,color:#a9b1d6
+```
+
+<details>
+<summary><b>Key design decisions</b></summary>
+<br>
+
+- **Lease-first memory policy** — Components must request memory leases before expensive allocations; brokered leases are the source of truth.
+- **Typed pressure tiers** — Budget aggressiveness changes by pressure tier to avoid hardcoded, brittle thresholds.
+- **Deterministic shedding** — Display degradation follows ordered one-step transitions, preventing abrupt multi-level drops.
+- **Flap prevention controls** — Dwell windows, cooldowns, and rate limits stop oscillation under noisy pressure signals.
+- **Crash-safe reconciliation** — Epoch fencing and stale lease recovery reclaim orphaned allocations after process failures.
+- **Closed-loop observability** — Broker and controller events feed telemetry so memory policy can be calibrated over time.
+
+</details>
+>>>>>>> 1dee070 (Refresh profile architecture docs and refine memory control plane presentation.)
 
 ### Safety & Governance Path
 
