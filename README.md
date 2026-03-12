@@ -769,6 +769,36 @@ JARVIS_SAGA_KEEP_FORENSICS_BRANCHES=true
 python3 unified_supervisor.py --force
 ```
 
+### Ouroboros: Honest Capability Assessment
+
+**What it does:**
+- Detects opportunities across all 3 repos (test failures, backlog, complexity, voice commands)
+- Calls J-Prime on GCP, receives a schema 2c.1 multi-repo patch
+- Applies with B+ saga safety — ephemeral branches, two-tier locks, ff-only promote gates, rollback
+- Narrates every decision in real time via voice + TUI
+- Commits and promotes across jarvis + prime + reactor without human touch
+
+**Where it stands vs. Claude Code:**
+
+| Capability | Claude Code | Ouroboros v262.0 |
+|---|---|---|
+| Read arbitrary files during an op | Full `Read` tool | Partial — TheOracle + context_expander (10 files max) |
+| Run bash commands | Yes | No |
+| Search the web | Yes | No |
+| Edit code iteratively with feedback | Multi-turn, sees results | One-shot patch + apply |
+| Test before committing | Runs tests, reads output, fixes | Applies first, verifies after |
+| Persistent strategic goal memory | Deep conversation context | Per-op intent only |
+
+**Core difference:** Claude Code is a full agentic loop with tool use — reads, runs, observes, revises, converges. Ouroboros is a code generation + automated apply pipeline. J-Prime generates a patch once; the B+ saga applies it. No iterative tool-use loop within an operation yet.
+
+**What would close the gap:**
+1. Tool use in the generation loop — J-Prime calls `read_file`, `run_command`, `run_tests` during generation
+2. Multi-turn op execution — generate → run → observe → revise → converge
+3. Persistent goal memory — accumulates your long-running intent across sessions into every op's context
+4. Sandboxed shell — Ouroboros verifies its own changes before committing
+
+**Bottom line:** Real, production-grade autonomous code delivery — not a demo. JARVIS will find work, generate patches via J-Prime, and commit across 3 repos without you touching anything. Not yet at Claude Code-level agentic tool use. That is the explicit next evolution.
+
 ### GCP Hybrid Cloud Spot Architecture
 
 <details>
