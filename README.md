@@ -54,7 +54,7 @@ For the past 12 months, I have been executing a solo build of **JARVIS** — a t
 
 <div align="center">
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=16&duration=2500&pause=800&color=39FF14&center=true&vCenter=true&repeat=true&width=700&height=30&lines=%F0%9F%9F%A2+JARVIS+v260+%E2%80%94+Neural+Mesh+self-healing+agent+topology;%F0%9F%9F%A2+Prime+%E2%80%94+Multi-model+inference+routing+with+circuit+breakers;%F0%9F%9F%A2+ReactorCore+%E2%80%94+LoRA+fine-tuning+pipeline+on+GCP+Spot+VMs;%F0%9F%9F%A2+Ghost+Display+%E2%80%94+Vision-first+autonomous+screen+control;%F0%9F%9F%A1+Ouroboros+%E2%80%94+Self-programming+loop+%28experimental%29)](https://github.com/drussell23)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=16&duration=2500&pause=800&color=39FF14&center=true&vCenter=true&repeat=true&width=700&height=30&lines=%F0%9F%9F%A2+JARVIS+v262+%E2%80%94+Ouroboros+B%2B+full+activation+%28self-developing+across+3+repos%29;%F0%9F%9F%A2+B%2B+sagas%3A+ephemeral+branches+%2B+ff-only+promote+%2B+two-tier+locks;%F0%9F%9F%A2+SagaMessageBus+passive+observer+%E2%80%94+lifecycle+events+across+all+repos;%F0%9F%9F%A2+Prime+%E2%80%94+GCP+golden+image+%7C+30s+cold+start+%7C+11+specialist+models;%F0%9F%9F%A2+ReactorCore+%E2%80%94+LoRA+fine-tuning+pipeline+on+GCP+Spot+VMs)](https://github.com/drussell23)
 
 </div>
 
@@ -224,7 +224,7 @@ Every component below is production code running in the JARVIS ecosystem — not
 | **Compression** | Zstd, LZ4, Gzip/Zlib, Custom Vision Compression | Rust + Python |
 | **Cryptography** | HMAC, SHA-256, MD5, JWT, Secure Password Hashing, File Integrity Checksums, Checkpoint Verification | All three repos |
 | **Caching** | LRU Eviction, TTL Eviction, Predictive Cache Warming (EWMA + time-series), LSH Semantic Cache, Bloom Filter Negative Cache, Memoization (lru_cache) | All three repos |
-| **Evolutionary** | Genetic Algorithm (Ouroboros self-programming loop) | JARVIS |
+| **Evolutionary** | Genetic Algorithm (Ouroboros self-programming loop — B+ branch-isolated sagas, v262.0 fully activated) | JARVIS |
 | **Concurrency** | Deadlock Prevention, CPU Affinity Pinning, Parallel DAG Initialization, Zero-Copy mmap IPC, Lock-Free Channels | JARVIS + Prime |
 | **GPU / SIMD** | Metal Compute Shaders, ARM64 NEON SIMD Intrinsics | JARVIS (Rust + C + Assembly) |
 | **C++ ML (mlforge)** | Linear Regression (Ridge/Lasso), Logistic Regression, Decision Tree (Gini), Neural Net (backprop), Matrix Serialization, KD-Tree, Graph (BFS/DFS), Trie | ReactorCore |
@@ -678,6 +678,97 @@ flowchart TD
 - **Boot contract validation** — Supervisor checks schema version compatibility across all three repos at startup. Any mismatch degrades to read-only autonomy mode (no autonomous writes)
 - **Prime as policy gate** — Body attaches `autonomy_policy` (allowed/denied actions, risk thresholds) to commands; Prime validates and returns structured `action_plan` with `policy_compatible` flag
 
+### Ouroboros — Autonomous Self-Development (v262.0 B+)
+
+<details>
+<summary><b>Purpose, Problem, Challenge, Solution</b></summary>
+<br>
+
+- **Purpose:** Enable JARVIS to autonomously detect, generate, validate, and apply code improvements across all three repos (JARVIS, JARVIS-Prime, Reactor-Core) in real time — without human intervention.
+- **Problem:** Cross-repo code applies without isolation are dangerous: partial failures leave repos in inconsistent states, no rollback exists, TARGET_MOVED (another commit landing mid-apply) goes undetected, and forensics branches are lost on failure.
+- **Core Challenge:** Production-grade saga apply safety across three independent git repos — ephemeral branch isolation, deterministic lock ordering, ff-only promote gates, and bounded passive observability — all without changing the external execution contract.
+- **What This Solves (v262.0 B+):** Full activation of the autonomous self-development loop with B+ branch-isolated sagas, passive SagaMessageBus observer, TestFailureSensor with real polling watcher, and all 4 P0 config blockers resolved. `JARVIS_SAGA_BRANCH_ISOLATION=true` + `JARVIS_GOVERNANCE_MODE=governed` = fully operational.
+
+</details>
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a1b27', 'primaryTextColor': '#a9b1d6', 'lineColor': '#545c7e', 'fontSize': '13px', 'fontFamily': 'JetBrains Mono, monospace' }}}%%
+
+flowchart TD
+    subgraph INTAKE["Zone 6.9 — Intake Layer (per repo × 3)"]
+        B["📋 BacklogSensor<br/><i>polls .jarvis/backlog.json · 30s</i>"]
+        T["🧪 TestFailureSensor + TestWatcher<br/><i>pytest subprocess · streak ≥ 2 · 300s</i>"]
+        M["⛏️ OpportunityMiner<br/><i>complexity ≥ 10 · 300s</i>"]
+        V["🎤 VoiceCommandSensor<br/><i>event-driven · always on</i>"]
+    end
+
+    subgraph GLS["Zone 6.8 — Governed Loop Service"]
+        Q["📥 UnifiedIntakeRouter<br/><i>dedup · priority · human-ack</i>"]
+        FSM["🔄 PreemptionFsmEngine<br/><i>IDLE→ACTIVE→PAUSED→TERMINAL</i>"]
+        ORCH["🎯 Orchestrator<br/><i>CLASSIFY→ROUTE→EXPAND→GENERATE→VALIDATE→GATE→APPLY→VERIFY→COMPLETE</i>"]
+        BUS["📡 SagaMessageBus<br/><i>passive observer · max 500 msgs · TTL 300s</i>"]
+    end
+
+    subgraph SAGA["B+ Saga Apply (branch_isolation=True)"]
+        PRE["1. Preflight: assert clean worktree"]
+        BR["2. Create ouroboros/saga-&lt;op_id&gt;/&lt;repo&gt;"]
+        AP["3. Apply patch + git commit"]
+        LOCK["Two-Tier Lock:<br/>asyncio.Lock + fcntl.flock<br/><i>sorted order: jarvis → prime → reactor</i>"]
+        PROM["4. promote_all()<br/><i>check_promote_safe → git merge --ff-only</i>"]
+        COMP["5. On failure: _bplus_compensate_all()<br/><i>restore original_ref · keep forensics branch</i>"]
+    end
+
+    subgraph JPRIME["GCP J-Prime (Golden Image · 136.113.252.164:8000)"]
+        GEN["🧠 Code Generation<br/><i>schema 2c.1 · multi-repo patches</i>"]
+        NOOP["⚡ Noop Fast-Path<br/><i>2b.1-noop → GENERATE→COMPLETE</i>"]
+    end
+
+    B & T & M & V --> Q
+    Q --> FSM --> ORCH
+    ORCH -->|"GENERATE"| JPRIME
+    GEN & NOOP --> ORCH
+    ORCH -->|"APPLY"| PRE
+    PRE --> LOCK --> BR --> AP
+    AP -->|"success"| PROM
+    AP -->|"failure"| COMP
+    PROM -->|"SAGA_SUCCEEDED"| BUS
+    PROM -->|"TARGET_MOVED"| BUS
+    PROM -->|"SAGA_PARTIAL_PROMOTE"| BUS
+    COMP -->|"SAGA_ROLLED_BACK"| BUS
+    ORCH -->|"VERIFY fail"| BUS
+
+    style INTAKE fill:#0d1117,stroke:#70a5fd,stroke-width:2px,color:#a9b1d6
+    style GLS fill:#0d1117,stroke:#bf91f3,stroke-width:2px,color:#a9b1d6
+    style SAGA fill:#0d1117,stroke:#9ece6a,stroke-width:2px,color:#a9b1d6
+    style JPRIME fill:#0d1117,stroke:#e0af68,stroke-width:2px,color:#a9b1d6
+    style BUS fill:#1a1b27,stroke:#7dcfff,stroke-width:2px,color:#7dcfff
+    style LOCK fill:#1a1b27,stroke:#f7768e,stroke-width:2px,color:#f7768e
+```
+
+**How it works:**
+
+- **Zone 6.9 sensors fan out per repo** — Each of the three repos (JARVIS, JARVIS-Prime, Reactor-Core) gets its own `BacklogSensor`, `TestFailureSensor` (with real `TestWatcher` subprocess poller), and `OpportunityMinerSensor`. `VoiceCommandSensor` is always-on and event-driven.
+- **TestWatcher polls continuously** — Runs `pytest` in a subprocess every 300s per repo. Emits a stable `intent:test_failure` envelope only after `streak ≥ 2` consecutive failures — preventing false alarms from transient flakes.
+- **B+ branch isolation** — Every apply creates an ephemeral branch `ouroboros/saga-<op_id>/<repo>`. Patches are committed there. Promote uses `git merge --ff-only` — if the target moved (TARGET_MOVED), the gate fails and the saga compensates cleanly.
+- **Two-tier locking** — `asyncio.Lock` (in-process) + `fcntl.flock` (cross-process) acquired in sorted repo name order (`jarvis → prime → reactor-core`) — deterministic, deadlock-free across concurrent ops.
+- **SAGA_PARTIAL_PROMOTE** — If promotion succeeds for some repos but fails for others, the new `SAGA_PARTIAL_PROMOTE` terminal state triggers a scoped pause (`cross_repo_saga` scope) until the operator reviews the partial state.
+- **SagaMessageBus** — A passive, fault-isolated observer (zero execution authority) records 8 event types: `SAGA_CREATED`, `SAGA_ADVANCED`, `SAGA_COMPLETED`, `SAGA_FAILED`, `SAGA_ROLLED_BACK`, `SAGA_PARTIAL_PROMOTE`, `TARGET_MOVED`, `ANCESTRY_VIOLATION`. Fire-and-forget — a broken bus never blocks an apply.
+- **SagaLedgerArtifact** — A 15-field frozen dataclass records every saga op: original_ref, saga_branch, promoted_sha, rollback_reason, kept_forensics_branches, and timestamp_ns. Full audit trail in the durable ledger.
+- **J-Prime generates patches** — GCP golden image at `136.113.252.164:8000` generates schema 2c.1 multi-repo patches. Noop fast-path (`2b.1-noop`) skips directly to `COMPLETE` if the change is already present.
+- **Voice narration** — `VoiceNarrator` announces intent, decision, and postmortem at each significant phase. `OUROBOROS_VOICE_DEBOUNCE_S` prevents over-narration (default 60s).
+
+**Activation (v262.0 — all green):**
+
+```bash
+# .env (required for full autonomous operation)
+JARVIS_GOVERNANCE_MODE=governed
+JARVIS_SAGA_BRANCH_ISOLATION=true
+JARVIS_SAGA_KEEP_FORENSICS_BRANCHES=true
+
+# Start
+python3 unified_supervisor.py --force
+```
+
 ### GCP Hybrid Cloud Spot Architecture
 
 <details>
@@ -1096,7 +1187,7 @@ Native C++ Training Kernels
 - **Proactive intelligence** — predictive suggestions, proactive vision monitoring, proactive communication, emotional intelligence module
 - **RAG pipeline** — ChromaDB vector store, FAISS similarity search, embedding service, long-term memory system
 - **Chain-of-thought / reasoning graph engine** — LangGraph-based multi-step reasoning with conditional routing and reflection loops
-- **Ouroboros** — self-programming engine for autonomous codebase analysis and improvement
+- **Ouroboros (v262.0 B+ — fully activated)** — autonomous self-development across JARVIS, JARVIS-Prime, and Reactor-Core: B+ branch-isolated saga applies (ephemeral branches, two-tier locks, ff-only promote gates, rollback-via-branch-delete), SagaMessageBus passive observer, TestFailureSensor with real TestWatcher per repo, GCP J-Prime code generation (schema 2c.1), voice narration at every decision phase
 - **Web research service** — autonomous web search and information synthesis
 - **A/B testing framework** — vision pipeline experimentation
 - **Repository intelligence** — code ownership analysis, dependency analyzer, API contract analyzer, AST transformer, cross-repo refactoring engine
