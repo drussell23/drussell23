@@ -678,16 +678,16 @@ flowchart TD
 - **Boot contract validation** — Supervisor checks schema version compatibility across all three repos at startup. Any mismatch degrades to read-only autonomy mode (no autonomous writes)
 - **Prime as policy gate** — Body attaches `autonomy_policy` (allowed/denied actions, risk thresholds) to commands; Prime validates and returns structured `action_plan` with `policy_compatible` flag
 
-### Ouroboros — Autonomous Self-Development (v262.0 B+)
+### Ouroboros — Autonomous Self-Development (v262.0 B+ → Event Spine)
 
 <details>
 <summary><b>Purpose, Problem, Challenge, Solution</b></summary>
 <br>
 
 - **Purpose:** Enable JARVIS to autonomously detect, generate, validate, and apply code improvements across all three repos (JARVIS, JARVIS-Prime, Reactor-Core) in real time — without human intervention.
-- **Problem:** Cross-repo code applies without isolation are dangerous: partial failures leave repos in inconsistent states, no rollback exists, TARGET_MOVED (another commit landing mid-apply) goes undetected, and forensics branches are lost on failure.
-- **Core Challenge:** Production-grade saga apply safety across three independent git repos — ephemeral branch isolation, deterministic lock ordering, ff-only promote gates, and bounded passive observability — all without changing the external execution contract.
-- **What This Solves (v262.0 B+):** Full activation of the autonomous self-development loop with B+ branch-isolated sagas, passive SagaMessageBus observer, TestFailureSensor with real polling watcher, and all 4 P0 config blockers resolved. `JARVIS_SAGA_BRANCH_ISOLATION=true` + `JARVIS_GOVERNANCE_MODE=governed` = fully operational.
+- **Problem:** Cross-repo code applies without isolation are dangerous: partial failures leave repos in inconsistent states, no rollback exists, TARGET_MOVED (another commit landing mid-apply) goes undetected, and forensics branches are lost on failure. Polling-based sensors waste 5+ minutes before detecting work. Single-provider failures permanently kill the pipeline.
+- **Core Challenge:** Production-grade saga apply safety across three independent git repos, sub-second event-driven intake, adaptive cost-optimized provider routing with predictive recovery, and real API cost tracking — all without changing the external execution contract.
+- **What This Solves:** Full activation of the autonomous self-development loop with B+ branch-isolated sagas, a **Unified Event Spine** (FileWatchGuard + TrinityEventBus → sensors react in <1s), **adaptive provider routing** (DoubleWord 397B first at $0.10/$0.40/M, Claude fallback at $3/$15/M with failure-mode-aware exponential backoff), **battle test runner** with real API cost tracking, and **self-healing** (QUEUE_ONLY auto-recovery, poisoned connector detection, transient failure resilience).
 
 </details>
 
@@ -695,10 +695,20 @@ flowchart TD
 %%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a1b27', 'primaryTextColor': '#a9b1d6', 'lineColor': '#545c7e', 'fontSize': '13px', 'fontFamily': 'JetBrains Mono, monospace' }}}%%
 
 flowchart TD
-    subgraph INTAKE["Zone 6.9 — Intake Layer (per repo × 3)"]
-        B["📋 BacklogSensor<br/><i>polls .jarvis/backlog.json · 30s</i>"]
-        T["🧪 TestFailureSensor + TestWatcher<br/><i>pytest subprocess · streak ≥ 2 · 300s</i>"]
-        M["⛏️ OpportunityMiner<br/><i>complexity ≥ 10 · 300s</i>"]
+    subgraph SPINE["Unified Event Spine (TrinityEventBus)"]
+        FW["👁️ FileWatchGuard<br/><i>watchdog · repo root · debounce 0.3s</i>"]
+        PYTEST["🧪 ouroboros_pytest_plugin<br/><i>.jarvis/test_results.json</i>"]
+        GITHOOK["🔗 post-commit hook<br/><i>.jarvis/git_events.json</i>"]
+        BRIDGES["🔌 Bus Bridges<br/><i>GapSignalBus · EventEmitter · EventChannel</i>"]
+        TEB["📡 TrinityEventBus<br/><i>MQTT wildcards · priority queues · WAL · dedup</i>"]
+        FW & PYTEST & GITHOOK & BRIDGES --> TEB
+    end
+
+    subgraph INTAKE["Zone 6.9 — Event-Driven Intake (sub-second)"]
+        B["📋 BacklogSensor<br/><i>fs.changed → backlog.json · instant</i>"]
+        T["🧪 TestFailureSensor<br/><i>fs.changed → test_results.json · streak ≥ 2</i>"]
+        M["⛏️ OpportunityMiner<br/><i>fs.changed → scan_file() · instant</i>"]
+        TODO["📝 TodoScanner<br/><i>fs.changed → scan_file() · instant</i>"]
         V["🎤 VoiceCommandSensor<br/><i>event-driven · always on</i>"]
     end
 
@@ -709,95 +719,103 @@ flowchart TD
         BUS["📡 SagaMessageBus<br/><i>passive observer · max 500 msgs · TTL 300s</i>"]
     end
 
-    subgraph SAGA["B+ Saga Apply (branch_isolation=True)"]
-        PRE["1. Preflight: assert clean worktree"]
-        BR["2. Create ouroboros/saga-&lt;op_id&gt;/&lt;repo&gt;"]
-        AP["3. Apply patch + git commit"]
-        LOCK["Two-Tier Lock:<br/>asyncio.Lock + fcntl.flock<br/><i>sorted order: jarvis → prime → reactor</i>"]
-        PROM["4. promote_all()<br/><i>check_promote_safe → git merge --ff-only</i>"]
-        COMP["5. On failure: _bplus_compensate_all()<br/><i>restore original_ref · keep forensics branch</i>"]
+    subgraph ROUTING["Adaptive 3-Tier Provider Cascade"]
+        DW["🔵 Tier 0: DoubleWord 397B<br/><i>$0.10/$0.40/M · batch API · RateLimitService</i>"]
+        CL["🟡 Tier 1: Claude Sonnet<br/><i>$3/$15/M · fallback only during DW downtime</i>"]
+        FBACK["🔄 FailbackFSM<br/><i>FailureMode classify · recovery ETA · adaptive probes</i>"]
+        DW -->|"timeout/429/5xx"| FBACK
+        FBACK -->|"recovery window elapsed"| DW
+        FBACK -->|"still in backoff"| CL
     end
 
-    subgraph JPRIME["GCP J-Prime (Golden Image · 136.113.252.164:8000)"]
-        GEN["🧠 Code Generation<br/><i>schema 2c.1 · multi-repo patches</i>"]
-        NOOP["⚡ Noop Fast-Path<br/><i>2b.1-noop → GENERATE→COMPLETE</i>"]
+    subgraph SAGA["B+ Saga Apply"]
+        PRE["1. Preflight: clean worktree"]
+        BR["2. Create ephemeral branch"]
+        AP["3. Apply patch + commit"]
+        LOCK["Two-Tier Lock<br/><i>asyncio.Lock + fcntl.flock</i>"]
+        PROM["4. promote_all()<br/><i>git merge --ff-only</i>"]
     end
 
-    B & T & M & V --> Q
+    TEB --> B & T & M & TODO & V
+    B & T & M & TODO & V --> Q
     Q --> FSM --> ORCH
-    ORCH -->|"GENERATE"| JPRIME
-    GEN & NOOP --> ORCH
+    ORCH -->|"GENERATE"| ROUTING
+    DW & CL --> ORCH
     ORCH -->|"APPLY"| PRE
-    PRE --> LOCK --> BR --> AP
-    AP -->|"success"| PROM
-    AP -->|"failure"| COMP
+    PRE --> LOCK --> BR --> AP --> PROM
     PROM -->|"SAGA_SUCCEEDED"| BUS
-    PROM -->|"TARGET_MOVED"| BUS
-    PROM -->|"SAGA_PARTIAL_PROMOTE"| BUS
-    COMP -->|"SAGA_ROLLED_BACK"| BUS
-    ORCH -->|"VERIFY fail"| BUS
 
+    style SPINE fill:#0d1117,stroke:#7dcfff,stroke-width:2px,color:#a9b1d6
     style INTAKE fill:#0d1117,stroke:#70a5fd,stroke-width:2px,color:#a9b1d6
     style GLS fill:#0d1117,stroke:#bf91f3,stroke-width:2px,color:#a9b1d6
+    style ROUTING fill:#0d1117,stroke:#e0af68,stroke-width:2px,color:#a9b1d6
     style SAGA fill:#0d1117,stroke:#9ece6a,stroke-width:2px,color:#a9b1d6
-    style JPRIME fill:#0d1117,stroke:#e0af68,stroke-width:2px,color:#a9b1d6
-    style BUS fill:#1a1b27,stroke:#7dcfff,stroke-width:2px,color:#7dcfff
+    style TEB fill:#1a1b27,stroke:#7dcfff,stroke-width:2px,color:#7dcfff
+    style FBACK fill:#1a1b27,stroke:#f7768e,stroke-width:2px,color:#f7768e
     style LOCK fill:#1a1b27,stroke:#f7768e,stroke-width:2px,color:#f7768e
 ```
 
 **How it works:**
 
-- **Zone 6.9 sensors fan out per repo** — Each of the three repos (JARVIS, JARVIS-Prime, Reactor-Core) gets its own `BacklogSensor`, `TestFailureSensor` (with real `TestWatcher` subprocess poller), and `OpportunityMinerSensor`. `VoiceCommandSensor` is always-on and event-driven.
-- **TestWatcher polls continuously** — Runs `pytest` in a subprocess every 300s per repo. Emits a stable `intent:test_failure` envelope only after `streak ≥ 2` consecutive failures — preventing false alarms from transient flakes.
-- **B+ branch isolation** — Every apply creates an ephemeral branch `ouroboros/saga-<op_id>/<repo>`. Patches are committed there. Promote uses `git merge --ff-only` — if the target moved (TARGET_MOVED), the gate fails and the saga compensates cleanly.
-- **Two-tier locking** — `asyncio.Lock` (in-process) + `fcntl.flock` (cross-process) acquired in sorted repo name order (`jarvis → prime → reactor-core`) — deterministic, deadlock-free across concurrent ops.
-- **SAGA_PARTIAL_PROMOTE** — If promotion succeeds for some repos but fails for others, the new `SAGA_PARTIAL_PROMOTE` terminal state triggers a scoped pause (`cross_repo_saga` scope) until the operator reviews the partial state.
-- **SagaMessageBus** — A passive, fault-isolated observer (zero execution authority) records 8 event types: `SAGA_CREATED`, `SAGA_ADVANCED`, `SAGA_COMPLETED`, `SAGA_FAILED`, `SAGA_ROLLED_BACK`, `SAGA_PARTIAL_PROMOTE`, `TARGET_MOVED`, `ANCESTRY_VIOLATION`. Fire-and-forget — a broken bus never blocks an apply.
-- **SagaLedgerArtifact** — A 15-field frozen dataclass records every saga op: original_ref, saga_branch, promoted_sha, rollback_reason, kept_forensics_branches, and timestamp_ns. Full audit trail in the durable ledger.
-- **J-Prime generates patches** — GCP golden image at `136.113.252.164:8000` generates schema 2c.1 multi-repo patches. Noop fast-path (`2b.1-noop`) skips directly to `COMPLETE` if the change is already present.
-- **Voice narration** — `VoiceNarrator` announces intent, decision, and postmortem at each significant phase. `OUROBOROS_VOICE_DEBOUNCE_S` prevents over-narration (default 60s).
+- **Unified Event Spine** — A `FileWatchGuard` (watchdog) watches the repo root. On any `.py`/`.json` change, it publishes `fs.changed.*` events to `TrinityEventBus` (MQTT-style topics, priority queues, WAL persistence, cross-repo transport). Three adapter bridges forward events from `GapSignalBus`, `EventEmitter`, and `EventChannelServer` into the unified spine — **0 of 123 importing files changed**.
+- **Sub-second sensor reactions** — Sensors subscribe to `TrinityEventBus` instead of polling. `BacklogSensor` reacts to `backlog.json` changes instantly. `TodoScannerSensor` and `OpportunityMinerSensor` do **incremental single-file scans** on changed files. `TestFailureSensor` consumes structured results from a pytest plugin (`.jarvis/test_results.json`) — no subprocess spawning, no regex parsing. A `post-commit` git hook writes `.jarvis/git_events.json` for `DocStalenessSensor` and `CrossRepoDriftSensor`.
+- **Adaptive 3-tier provider routing** — DoubleWord 397B (Tier 0, $0.10/$0.40/M) is always tried first. When it fails, the `FailbackStateMachine` classifies the failure mode (`RATE_LIMITED`=15s backoff, `TIMEOUT`=45s, `SERVER_ERROR`=60s, `CONNECTION_ERROR`=120s) and predicts recovery via exponential backoff. Claude Sonnet (Tier 1, $3/$15/M) is used only during predicted downtime. The system eagerly returns to DoubleWord when recovery is likely — **30-37x cost savings**.
+- **Deadline budget allocation** — The generation deadline is split deterministically: Tier 0 gets 50% (max 90s), Tier 1 gets a guaranteed 45s reserve. Within Tier 1, the primary gets 65%, fallback gets a guaranteed 20s minimum. No single tier can starve downstream fallbacks.
+- **Self-healing** — Transient failures (timeout, rate limit) stay in `FALLBACK_ACTIVE` instead of permanently killing the pipeline. `QUEUE_ONLY` auto-recovers when a health probe succeeds. Poisoned aiohttp connectors are detected and replaced automatically. Background poll tasks are capped at 3 concurrent.
+- **Battle Test Runner** — `scripts/ouroboros_battle_test.py` boots the full stack as a headless daemon. `CostTracker` monitors real API spend every 5s and stops the session at `--cost-cap`. The pytest plugin, event spine, and adaptive routing work together end-to-end.
+- **B+ branch isolation** — Every apply creates an ephemeral branch `ouroboros/saga-<op_id>/<repo>`. Promote uses `git merge --ff-only` — if TARGET_MOVED, the saga compensates cleanly.
+- **Two-tier locking** — `asyncio.Lock` (in-process) + `fcntl.flock` (cross-process) in sorted repo order — deterministic, deadlock-free.
+- **Voice narration** — `VoiceNarrator` announces intent, decision, and postmortem at each phase.
 
-**Activation (v262.0 — all green):**
+**Activation:**
 
 ```bash
 # .env (required for full autonomous operation)
 JARVIS_GOVERNANCE_MODE=governed
 JARVIS_SAGA_BRANCH_ISOLATION=true
 JARVIS_SAGA_KEEP_FORENSICS_BRANCHES=true
+DOUBLEWORD_API_KEY=sk-...           # Tier 0: DoubleWord 397B ($0.10/$0.40/M)
+ANTHROPIC_API_KEY=sk-ant-...        # Tier 1: Claude Sonnet ($3/$15/M)
 
-# Start
+# Full supervisor
 python3 unified_supervisor.py --force
+
+# Or headless battle test (autonomous session with cost cap)
+python3 scripts/ouroboros_battle_test.py --cost-cap 0.50 --idle-timeout 600 -v
 ```
 
 ### Ouroboros: Honest Capability Assessment
 
 **What it does:**
-- Detects opportunities across all 3 repos (test failures, backlog, complexity, voice commands)
-- Calls J-Prime on GCP, receives a schema 2c.1 multi-repo patch
+- Detects opportunities in **sub-second time** via event-driven sensors (file watcher + pytest plugin + git hooks)
+- Routes to the **cheapest available provider** (DoubleWord 397B at 30-37x cheaper than Claude) with automatic failover
 - Applies with B+ saga safety — ephemeral branches, two-tier locks, ff-only promote gates, rollback
+- Tracks **real API cost** and stops automatically at budget cap
+- Self-heals from provider failures, connector poisoning, and transient errors
 - Narrates every decision in real time via voice + TUI
-- Commits and promotes across jarvis + prime + reactor without human touch
 
 **Where it stands vs. Claude Code:**
 
-| Capability | Claude Code | Ouroboros v262.0 |
+| Capability | Claude Code | Ouroboros (current) |
 |---|---|---|
-| Read arbitrary files during an op | Full `Read` tool | Partial — TheOracle + context_expander (10 files max) |
-| Run bash commands | Yes | No |
-| Search the web | Yes | No |
-| Edit code iteratively with feedback | Multi-turn, sees results | One-shot patch + apply |
-| Test before committing | Runs tests, reads output, fixes | Applies first, verifies after |
+| Read arbitrary files during an op | Full `Read` tool | TheOracle GraphRAG + context_expander (10 files max) |
+| Run bash commands | Yes | No (sandboxed validation only) |
+| Detect work to do | Manual user request | Automatic: 15+ sensors, event-driven (<1s), test failures, TODOs, complexity |
+| Provider cost optimization | Single provider | 3-tier cascade: DW $0.10/M → Claude $3/M → GCP (adaptive failover + recovery prediction) |
+| Self-healing on failure | Retries in conversation | FailureMode classification, exponential backoff, QUEUE_ONLY auto-recovery, connector resilience |
+| Cost tracking | Per-conversation | Real-time per-provider tracking, session budget cap, per-op + daily limits |
+| Edit code iteratively | Multi-turn, sees results | One-shot patch + apply (L2 repair engine available but off by default) |
 | Persistent strategic goal memory | Deep conversation context | Per-op intent only |
 
-**Core difference:** Claude Code is a full agentic loop with tool use — reads, runs, observes, revises, converges. Ouroboros is a code generation + automated apply pipeline. J-Prime generates a patch once; the B+ saga applies it. No iterative tool-use loop within an operation yet.
+**Core difference:** Claude Code is a full agentic loop with tool use. Ouroboros is an **autonomous pipeline** — it finds its own work, routes to the cheapest provider, applies with saga safety, and self-heals from failures. No human in the loop for SAFE_AUTO operations.
 
 **What would close the gap:**
-1. Tool use in the generation loop — J-Prime calls `read_file`, `run_command`, `run_tests` during generation
+1. Tool use in the generation loop — provider calls `read_file`, `run_command` during generation
 2. Multi-turn op execution — generate → run → observe → revise → converge
-3. Persistent goal memory — accumulates your long-running intent across sessions into every op's context
-4. Sandboxed shell — Ouroboros verifies its own changes before committing
+3. Persistent goal memory across sessions
+4. Enable L2 repair engine by default (iterative test → fix loop)
 
-**Bottom line:** Real, production-grade autonomous code delivery — not a demo. JARVIS will find work, generate patches via J-Prime, and commit across 3 repos without you touching anything. Not yet at Claude Code-level agentic tool use. That is the explicit next evolution.
+**Bottom line:** Real, production-grade autonomous code delivery with cost-optimized provider routing and event-driven intake. The organism finds work, generates patches, and commits across 3 repos — all while minimizing API spend and self-healing from failures.
 
 ### GCP Hybrid Cloud Spot Architecture
 
@@ -1217,7 +1235,7 @@ Native C++ Training Kernels
 - **Proactive intelligence** — predictive suggestions, proactive vision monitoring, proactive communication, emotional intelligence module
 - **RAG pipeline** — ChromaDB vector store, FAISS similarity search, embedding service, long-term memory system
 - **Chain-of-thought / reasoning graph engine** — LangGraph-based multi-step reasoning with conditional routing and reflection loops
-- **Ouroboros (v262.0 B+ — fully activated)** — autonomous self-development across JARVIS, JARVIS-Prime, and Reactor-Core: B+ branch-isolated saga applies (ephemeral branches, two-tier locks, ff-only promote gates, rollback-via-branch-delete), SagaMessageBus passive observer, TestFailureSensor with real TestWatcher per repo, GCP J-Prime code generation (schema 2c.1), voice narration at every decision phase
+- **Ouroboros (Event Spine + Adaptive Routing)** — autonomous self-development across JARVIS, JARVIS-Prime, and Reactor-Core: Unified Event Spine (FileWatchGuard + TrinityEventBus + pytest plugin + git hooks → sub-second sensor reactions), adaptive 3-tier provider cascade (DoubleWord 397B $0.10/M → Claude $3/M → GCP, with failure-mode classification + exponential backoff recovery prediction), QUEUE_ONLY auto-recovery, real API cost tracking, B+ saga applies (ephemeral branches, two-tier locks, ff-only promote), battle test runner with $0.50 cost cap
 - **Web research service** — autonomous web search and information synthesis
 - **A/B testing framework** — vision pipeline experimentation
 - **Repository intelligence** — code ownership analysis, dependency analyzer, API contract analyzer, AST transformer, cross-repo refactoring engine
