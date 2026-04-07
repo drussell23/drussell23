@@ -678,7 +678,7 @@ flowchart TD
 - **Boot contract validation** — Supervisor checks schema version compatibility across all three repos at startup. Any mismatch degrades to read-only autonomy mode (no autonomous writes)
 - **Prime as policy gate** — Body attaches `autonomy_policy` (allowed/denied actions, risk thresholds) to commands; Prime validates and returns structured `action_plan` with `policy_compatible` flag
 
-### Ouroboros — Autonomous Self-Development (v262.0 B+ → Event Spine)
+### Ouroboros + Venom + Trinity Consciousness — Autonomous Self-Development
 
 <details>
 <summary><b>Purpose, Problem, Challenge, Solution</b></summary>
@@ -761,11 +761,28 @@ flowchart TD
 - **Sub-second sensor reactions** — Sensors subscribe to `TrinityEventBus` instead of polling. `BacklogSensor` reacts to `backlog.json` changes instantly. `TodoScannerSensor` and `OpportunityMinerSensor` do **incremental single-file scans** on changed files. `TestFailureSensor` consumes structured results from a pytest plugin (`.jarvis/test_results.json`) — no subprocess spawning, no regex parsing. A `post-commit` git hook writes `.jarvis/git_events.json` for `DocStalenessSensor` and `CrossRepoDriftSensor`.
 - **Adaptive 3-tier provider routing** — DoubleWord 397B (Tier 0, $0.10/$0.40/M) is always tried first. When it fails, the `FailbackStateMachine` classifies the failure mode (`RATE_LIMITED`=15s backoff, `TIMEOUT`=45s, `SERVER_ERROR`=60s, `CONNECTION_ERROR`=120s) and predicts recovery via exponential backoff. Claude Sonnet (Tier 1, $3/$15/M) is used only during predicted downtime. The system eagerly returns to DoubleWord when recovery is likely — **30-37x cost savings**.
 - **Deadline budget allocation** — The generation deadline is split deterministically: Tier 0 gets 50% (max 90s), Tier 1 gets a guaranteed 45s reserve. Within Tier 1, the primary gets 65%, fallback gets a guaranteed 20s minimum. No single tier can starve downstream fallbacks.
-- **Self-healing** — Transient failures (timeout, rate limit) stay in `FALLBACK_ACTIVE` instead of permanently killing the pipeline. `QUEUE_ONLY` auto-recovers when a health probe succeeds. Poisoned aiohttp connectors are detected and replaced automatically. Background poll tasks are capped at 3 concurrent.
-- **Battle Test Runner** — `scripts/ouroboros_battle_test.py` boots the full stack as a headless daemon. `CostTracker` monitors real API spend every 5s and stops the session at `--cost-cap`. The pytest plugin, event spine, and adaptive routing work together end-to-end.
-- **B+ branch isolation** — Every apply creates an ephemeral branch `ouroboros/saga-<op_id>/<repo>`. Promote uses `git merge --ff-only` — if TARGET_MOVED, the saga compensates cleanly.
-- **Two-tier locking** — `asyncio.Lock` (in-process) + `fcntl.flock` (cross-process) in sorted repo order — deterministic, deadlock-free.
-- **Voice narration** — `VoiceNarrator` announces intent, decision, and postmortem at each phase.
+- **Venom: Agentic Execution Layer** — Named after the Marvel symbiote. The `ToolLoopCoordinator` transforms Ouroboros from a one-shot patch generator into a **multi-turn agentic loop**. During generation, the provider calls `read_file`, `search_code`, `run_tests`, and `get_callers` — reading the codebase, running tests, and revising across multiple turns (up to 5 rounds). `GoverningToolPolicy` enforces repo containment on every tool call. When L1 validation fails, the **L2 Repair Engine** takes over: `generate → test → classify failure → revise` (up to 5 iterations, 120s timebox, failure-class-aware retry budgets).
+- **Trinity Consciousness: Metacognition** — Zone 6.11: the **soul** of the organism. 4 core engines (HealthCortex, MemoryEngine, DreamEngine, ProphecyEngine) + 3 fusion engines (CAI Contextual Awareness, SAI Situational Awareness, UAE Unified Awareness). **MemoryEngine** records every operation outcome and builds per-file reputation (success rate, fragility score, co-failure tracking, 168h TTL). **ProphecyEngine** predicts regression risk from historical patterns. **ConsciousnessBridge** injects intelligence into the pipeline: regression assessment at CLASSIFY, fragile file context at GENERATE RETRY, outcome recording at POST-APPLY. The organism **learns from its own history** across sessions.
+- **Self-healing** — Transient failures stay in `FALLBACK_ACTIVE`. `QUEUE_ONLY` auto-recovers on probe success. Poisoned connectors detected and replaced. Background polls capped at 3 concurrent.
+- **Battle Test Runner** — Boots the full stack: Consciousness + Venom + Event Spine + Adaptive Routing. `CostTracker` monitors real API spend every 5s. Session stops at `--cost-cap`.
+- **B+ branch isolation** — Ephemeral branches per saga, `git merge --ff-only` promote, two-tier locking (asyncio + fcntl), deterministic deadlock-free.
+
+**The complete organism loop:**
+
+```
+Trinity Consciousness (soul — WHY evolve?)
+    │  MemoryEngine: "this file fails 60% of the time"
+    │  ProphecyEngine: "HIGH regression risk"
+    ▼
+Ouroboros Pipeline (skeleton — WHAT to do, safely)
+    │  CLASSIFY → ROUTE → EXPAND → GENERATE → VALIDATE → APPLY
+    ▼
+Venom Agentic Loop (nervous system — HOW to do it)
+    │  read_file → search_code → run_tests → revise → converge
+    │  L2 Repair: generate → test → classify → fix → test again
+    ▼
+Code Applied → Consciousness records outcome → learns for next time
+```
 
 **Activation:**
 
@@ -773,9 +790,12 @@ flowchart TD
 # .env (required for full autonomous operation)
 JARVIS_GOVERNANCE_MODE=governed
 JARVIS_SAGA_BRANCH_ISOLATION=true
-JARVIS_SAGA_KEEP_FORENSICS_BRANCHES=true
-DOUBLEWORD_API_KEY=sk-...           # Tier 0: DoubleWord 397B ($0.10/$0.40/M)
-ANTHROPIC_API_KEY=sk-ant-...        # Tier 1: Claude Sonnet ($3/$15/M)
+DOUBLEWORD_API_KEY=sk-...                  # Tier 0: DoubleWord 397B ($0.10/$0.40/M)
+ANTHROPIC_API_KEY=sk-ant-...               # Tier 1: Claude Sonnet ($3/$15/M)
+JARVIS_GOVERNED_TOOL_USE_ENABLED=true      # Venom: agentic tool loop
+JARVIS_TOOL_RUN_TESTS_ALLOWED=true         # Venom: run pytest during generation
+JARVIS_L2_ENABLED=true                     # L2: iterative self-repair
+JARVIS_CONSCIOUSNESS_ENABLED=true          # Trinity Consciousness: metacognition
 
 # Full supervisor
 python3 unified_supervisor.py --force
@@ -784,38 +804,48 @@ python3 unified_supervisor.py --force
 python3 scripts/ouroboros_battle_test.py --cost-cap 0.50 --idle-timeout 600 -v
 ```
 
-### Ouroboros: Honest Capability Assessment
+### Ouroboros + Venom + Consciousness: Capability Assessment
 
 **What it does:**
 - Detects opportunities in **sub-second time** via event-driven sensors (file watcher + pytest plugin + git hooks)
-- Routes to the **cheapest available provider** (DoubleWord 397B at 30-37x cheaper than Claude) with automatic failover
-- Applies with B+ saga safety — ephemeral branches, two-tier locks, ff-only promote gates, rollback
+- **Reads code, runs tests, and revises** across multiple turns via Venom's ToolLoopCoordinator (5 tools, policy-gated)
+- **Iteratively converges** on fixes via L2 Repair Engine (generate → test → classify → revise, up to 5 iterations)
+- **Predicts regression risk** from historical outcomes via Trinity Consciousness (MemoryEngine + ProphecyEngine)
+- Routes to the **cheapest available provider** (DoubleWord 397B at 30-37x cheaper than Claude) with adaptive failover
+- **Learns across sessions** — MemoryEngine records every outcome, builds per-file reputation, feeds into next operation
+- Applies with B+ saga safety — ephemeral branches, two-tier locks, ff-only promote gates
 - Tracks **real API cost** and stops automatically at budget cap
 - Self-heals from provider failures, connector poisoning, and transient errors
-- Narrates every decision in real time via voice + TUI
 
 **Where it stands vs. Claude Code:**
 
-| Capability | Claude Code | Ouroboros (current) |
+| Capability | Claude Code | Ouroboros + Venom + Consciousness |
 |---|---|---|
-| Read arbitrary files during an op | Full `Read` tool | TheOracle GraphRAG + context_expander (10 files max) |
-| Run bash commands | Yes | No (sandboxed validation only) |
-| Detect work to do | Manual user request | Automatic: 15+ sensors, event-driven (<1s), test failures, TODOs, complexity |
-| Provider cost optimization | Single provider | 3-tier cascade: DW $0.10/M → Claude $3/M → GCP (adaptive failover + recovery prediction) |
-| Self-healing on failure | Retries in conversation | FailureMode classification, exponential backoff, QUEUE_ONLY auto-recovery, connector resilience |
-| Cost tracking | Per-conversation | Real-time per-provider tracking, session budget cap, per-op + daily limits |
-| Edit code iteratively | Multi-turn, sees results | One-shot patch + apply (L2 repair engine available but off by default) |
-| Persistent strategic goal memory | Deep conversation context | Per-op intent only |
+| Read files during generation | Full `Read` tool | `read_file` + `search_code` + `list_symbols` via ToolLoopCoordinator |
+| Run tests during generation | Yes | `run_tests` tool (policy-gated, pytest in sandbox) |
+| Multi-turn iterative editing | Multi-turn conversation | Venom: 5-round tool loop + L2 Repair: 5-iteration convergence |
+| Detect work autonomously | Manual user request | 15+ event-driven sensors (<1s reaction via TrinityEventBus) |
+| Learn from past failures | Conversation context only | MemoryEngine: per-file reputation, cross-session learning |
+| Predict regression risk | No | ProphecyEngine: heuristic risk scoring from file history |
+| Cost optimization | Single provider | 3-tier cascade: DW $0.10/M → Claude $3/M → GCP (adaptive failover) |
+| Self-healing | Retries in conversation | FailureMode classification, QUEUE_ONLY auto-recovery, connector resilience |
+| Real-time cost tracking | Per-conversation | Per-provider per-5s tracking, session cap, per-op + daily limits |
+| Persistent goal memory | Deep conversation context | Per-op + episodic memory (cross-session file reputation) |
 
-**Core difference:** Claude Code is a full agentic loop with tool use. Ouroboros is an **autonomous pipeline** — it finds its own work, routes to the cheapest provider, applies with saga safety, and self-heals from failures. No human in the loop for SAFE_AUTO operations.
+**Core architecture — the three symbiotic layers:**
 
-**What would close the gap:**
-1. Tool use in the generation loop — provider calls `read_file`, `run_command` during generation
-2. Multi-turn op execution — generate → run → observe → revise → converge
-3. Persistent goal memory across sessions
-4. Enable L2 repair engine by default (iterative test → fix loop)
+| Layer | Name | Role | Analogy |
+|-------|------|------|---------|
+| **Soul** | Trinity Consciousness | WHY evolve? Memory, prediction, awareness | The Synthetic Soul (Manifesto §4) |
+| **Skeleton** | Ouroboros Pipeline | WHAT to do, safely. Governance, routing, cost | The Deterministic Perimeter |
+| **Nervous System** | Venom | HOW to do it. Read, execute, observe, revise | The Adaptive Intelligence |
 
-**Bottom line:** Real, production-grade autonomous code delivery with cost-optimized provider routing and event-driven intake. The organism finds work, generates patches, and commits across 3 repos — all while minimizing API spend and self-healing from failures.
+**Remaining gap vs Claude Code:**
+1. Web search during generation (Venom has `web_fetch`/`web_search` tools but Phase C/D gated)
+2. Full bash shell during generation (policy-gated, not yet enabled by default)
+3. Conversation-level persistent memory (MemoryEngine is per-file, not per-goal yet)
+
+**Bottom line:** Production-grade autonomous code delivery with agentic tool use, iterative self-repair, cross-session learning, cost-optimized routing, and event-driven intake. The organism finds work, reads code, runs tests, converges on fixes, learns from outcomes, and commits across 3 repos — no human in the loop.
 
 ### GCP Hybrid Cloud Spot Architecture
 
@@ -1235,7 +1265,7 @@ Native C++ Training Kernels
 - **Proactive intelligence** — predictive suggestions, proactive vision monitoring, proactive communication, emotional intelligence module
 - **RAG pipeline** — ChromaDB vector store, FAISS similarity search, embedding service, long-term memory system
 - **Chain-of-thought / reasoning graph engine** — LangGraph-based multi-step reasoning with conditional routing and reflection loops
-- **Ouroboros (Event Spine + Adaptive Routing)** — autonomous self-development across JARVIS, JARVIS-Prime, and Reactor-Core: Unified Event Spine (FileWatchGuard + TrinityEventBus + pytest plugin + git hooks → sub-second sensor reactions), adaptive 3-tier provider cascade (DoubleWord 397B $0.10/M → Claude $3/M → GCP, with failure-mode classification + exponential backoff recovery prediction), QUEUE_ONLY auto-recovery, real API cost tracking, B+ saga applies (ephemeral branches, two-tier locks, ff-only promote), battle test runner with $0.50 cost cap
+- **Ouroboros + Venom + Trinity Consciousness** — autonomous self-development across JARVIS, JARVIS-Prime, and Reactor-Core: **Venom** agentic tool loop (read_file, search_code, run_tests during generation, 5-round multi-turn convergence) + **L2 Repair Engine** (iterative generate→test→classify→revise, 5 iterations, 120s timebox) + **Trinity Consciousness** (MemoryEngine cross-session learning, ProphecyEngine regression prediction, 4 core + 3 fusion engines) + **Unified Event Spine** (FileWatchGuard→TrinityEventBus→sensors, sub-second reactions) + adaptive 3-tier provider cascade (DW $0.10/M → Claude $3/M → GCP, failure-mode classification, recovery prediction) + B+ saga applies + battle test runner with real cost tracking
 - **Web research service** — autonomous web search and information synthesis
 - **A/B testing framework** — vision pipeline experimentation
 - **Repository intelligence** — code ownership analysis, dependency analyzer, API contract analyzer, AST transformer, cross-repo refactoring engine
