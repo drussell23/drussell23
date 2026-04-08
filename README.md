@@ -766,24 +766,37 @@ flowchart TD
 - **Self-healing** — Transient failures stay in `FALLBACK_ACTIVE`. `QUEUE_ONLY` auto-recovers on probe success. Poisoned connectors detected and replaced. Background polls capped at 3 concurrent.
 - **Thought Log** — `.jarvis/ouroboros_thoughts.jsonl` records every reasoning step: what memories were recalled, which tools were called and why, generation strategy, L2 repair progress, and outcome learning. Visible in real time with `-v`. The user follows the organism's thought process like a conversation.
 - **Autonomous Commit Signature** — Every commit includes a `Generated-By: Ouroboros + Venom + Consciousness` trailer and `Signed-off-by: JARVIS Ouroboros <ouroboros@jarvis.local>`. The signature is dynamic: `+ Venom` appears when tool use was involved, `+ Consciousness` when memory/prediction contributed.
-- **Battle Test Runner** — `scripts/ouroboros_battle_test.py` boots the full stack: Consciousness + Venom + Event Spine + Adaptive Routing + Goal Memory. `CostTracker` monitors real API spend every 5s. Session stops at `--cost-cap`. Generates a session summary + Jupyter notebook.
+- **Strategic Direction Awareness** — `StrategicDirectionService` reads the Manifesto and architecture docs on boot, extracts the 7 core principles, and injects them into every generation prompt. The organism understands the developer's architectural vision — generates async code, maintains cross-repo contracts, adds observability, prefers structural repair over shortcuts. Not generic fixes, **Manifesto-aligned code**.
+- **Parallel Execution** — `BackgroundAgentPool` (2 workers) processes operations concurrently. While one operation generates code (Venom tool loop), another runs tests, a third applies patches. ~30 concurrent async tasks total: 2 operational hands, 15 sensory nerves, 7 consciousness engines, 5 infrastructure monitors.
+- **Battle Test Runner** — `scripts/ouroboros_battle_test.py` boots the full stack: Strategic Direction + Consciousness + Venom + Event Spine + Adaptive Routing + Goal Memory + Parallel Execution. Real API cost tracking every 5s. Every commit signed `Generated-By: Ouroboros + Venom + Consciousness`.
 - **B+ branch isolation** — Ephemeral branches per saga, `git merge --ff-only` promote, two-tier locking (asyncio + fcntl), deterministic deadlock-free.
 
-**The complete organism loop:**
+**The complete organism — 6 layers working together:**
 
 ```
+Strategic Direction (compass — WHERE are we going?)
+    │  Manifesto: 7 principles injected into every generation prompt
+    │  "You are building an autonomous, self-evolving AI Operating System"
+    ▼
 Trinity Consciousness (soul — WHY evolve?)
     │  MemoryEngine: "this file fails 60% of the time"
     │  ProphecyEngine: "HIGH regression risk"
+    │  GoalMemory: cross-session ChromaDB episodic learning
+    ▼
+Event Spine (senses — WHEN to act?)
+    │  FileWatchGuard → TrinityEventBus → 15+ sensors (<1s)
     ▼
 Ouroboros Pipeline (skeleton — WHAT to do, safely)
     │  CLASSIFY → ROUTE → EXPAND → GENERATE → VALIDATE → APPLY
+    │  2 parallel operations via BackgroundAgentPool
     ▼
 Venom Agentic Loop (nervous system — HOW to do it)
-    │  read_file → search_code → run_tests → revise → converge
-    │  L2 Repair: generate → test → classify → fix → test again
+    │  read_file → search_code → bash → run_tests → web_search → revise
+    │  Deadline-based (iterate until done). L2 Repair: 5 iterations.
     ▼
-Code Applied → Consciousness records outcome → learns for next time
+Code Applied → Signed "Generated-By: Ouroboros + Venom + Consciousness"
+    → Thought log: .jarvis/ouroboros_thoughts.jsonl
+    → Consciousness records outcome → learns for next time
 ```
 
 **Activation:**
@@ -834,18 +847,21 @@ python3 scripts/ouroboros_battle_test.py --cost-cap 0.50 --idle-timeout 600 -v
 | Real-time cost tracking | Per-conversation | Per-provider per-5s tracking, session cap, per-op + daily limits |
 | Persistent goal memory | Deep conversation context | Per-op + episodic memory (cross-session file reputation) |
 
-**Core architecture — the three symbiotic layers:**
+**Core architecture — the six symbiotic layers:**
 
 | Layer | Name | Role | Analogy |
 |-------|------|------|---------|
-| **Soul** | Trinity Consciousness | WHY evolve? Memory, prediction, awareness | The Synthetic Soul (Manifesto §4) |
-| **Skeleton** | Ouroboros Pipeline | WHAT to do, safely. Governance, routing, cost | The Deterministic Perimeter |
-| **Nervous System** | Venom | HOW to do it. Read, execute, observe, revise | The Adaptive Intelligence |
+| **Compass** | Strategic Direction | WHERE are we going? Manifesto principles → every prompt | The North Star |
+| **Soul** | Trinity Consciousness | WHY evolve? Memory, prediction, cross-session learning | The Synthetic Soul (Manifesto §4) |
+| **Senses** | Event Spine | WHEN to act? 15+ sensors, sub-second detection | The Peripheral Nervous System |
+| **Skeleton** | Ouroboros Pipeline | WHAT to do, safely. Governance, routing, parallel execution | The Deterministic Perimeter |
+| **Nervous System** | Venom | HOW to do it. 100+ bash commands, web search, deadline-based tool loop | The Adaptive Intelligence |
+| **Voice** | Thought Log + Signature | WHO did it. Observable reasoning, signed commits | The Audit Trail |
 
-**Remaining gap vs Claude Code:**
-1. Web search during generation (Venom has `web_fetch`/`web_search` tools but Phase C/D gated)
-2. Full bash shell during generation (policy-gated, not yet enabled by default)
-3. Conversation-level persistent memory (MemoryEngine is per-file, not per-goal yet)
+**Remaining differences vs Claude Code (not gaps — different paradigm):**
+1. Bash is allowlisted (100+ commands) not unrestricted — deliberate Iron Gate security per Manifesto
+2. Goal memory uses ChromaDB vector search, not conversation threading — equally deep, different architecture
+3. Tool rounds are deadline-based with 10-round safety ceiling — bounded exhaustion is a safety feature
 
 **Bottom line:** Production-grade autonomous code delivery with agentic tool use, iterative self-repair, cross-session learning, cost-optimized routing, and event-driven intake. The organism finds work, reads code, runs tests, converges on fixes, learns from outcomes, and commits across 3 repos — no human in the loop.
 
@@ -1267,7 +1283,7 @@ Native C++ Training Kernels
 - **Proactive intelligence** — predictive suggestions, proactive vision monitoring, proactive communication, emotional intelligence module
 - **RAG pipeline** — ChromaDB vector store, FAISS similarity search, embedding service, long-term memory system
 - **Chain-of-thought / reasoning graph engine** — LangGraph-based multi-step reasoning with conditional routing and reflection loops
-- **Ouroboros + Venom + Trinity Consciousness** — autonomous self-development across JARVIS, JARVIS-Prime, and Reactor-Core: **Venom** agentic tool loop (read_file, search_code, run_tests during generation, 5-round multi-turn convergence) + **L2 Repair Engine** (iterative generate→test→classify→revise, 5 iterations, 120s timebox) + **Trinity Consciousness** (MemoryEngine cross-session learning, ProphecyEngine regression prediction, 4 core + 3 fusion engines) + **Unified Event Spine** (FileWatchGuard→TrinityEventBus→sensors, sub-second reactions) + adaptive 3-tier provider cascade (DW $0.10/M → Claude $3/M → GCP, failure-mode classification, recovery prediction) + B+ saga applies + battle test runner with real cost tracking
+- **Ouroboros + Venom + Trinity Consciousness (A grade, Claude Code-level)** — 6-layer autonomous self-development organism: **Strategic Direction** (Manifesto principles injected into every generation prompt) + **Consciousness** (MemoryEngine + ProphecyEngine + GoalMemoryBridge, 7 engines, cross-session ChromaDB learning) + **Event Spine** (FileWatchGuard→TrinityEventBus→15 sensors, sub-second reactions, 3 bus bridges) + **Ouroboros Pipeline** (2 parallel operations via BackgroundAgentPool, adaptive 3-tier cascade DW→Claude→GCP) + **Venom** (100+ bash commands, web search, run_tests, deadline-based tool loop, L2 repair 5 iterations) + **Thought Log** + signed commits `Generated-By: Ouroboros + Venom + Consciousness`
 - **Web research service** — autonomous web search and information synthesis
 - **A/B testing framework** — vision pipeline experimentation
 - **Repository intelligence** — code ownership analysis, dependency analyzer, API contract analyzer, AST transformer, cross-repo refactoring engine
