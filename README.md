@@ -54,7 +54,7 @@ For the past 12 months, I have been executing a solo build of **JARVIS** — a t
 
 <div align="center">
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=16&duration=2500&pause=800&color=39FF14&center=true&vCenter=true&repeat=true&width=700&height=30&lines=%F0%9F%9F%A2+JARVIS+v262+%E2%80%94+Ouroboros+B%2B+full+activation+%28self-developing+across+3+repos%29;%F0%9F%9F%A2+B%2B+sagas%3A+ephemeral+branches+%2B+ff-only+promote+%2B+two-tier+locks;%F0%9F%9F%A2+SagaMessageBus+passive+observer+%E2%80%94+lifecycle+events+across+all+repos;%F0%9F%9F%A2+Prime+%E2%80%94+GCP+golden+image+%7C+30s+cold+start+%7C+11+specialist+models;%F0%9F%9F%A2+ReactorCore+%E2%80%94+LoRA+fine-tuning+pipeline+on+GCP+Spot+VMs)](https://github.com/drussell23)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=16&duration=2800&pause=800&color=39FF14&center=true&vCenter=true&repeat=true&width=820&height=30&lines=%F0%9F%9F%A2+JARVIS+v263+%E2%80%94+Priority+%231+%2B+%232+CLOSED+%C2%B7+structural+A+%2F+empirical+A%E2%88%92+%C2%B7+36+AST+pins;%F0%9F%9F%A2+Coherence+Auditor+%E2%80%94+long-horizon+behavioral+drift+detection+%286-kind+closed+taxonomy%29;%F0%9F%9F%A2+PostmortemRecall+%E2%80%94+cross-session+recurrence+prevention+loop+closed+end-to-end;%F0%9F%9F%A2+Move+6+Generative+Quorum+%E2%80%94+K-way+consensus+killing+Quine-class+hallucination;%F0%9F%9F%A2+Priority+%233+Counterfactual+Replay+%E2%80%94+empirical+recurrence-reduction+baseline+%28next%29;%F0%9F%9F%A2+Prime+%E2%80%94+GCP+golden+image+%7C+30s+cold+start+%7C+11+specialist+models;%F0%9F%9F%A2+ReactorCore+%E2%80%94+LoRA+fine-tuning+pipeline+on+GCP+Spot+VMs)](https://github.com/drussell23)
 
 </div>
 
@@ -877,6 +877,61 @@ python3 scripts/ouroboros_battle_test.py --cost-cap 0.50 --idle-timeout 600 -v
 3. Tool rounds are deadline-based with safety ceiling — bounded exhaustion is a safety feature
 
 **Bottom line:** A+ autonomous self-developing organism. Matches Claude Code on every agentic capability. Exceeds it in autonomous detection, cost optimization, cross-session learning, risk prediction, self-healing, multi-repo, strategic direction, parallel execution, and budget control. The organism finds work, streams code token-by-token, proves fixes with tests, commits with its signature, and learns from outcomes — all at 30-37x lower cost.
+
+### Recent Major Additions — May 2026
+
+**The convergence-phase delivery: 4 strategic arcs + 3 immediate-priority fixes shipped single-session, taking O+V from "structural A− / empirical B+" to "structural A / empirical A−" — closing the gestalt-rotation blind spot AND the recurrence-prevention loop end-to-end.**
+
+| Arc | What it closes | Status |
+|---|---|---|
+| **Tier 1 #1** — Confidence drop SSE producer wiring | Anthropic-routed ops had ZERO confidence signal; producers now wired into doubleword_provider | ✅ CLOSED |
+| **Tier 1 #2** — PostureObserver task-death detection | Silent observer death cascade; `safe_load_posture` wrapper + 4-value `PostureHealthStatus` enum | ✅ CLOSED |
+| **Tier 1 #3** — Cross-process flock on ledgers | AdaptationLedger / InvariantDriftStore append corruption; `flock_append_line` + `flock_critical_section` primitives; 30+ writers migrated | ✅ CLOSED |
+| **Move 5** — Confidence-Aware Probe Loop | Ambiguity resolution without `ask_human`; 4th `ConfidenceCollapseAction.PROBE_ENVIRONMENT` outcome; K-call cap + monotonic-clock + sha256 diminishing-returns three-independent-termination guarantees; READONLY_TOOL_ALLOWLIST AST-pinned | ✅ CLOSED (5 slices, all flags default-TRUE) |
+| **Move 6** — Generative Quorum | Test-shape gaming + Quine-class hallucination bypass vectors; K-way parallel candidate generation with AST-normalized signature consensus; 5-value `ConsensusOutcome` closed enum; cost contract preserved by `COST_GATED_ROUTES` AST pin | ✅ CLOSED (5 slices, master deliberately default-FALSE pending live verification soak) |
+| **Priority #1** — Coherence Auditor | Long-horizon behavioral drift detection (the gestalt-rotation blind spot); 6-value `BehavioralDriftKind` closed enum DISTINCT from Move 4's 9-value structural taxonomy (`BEHAVIORAL_ROUTE_DRIFT` / `POSTURE_LOCKED` / `SYMBOL_FLUX_DRIFT` / `POLICY_DEFAULT_DRIFT` / `RECURRENCE_DRIFT` / `CONFIDENCE_DRIFT`); periodic posture-aware async observer (HARDEN 3h / DEFAULT 6h / MAINTAIN 12h) + adaptive vigilance + drift signature dedup | ✅ CLOSED (5 slices, all 3 flags default-TRUE) |
+| **Priority #2** — PostmortemRecall | **The recurrence-prevention loop closed end-to-end.** Activates Priority #1 Slice 4's previously-dormant `INJECT_POSTMORTEM_RECALL_HINT` advisory. Cross-session prior-failure context injection at CONTEXT_EXPANSION via robust degradation contract NEVER raising into GENERATE pipeline (8-path matrix verified). Recurrence consumer stamps Phase C `MonotonicTighteningVerdict.PASSED` on every boost. | ✅ CLOSED (5 slices, all 4 flags default-TRUE) |
+
+**By the numbers:**
+
+| Metric | Before this session | After |
+|---|---|---|
+| `shipped_code_invariants` AST pins | 20 | **36** (+16, +80%) |
+| SSE event vocabulary | 57 events | **62 events** (+5: probe_outcome / quorum_outcome / behavioral_drift_detected / postmortem_recall_injected / posture_observer_degraded) |
+| FlagRegistry seeds | ~90 | **~110** (+20: 6 Move 6 + 8 Priority #1 + 6 Priority #2) |
+| Async observers | 3 | **4** (CoherenceObserver joined PostureObserver + InvariantDriftAuditor + Move 5's PROBE runner) |
+| Closed-taxonomy enums (J.A.R.M.A.T.R.I.X.) | ~30 | **~50** (every new arc shipped ≥3 closed enums) |
+| Phase C cage rule integration sites | 1 | **3** (Move 6 gate + Priority #1 bridge + Priority #2 consumer all stamp `MonotonicTighteningVerdict.PASSED`) |
+| Total regression tests | ~1,500 | **2,300+** (+800 this session) |
+| Bypass vectors closed | 4 | **8** (added: Test-shape gaming, Quine-class hallucination, Recurrence loop, Long-horizon coherence drift) |
+
+**Architectural principles honored throughout:**
+
+1. **Pure-stdlib primitives** for Slice 1 of every arc — strongest authority invariant possible. Zero governance imports. Formula parity with `semantic_index._recency_weight` pinned by 36-test parametrized sweep across multiple arcs.
+
+2. **Zero duplication via reuse contracts** — AST-pinned importfrom for every reused helper:
+   - `last_session_summary._sanitize_field` + `_parse_summary` (canonical safety + parser helpers)
+   - `episodic_memory.FailureEpisode` field-parity verified by AST walk (PostmortemRecord extends shape without runtime import)
+   - `cross_process_jsonl.flock_append_line` + `flock_critical_section` (Tier 1 #3 cross-process safety)
+   - `adaptation.ledger.MonotonicTighteningVerdict` (Phase C universal cage rule)
+
+3. **Robust degradation as load-bearing contract** — Priority #2 Slice 3's 8-path degradation matrix proves the GENERATE pipeline is structurally protected from recall failures. Empty/corrupt/error all return `""` — the pipeline NEVER sees a raise.
+
+4. **Cost contract preserved by AST construction** — Move 6 / Priority #1 / Priority #2 all AST-pin: NO `providers` / `doubleword_provider` / `urgency_router` / `candidate_generator` imports. Read-only auditors + advisory-only output → zero LLM cost amplification.
+
+5. **Monotonic-tightening universal cage rule** — every adaptation proposal across 3 arcs stamps the canonical Phase C verdict string. Operators correlate cross-file via shared vocabulary. AST-pinned via importfrom.
+
+**Letter grade movement (3 reviews this session)**:
+
+| Review | Grade | Key delta |
+|---|---|---|
+| §28 v9 (post-Move-4) | A− structural / B+ empirical | Identified 3 immediate priorities + Move 5/6 path |
+| §28.7 (post-Priority-#1) | A− structural / B+ empirical | Coherence Auditor closed temporal gap |
+| **§29 (post-Priority-#2)** | **A structural / A− empirical** | Recurrence-prevention loop closed end-to-end |
+
+**Next: Priority #3 — Counterfactual Replay Engine** (5-slice arc scoped). Replay-with-policy-swap engine using cached generation hashes for **ZERO LLM cost** (AST-pinned). Produces empirical `recurrence_reduction_pct` baseline that retroactively justifies Move 6 master flag graduation. **Realistic timeline to A-level empirical execution: 6–10 weeks** (Priority #3 + Slice 5b consolidation across 4 arcs in parallel → live verification soak → Move 6 graduation → Move 7 + Move 8 → first live RSI cycle = first true second-order doll completed).
+
+The Reverse Russian Doll's outer shell now scales **detectionally + preventatively**. Priority #3 will add **evaluatively** — Anti-Venom mathematical auditability via deterministic counterfactual.
 
 ### GCP Hybrid Cloud Spot Architecture
 
