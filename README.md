@@ -14,10 +14,11 @@
 
 <br>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3000&pause=1000&color=39FF14&center=true&vCenter=true&multiline=true&repeat=true&width=820&height=80&lines=3%2C900%2B+commits+%C2%B7+2.5M+lines+of+code+%C2%B7+11+languages;Building+production-grade+autonomous+AI+infrastructure)](https://github.com/drussell23)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3000&pause=1000&color=39FF14&center=true&vCenter=true&multiline=true&repeat=true&width=820&height=80&lines=7%2C800%2B+commits+%C2%B7+%7E3.1M+LOC+%C2%B7+%7E24K+governance+tests;181-page+paper+%C2%B7+Constitutional+Classifier+parity+target+%C2%B7+0%2F38+cage+escapes)](https://github.com/drussell23)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/derek-j-russell/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/drussell23)
+[![O+V Paper](https://img.shields.io/badge/O%2BV_Paper-181_pages-d4a574?style=for-the-badge&logo=googledocs&logoColor=white)](https://drussell23.github.io/JARVIS/architecture/OV_RESEARCH_PAPER_2026-04-16.html)
 [![Featured](https://img.shields.io/badge/Mustang_News-Featured-8B0000?style=for-the-badge)](https://mustangnews.net/10-years-in-the-making-one-cal-poly-students-unique-path-to-an-engineering-degree/)
 [![Profile Views](https://komarev.com/ghpvc/?username=drussell23&style=for-the-badge&color=1a1b27&label=PROFILE+VIEWS)](https://github.com/drussell23)
 [![Play JARVIS Voice](https://img.shields.io/badge/Play_JARVIS_Voice-Daniel-39FF14?style=for-the-badge&logo=soundcloud&logoColor=black)](https://drussell23.github.io/drussell23/voice/?autoplay=1)
@@ -26,7 +27,21 @@
 
 ---
 
-For the past 12 months, I have been executing a solo build of **JARVIS** — a three-repository, multi-process autonomous AI operating system spanning Python, C++, Rust, Go, Swift, Objective-C, and TypeScript. The system orchestrates 60+ asynchronous agents across a neural mesh, routes inference dynamically between local Apple Silicon and GCP, performs real-time voice biometric authentication, controls macOS at the native API level, and continuously trains its own models through a self-improving feedback loop.
+### AI Safety Architect & Founding Engineer
+
+Sole architect of the **JARVIS Trinity AI ecosystem** — a **~3.1M LOC** autonomous AI operating system with a **~639K LOC** Ouroboros + Venom governance core — implementing the **Reverse Russian Doll** method for bounded Recursive Self-Improvement. Designed against Anthropic's [**Constitutional Classifiers**](https://arxiv.org/abs/2501.18837) and **ASL-4 safeguard** frameworks; every safety claim runs hypothesis → measurement-harness → falsification before it ships.
+
+**Featured paper** — [**"Ouroboros + Venom (O+V): A Governed Architecture for Autonomous Self-Development"**](https://drussell23.github.io/JARVIS/architecture/OV_RESEARCH_PAPER_2026-04-16.html) (181-page first-author, 2026)
+
+**At a glance:**
+
+- **11-phase governance pipeline** · **6-route urgency-aware provider cascade** · **19 autonomous sensors** · **29 Venom built-in tools + MCP**
+- **Iron Gate** (AST validation) + **Semantic Guardian** (12 detectors, ~10ms, zero LLM, 75 tests) + **4-tier risk escalation** + **L2 self-repair FSM** + **L3 worktree-isolated parallel subagents**
+- **~24K governance tests** · **300+ AST-pin structural invariants** across **900+ modules**
+- **Battle-test corpus** (as of 2026-05-17): **337 sessions** · **154h cumulative soak** · **124 clean completions** · **$54.67 total cost**
+- **GCP J-Prime self-hosted tier** — 11 GGUF specialists (~40.4 GB, Q4_K_M) · **~87s warm cold-start vs 30–60 min fresh-VM** · **~28× lower compute cost vs A100**
+- **3-tier provider cascade** (DoubleWord 397B → Claude → J-Prime) — **30–37× per-op cost reduction**
+- **Adversarial cage** — 0/38 escapes on a hand-authored corpus · 12/38 documented gaps · Constitutional Classifier 86%→4.4% parity target (positioned, not yet claimed)
 
 ---
 
@@ -54,7 +69,7 @@ For the past 12 months, I have been executing a solo build of **JARVIS** — a t
 
 <div align="center">
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=16&duration=2800&pause=800&color=39FF14&center=true&vCenter=true&repeat=true&width=820&height=30&lines=%F0%9F%9F%A2+JARVIS+v263+%E2%80%94+Priority+%231+%2B+%232+CLOSED+%C2%B7+structural+A+%2F+empirical+A%E2%88%92+%C2%B7+36+AST+pins;%F0%9F%9F%A2+Coherence+Auditor+%E2%80%94+long-horizon+behavioral+drift+detection+%286-kind+closed+taxonomy%29;%F0%9F%9F%A2+PostmortemRecall+%E2%80%94+cross-session+recurrence+prevention+loop+closed+end-to-end;%F0%9F%9F%A2+Move+6+Generative+Quorum+%E2%80%94+K-way+consensus+killing+Quine-class+hallucination;%F0%9F%9F%A2+Priority+%233+Counterfactual+Replay+%E2%80%94+empirical+recurrence-reduction+baseline+%28next%29;%F0%9F%9F%A2+Prime+%E2%80%94+GCP+golden+image+%7C+30s+cold+start+%7C+11+specialist+models;%F0%9F%9F%A2+ReactorCore+%E2%80%94+LoRA+fine-tuning+pipeline+on+GCP+Spot+VMs)](https://github.com/drussell23)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=16&duration=2800&pause=800&color=39FF14&center=true&vCenter=true&repeat=true&width=820&height=30&lines=%F0%9F%9F%A2+DoubleWord+engineering+partnership+%E2%80%94+337-session+battle-test+corpus+%2B+64-page+benchmark+report;%F0%9F%9F%A2+SWE-Bench-Pro+%E2%80%94+full+A%E2%86%92F+substrate+shipped+%C2%B7+299+spine+tests+%C2%B7+parallel+evaluation+rig;%F0%9F%9F%A2+Predictive+Provider+Resilience+%E2%80%94+EWMA-median+TTFT+forecaster+%2B+cold-storage+VRAM+detection;%F0%9F%9F%A2+Phase+B+Subagents+%E2%80%94+EXPLORE%2FREVIEW%2FPLAN%2FGENERAL+graduated+%C2%B7+138+regression+tests;%F0%9F%9F%A2+OCA+%28Operator+Commit+Authority%29+%E2%80%94+Cursor+IDE+Iron+Gate+fix+%C2%B7+Slices+1-4+landed;%F0%9F%9F%A2+IDE+Observability+%E2%80%94+VS+Code%2FCursor%2FSublime%2FJetBrains+extensions+on+SSE+stream;%F0%9F%9F%A2+J-Prime+%E2%80%94+11+GGUF+specialists+%C2%B7+%7E40.4+GB+%C2%B7+%7E87s+warm+cold-start+vs+30-60+min+fresh-VM;%F0%9F%9F%A2+ReactorCore+%E2%80%94+LoRA+fine-tuning+pipeline+on+GCP+Spot+VMs)](https://github.com/drussell23)
 
 </div>
 
