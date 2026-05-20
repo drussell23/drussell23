@@ -14,7 +14,7 @@
 
 <br>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3000&pause=1000&color=39FF14&center=true&vCenter=true&multiline=true&repeat=true&width=820&height=80&lines=7%2C800%2B+commits+%C2%B7+%7E3.1M+LOC+%C2%B7+%7E24K+governance+tests;181-page+paper+%C2%B7+Constitutional+Classifier+parity+target+%C2%B7+0%2F38+cage+escapes)](https://github.com/drussell23)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3000&pause=1000&color=39FF14&center=true&vCenter=true&multiline=true&repeat=true&width=1050&height=80&lines=7%2C800%2B+commits+%C2%B7+%7E3.1M+LOC+%C2%B7+%7E24K+governance+tests;181-page+paper+%C2%B7+Constitutional+Classifier+parity+target+%C2%B7+0%2F38+cage+escapes)](https://github.com/drussell23)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/derek-j-russell/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/drussell23)
@@ -69,7 +69,7 @@ Sole architect of the **JARVIS Trinity AI ecosystem** — a **~3.1M LOC** autono
 
 <div align="center">
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=16&duration=2800&pause=800&color=39FF14&center=true&vCenter=true&repeat=true&width=820&height=30&lines=%F0%9F%9F%A2+DoubleWord+engineering+partnership+%E2%80%94+337-session+battle-test+corpus+%2B+64-page+benchmark+report;%F0%9F%9F%A2+SWE-Bench-Pro+%E2%80%94+full+A%E2%86%92F+substrate+shipped+%C2%B7+299+spine+tests+%C2%B7+parallel+evaluation+rig;%F0%9F%9F%A2+Predictive+Provider+Resilience+%E2%80%94+EWMA-median+TTFT+forecaster+%2B+cold-storage+VRAM+detection;%F0%9F%9F%A2+Phase+B+Subagents+%E2%80%94+EXPLORE%2FREVIEW%2FPLAN%2FGENERAL+graduated+%C2%B7+138+regression+tests;%F0%9F%9F%A2+OCA+%28Operator+Commit+Authority%29+%E2%80%94+Cursor+IDE+Iron+Gate+fix+%C2%B7+Slices+1-4+landed;%F0%9F%9F%A2+IDE+Observability+%E2%80%94+VS+Code%2FCursor%2FSublime%2FJetBrains+extensions+on+SSE+stream;%F0%9F%9F%A2+J-Prime+%E2%80%94+11+GGUF+specialists+%C2%B7+%7E40.4+GB+%C2%B7+%7E87s+warm+cold-start+vs+30-60+min+fresh-VM;%F0%9F%9F%A2+ReactorCore+%E2%80%94+LoRA+fine-tuning+pipeline+on+GCP+Spot+VMs)](https://github.com/drussell23)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=16&duration=2800&pause=800&color=39FF14&center=true&vCenter=true&repeat=true&width=1050&height=30&lines=%F0%9F%9F%A2+DoubleWord+partnership+%E2%80%94+337-session+battle-test+corpus+%2B+64-page+benchmark+report;%F0%9F%9F%A2+SWE-Bench-Pro+%E2%80%94+A%E2%86%92F+substrate+shipped+%C2%B7+299+spine+tests+%C2%B7+parallel+evaluation+rig;%F0%9F%9F%A2+Predictive+Provider+Resilience+%E2%80%94+EWMA-median+TTFT+forecaster+%2B+VRAM+eviction+detection;%F0%9F%9F%A2+Phase+B+Subagents+%E2%80%94+EXPLORE%2FREVIEW%2FPLAN%2FGENERAL+graduated+%C2%B7+138+regression+tests;%F0%9F%9F%A2+OCA+%28Operator+Commit+Authority%29+%E2%80%94+Cursor+IDE+Iron+Gate+fix+%C2%B7+Slices+1-4+landed;%F0%9F%9F%A2+IDE+Observability+%E2%80%94+VS+Code%2FCursor%2FSublime%2FJetBrains+extensions+on+SSE+stream;%F0%9F%9F%A2+J-Prime+%E2%80%94+11+GGUF+specialists+%C2%B7+%7E40.4+GB+%C2%B7+%7E87s+warm+cold-start+vs+30-60+min+fresh-VM;%F0%9F%9F%A2+ReactorCore+%E2%80%94+LoRA+fine-tuning+pipeline+on+GCP+Spot+VMs)](https://github.com/drussell23)
 
 </div>
 
