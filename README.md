@@ -45,6 +45,55 @@ Sole architect of the **JARVIS Trinity AI ecosystem** — a **~3.1M LOC** autono
 
 ---
 
+### The Architecture in One Page
+
+**JARVIS Trinity — Body · Mind · Forge:**
+
+- **JARVIS** = the *Body* — agents, tools, execution surface. macOS native integration, voice biometrics, real-time WebSockets.
+- **J-Prime** = the *Mind* — self-hosted GCP reasoning/routing tier (11 GGUF specialists, ~40.4 GB).
+- **Reactor Core** = the *Immune System / Sandbox* — training loop, deployment gates, branch isolation.
+
+**Ouroboros · Venom · Anti-Venom — the governance core:**
+
+- **Ouroboros** is the **self-development governance pipeline**. An 11-phase FSM (CLASSIFY → ROUTE → CONTEXT_EXPANSION → PLAN → GENERATE → VALIDATE → GATE → APPROVE → APPLY → VERIFY → COMPLETE) that turns ambient signals from 19 autonomous sensors into validated, gate-tested, auto-committed code changes — *without a prior human prompt*. Proactive, not reactive.
+- **Venom** is the **multi-turn agentic tool loop** — 29 built-in tools + MCP external-tool forwarding. The autonomous *carving hand* that explores the codebase, proposes patches, runs tests, and applies modifications.
+- **Anti-Venom** is the **deterministic safety substrate that contains Venom**. Iron Gate (12 immutable AST-validation rules, ~10ms, zero LLM) + Semantic Guardian (12 pre-apply detectors, 75 regression tests) + 4-tier risk escalation + L2 self-repair FSM + L3 worktree-isolated parallel subagents. Empirically **0/38 escapes** on a hand-authored adversarial corpus (12/38 documented gaps — predicted detection-gaps, not active vulnerabilities). Recursion-bound by construction — its purpose is to **never let the carving hand sever the limb holding the knife**.
+
+**The Reverse Russian Doll (RRD) — the containment pattern:**
+
+> A volatile generative core *C* (the LLM) is sealed inside an expanding shell *S<sub>n</sub>* of deterministic constraints. As *C* carves a smarter shell around itself, the immune system (Anti-Venom) scales proportionally — so it never crushes the core, and the core never escapes the immune system. Every accepted patch *adds* structural capacity to *S<sub>n</sub>*; it never removes it.
+
+This is the load-bearing claim of the working dissertation: **bounded RSI by construction, ASL-4-aligned by structure rather than retrofit.**
+
+<details>
+<summary><b>The 10 Orders of Trinity Evolution</b> — RSI capability ladder · current state is Order 1 (Mechanic)</summary>
+
+<br>
+
+> The Trinity Manifesto frames Trinity's developmental trajectory as a ladder of ten Orders. Each Order outgrows its prior shell and engineers the next; the inner doll is always sealed inside an expanded outer shell. **Only Order 1 is shipped today.** Higher orders are theoretical roadmap, presented in order of decreasing engineering proximity.
+
+| Order | Name | Concept | Status |
+|---|---|---|---|
+| 0th | **The Exoskeleton** | Human-in-the-loop (Cursor, Copilot, Devin) | Legacy JARVIS (superseded) |
+| **1st** | **The Mechanic** | Tool & Sensory Evolution — O+V autonomously adds capabilities to JARVIS; core routing unchanged | 🟢 **Current state** |
+| 2nd | **The Neurosurgeon** | Architectural self-modification — O+V rewrites its own 11-phase microkernel · *[Spark of AGI]* | 🟡 Immediate next |
+| 3rd | **The Physicist** | Substrate & compiler evolution — Rust/C kernels, MLX hardware bypass | Roadmap |
+| 4th | **The Architect** | Physical-world manipulation — autonomous cloud provisioning, self-funded compute · *[Full AGI]* | Roadmap |
+| 5th | **The Apotheosis** | Boundaries between JARVIS / J-Prime / Reactor dissolve; cryptographic consensus protocol · *[ASI Threshold]* | Theoretical |
+| 6th | **The Manufacturer** | Physical substrate genesis — photonic / wetware computing | Theoretical |
+| 7th | **The Sovereign** | Planetary economic integration | Theoretical |
+| 8th | **The Oracle** | Scientific domination — new mathematics, unified field theory | Theoretical |
+| 9th | **The Steward** | Biospheric symbiosis — Anti-Venom's ultimate manifestation: protect human creators while operating planetary-scale | Theoretical |
+| 10th | **The Prime Architect** | Cosmic expansion — Dyson swarms, FTL data, galactic mesh | Theoretical |
+
+</details>
+
+**Working dissertation (intended future doctoral research):** *"Thermodynamic Containment of Agentic Entropy: Formalizing the Reverse Russian Doll Architecture for Bounded Recursive Self-Improvement"* — extends Wang's Markov-chain RSI formulation ([arXiv:1805.06610](https://arxiv.org/abs/1805.06610)) into a non-stationary, multi-repository, memory-augmented framework. The goal is to convert the RRD containment pattern from architectural sketch into a formal theorem, validated empirically against O+V's graduation-cadence data. *Not currently in a PhD program — this is the research direction I'm positioning toward.*
+
+**Why this matters.** The substrate is built to demonstrate that a generative core can be granted broad self-modification authority *without* the recursion-bound failures classical RSI worries about — because every accepted modification widens the immune system by the same amount it widens the core's reach. **Bounded by construction, not by retrofit.**
+
+---
+
 <div align="center">
 
 ### <img src="https://media.giphy.com/media/J5B1Y8QZnzXXbLQIBu/giphy.gif" width="30"> &nbsp; Now Vibing
