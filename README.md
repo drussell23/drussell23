@@ -51,7 +51,7 @@ Sole architect of the **JARVIS Trinity AI ecosystem** — a **~4.29M-line** auto
 
 **At a glance:**
 
-- **11-phase governance pipeline** · **6-route urgency-aware provider cascade** · **19 autonomous sensors** · **29 Venom built-in tools + MCP**
+- **11-phase governance pipeline** · **6-route urgency-aware provider cascade** · **17 autonomous sensors** · **29 Venom built-in tools + MCP**
 - **Iron Gate** (AST validation) + **Semantic Guardian** (12 detectors, ~10ms, zero LLM, 75 tests) + **4-tier risk escalation** + **L2 self-repair FSM** + **L3 worktree-isolated parallel subagents**
 - **~35K governance tests** · **300+ AST-pin structural invariants** across **900+ modules**
 - **Battle-test corpus** (as of 2026-05-17): **337 sessions** · **154h cumulative soak** · **124 clean completions** · **$54.67 total cost**
@@ -71,7 +71,7 @@ Sole architect of the **JARVIS Trinity AI ecosystem** — a **~4.29M-line** auto
 
 **Ouroboros · Venom · Anti-Venom — the governance core:**
 
-- **Ouroboros** is the **self-development governance pipeline**. An 11-phase FSM (CLASSIFY → ROUTE → CONTEXT_EXPANSION → PLAN → GENERATE → VALIDATE → GATE → APPROVE → APPLY → VERIFY → COMPLETE) that turns ambient signals from 19 autonomous sensors into validated, gate-tested, auto-committed code changes — *without a prior human prompt*. Proactive, not reactive.
+- **Ouroboros** is the **self-development governance pipeline**. An 11-phase FSM (CLASSIFY → ROUTE → CONTEXT_EXPANSION → PLAN → GENERATE → VALIDATE → GATE → APPROVE → APPLY → VERIFY → COMPLETE) that turns ambient signals from 17 autonomous sensors into validated, gate-tested, auto-committed code changes — *without a prior human prompt*. Proactive, not reactive.
 - **Venom** is the **multi-turn agentic tool loop** — 29 built-in tools + MCP external-tool forwarding. The autonomous *carving hand* that explores the codebase, proposes patches, runs tests, and applies modifications.
 - **Anti-Venom** is the **deterministic safety substrate that contains Venom**. Iron Gate (12 immutable AST-validation rules, ~10ms, zero LLM) + Semantic Guardian (12 pre-apply detectors, 75 regression tests) + 4-tier risk escalation + L2 self-repair FSM + L3 worktree-isolated parallel subagents. Empirically **0/38 escapes** on a hand-authored adversarial corpus (12/38 documented gaps — predicted detection-gaps, not active vulnerabilities). Recursion-bound by construction — its purpose is to **never let the carving hand sever the limb holding the knife**.
 
@@ -1431,7 +1431,7 @@ Native C++ Training Kernels
 - **Proactive intelligence** — predictive suggestions, proactive vision monitoring, proactive communication, emotional intelligence module
 - **RAG pipeline** — ChromaDB vector store, FAISS similarity search, embedding service, long-term memory system
 - **Chain-of-thought / reasoning graph engine** — LangGraph-based multi-step reasoning with conditional routing and reflection loops
-- **Ouroboros + Venom + Trinity Consciousness (A grade, Claude Code-level)** — 6-layer autonomous self-development organism: **Strategic Direction** (Manifesto principles → every prompt) + **Consciousness** (7 engines, ChromaDB learning, regression prediction) + **Event Spine** (15 sensors, <1s reactions, 3 bus bridges) + **Ouroboros Pipeline** (2 parallel workers, adaptive DW→Claude cascade) + **Venom** (100+ bash, web search, run_tests, DW real-time + Claude tool loops, L2 repair) + **6-Layer Cost Optimization** (DW real-time 30x cheaper, Claude prompt caching 90%, smart max_tokens, prompt compression, complexity routing — **50-150+ ops per $0.50**) + Rich TUI + signed commits
+- **Ouroboros + Venom + Trinity Consciousness (A grade, Claude Code-level)** — 6-layer autonomous self-development organism: **Strategic Direction** (Manifesto principles → every prompt) + **Consciousness** (7 engines, ChromaDB learning, regression prediction) + **Event Spine** (17 sensors, <1s reactions, 3 bus bridges) + **Ouroboros Pipeline** (2 parallel workers, adaptive DW→Claude cascade) + **Venom** (100+ bash, web search, run_tests, DW real-time + Claude tool loops, L2 repair) + **6-Layer Cost Optimization** (DW real-time 30x cheaper, Claude prompt caching 90%, smart max_tokens, prompt compression, complexity routing — **50-150+ ops per $0.50**) + Rich TUI + signed commits
 - **Web research service** — autonomous web search and information synthesis
 - **A/B testing framework** — vision pipeline experimentation
 - **Repository intelligence** — code ownership analysis, dependency analyzer, API contract analyzer, AST transformer, cross-repo refactoring engine
