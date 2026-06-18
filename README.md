@@ -10,6 +10,10 @@
 
 <br>
 
+**Systems Engineer building JARVIS — a 4.29M-line autonomous AI OS with a 1.45M-line Ouroboros+Venom (O+V) self-development engine. Solo-built.**
+
+<br>
+
 <img src="./assets/jarvis-ui.png" width="90%" alt="JARVIS Interface — Autonomous AI Operating System"/>
 
 <br>
