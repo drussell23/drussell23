@@ -18,7 +18,7 @@
 
 <br>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3000&pause=1000&color=39FF14&center=true&vCenter=true&multiline=true&repeat=true&width=1050&height=80&lines=8%2C352+commits+%C2%B7+99.8%25+solo+%C2%B7+%7E3.2M+LOC+%C2%B7+%7E24K+governance+tests;181-page+paper+%C2%B7+Constitutional+Classifier+parity+target+%C2%B7+0%2F38+cage+escapes)](https://github.com/drussell23)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3000&pause=1000&color=39FF14&center=true&vCenter=true&multiline=true&repeat=true&width=1050&height=80&lines=8%2C352+commits+%C2%B7+99.8%25+solo+%C2%B7+%7E4.29M+lines+%C2%B7+%7E35K+governance+tests;181-page+paper+%C2%B7+Constitutional+Classifier+parity+target+%C2%B7+0%2F38+cage+escapes)](https://github.com/drussell23)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/derek-j-russell/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/drussell23)
@@ -53,7 +53,7 @@ Sole architect of the **JARVIS Trinity AI ecosystem** — a **~4.29M-line** auto
 
 - **11-phase governance pipeline** · **6-route urgency-aware provider cascade** · **19 autonomous sensors** · **29 Venom built-in tools + MCP**
 - **Iron Gate** (AST validation) + **Semantic Guardian** (12 detectors, ~10ms, zero LLM, 75 tests) + **4-tier risk escalation** + **L2 self-repair FSM** + **L3 worktree-isolated parallel subagents**
-- **~24K governance tests** · **300+ AST-pin structural invariants** across **900+ modules**
+- **~35K governance tests** · **300+ AST-pin structural invariants** across **900+ modules**
 - **Battle-test corpus** (as of 2026-05-17): **337 sessions** · **154h cumulative soak** · **124 clean completions** · **$54.67 total cost**
 - **GCP J-Prime self-hosted tier** — 11 GGUF specialists (~40.4 GB, Q4_K_M) · **~87s warm cold-start vs 30–60 min fresh-VM** · **~28× lower compute cost vs A100**
 - **3-tier provider cascade** (DoubleWord 397B → Claude → J-Prime) — **30–37× per-op cost reduction**
