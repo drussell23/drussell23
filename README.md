@@ -499,7 +499,7 @@ flowchart TD
 
 ### Disease 1: God File / Monolith Paradox
 
-`unified_supervisor.py` grew into a ~96K-line orchestration monolith with multiple high-impact domains in one file. The risk is not just size; it is **coupling density**: local edits can create non-local regressions.
+`unified_supervisor.py` grew into a ~99K-line orchestration monolith with multiple high-impact domains in one file. The risk is not just size; it is **coupling density**: local edits can create non-local regressions.
 
 ```mermaid
 flowchart TD
@@ -553,7 +553,7 @@ flowchart TD
 <br>
 
 **Ultra-short TL;DR**
-- **Monolith Risk Neutralized (in progress):** convert a 96K-line supervisor choke point into contract-bounded controllers
+- **Monolith Risk Neutralized (in progress):** convert a 99K-line supervisor choke point into contract-bounded controllers
 - **Single Entry Point Preserved:** one boot command, modular internals
 - **Safer Evolution:** isolation tests + parity-gated extraction waves
 
@@ -586,7 +586,7 @@ flowchart TD
 %%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1a1b27', 'primaryTextColor': '#a9b1d6', 'primaryBorderColor': '#70a5fd', 'lineColor': '#545c7e', 'secondaryColor': '#24283b', 'tertiaryColor': '#1a1b27', 'fontSize': '14px', 'fontFamily': 'JetBrains Mono, monospace' }}}%%
 
 flowchart TD
-    KERNEL["<b>UNIFIED SUPERVISOR KERNEL</b><br/>Single Entry Point · 50K+ LOC<br/>7-Zone Parallel Initialization"]
+    KERNEL["<b>UNIFIED SUPERVISOR KERNEL</b><br/>Single Entry Point · 99K+ LOC<br/>7-Zone Parallel Initialization"]
 
     KERNEL -->|"orchestrates"| JARVIS
     KERNEL -->|"routes inference"| PRIME
