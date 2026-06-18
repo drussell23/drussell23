@@ -14,7 +14,7 @@
 
 <br>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3000&pause=1000&color=39FF14&center=true&vCenter=true&multiline=true&repeat=true&width=1050&height=80&lines=7%2C800%2B+commits+%C2%B7+%7E3.1M+LOC+%C2%B7+%7E24K+governance+tests;181-page+paper+%C2%B7+Constitutional+Classifier+parity+target+%C2%B7+0%2F38+cage+escapes)](https://github.com/drussell23)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3000&pause=1000&color=39FF14&center=true&vCenter=true&multiline=true&repeat=true&width=1050&height=80&lines=8%2C352+commits+%C2%B7+99.8%25+solo+%C2%B7+%7E3.2M+LOC+%C2%B7+%7E24K+governance+tests;181-page+paper+%C2%B7+Constitutional+Classifier+parity+target+%C2%B7+0%2F38+cage+escapes)](https://github.com/drussell23)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/derek-j-russell/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/drussell23)
@@ -27,9 +27,21 @@
 
 ---
 
+<div align="center">
+
+`8,352 commits` · `~99.8% solo-authored` · `~27 commits/day` · `Aug 2025 → present`  
+`~4.29M tracked lines` · `3.19M Python` · `5,961 files` · `Python · Swift · TypeScript · Rust`  
+`O+V ~1.45M LOC` = `734K engine` + `646K test spine` + `64K scripts/docs`
+
+<sub>Every figure is git-tracked and reproducible — <code>git ls-files -z | xargs -0 wc -l</code></sub>
+
+</div>
+
+---
+
 ### AI Safety Architect & Founding Engineer
 
-Sole architect of the **JARVIS Trinity AI ecosystem** — a **~3.1M LOC** autonomous AI operating system with a **~639K LOC** Ouroboros + Venom governance core — implementing the **Reverse Russian Doll** method for bounded Recursive Self-Improvement. Designed against Anthropic's [**Constitutional Classifiers**](https://arxiv.org/abs/2501.18837) and **ASL-4 safeguard** frameworks; every safety claim runs hypothesis → measurement-harness → falsification before it ships.
+Sole architect of the **JARVIS Trinity AI ecosystem** — a **~4.29M-line** autonomous AI operating system (**3.19M LOC**) with a **~1.45M LOC** Ouroboros + Venom (O+V) self-development engine (734K engine + 646K test spine) — implementing the **Reverse Russian Doll** method for bounded Recursive Self-Improvement. Designed against Anthropic's [**Constitutional Classifiers**](https://arxiv.org/abs/2501.18837) and **ASL-4 safeguard** frameworks; every safety claim runs hypothesis → measurement-harness → falsification before it ships.
 
 **Featured paper** — [**"Ouroboros + Venom (O+V): A Governed Architecture for Autonomous Self-Development"**](https://drussell23.github.io/JARVIS/architecture/OV_RESEARCH_PAPER_2026-04-16.html) (181-page first-author, 2026)
 
