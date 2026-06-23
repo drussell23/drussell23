@@ -14,6 +14,10 @@
 
 <br>
 
+<img src="./assets/ov-banner.jpeg" width="90%" alt="Ouroboros + Venom (O+V) — Embrace the Chaos. Unchain the Dragon."/>
+
+<br>
+
 <img src="./assets/jarvis-ui.png" width="90%" alt="JARVIS Interface — Autonomous AI Operating System"/>
 
 <br>
