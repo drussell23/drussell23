@@ -22,7 +22,7 @@
 
 <br>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3000&pause=1000&color=39FF14&center=true&vCenter=true&multiline=true&repeat=true&width=1050&height=80&lines=8%2C352+commits+%C2%B7+99.8%25+solo+%C2%B7+%7E4.29M+lines+%C2%B7+%7E35K+governance+tests;181-page+paper+%C2%B7+Constitutional+Classifier+parity+target+%C2%B7+0%2F38+cage+escapes)](https://github.com/drussell23)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3000&pause=1000&color=39FF14&center=true&vCenter=true&multiline=true&repeat=true&width=1050&height=80&lines=9%2C231+commits+%C2%B7+99.8%25+solo+%C2%B7+%7E4.29M+lines+%C2%B7+1.61M+O%2BV+lines;181-page+paper+%C2%B7+Constitutional+Classifier+parity+target+%C2%B7+0%2F38+cage+escapes)](https://github.com/drussell23)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/derek-j-russell/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/drussell23)
@@ -37,9 +37,9 @@
 
 <div align="center">
 
-`8,352 commits` · `~99.8% solo-authored` · `~27 commits/day` · `Aug 2025 → present`  
-`~4.29M tracked lines` · `3.19M Python` · `5,961 files` · `Python · Swift · TypeScript · Rust`  
-`O+V ~1.45M LOC` = `734K engine` + `646K test spine` + `64K scripts/docs`
+`9,231 commits` · `~99.8% solo-authored` · `~28 commits/day` · `Aug 2025 → present (~11 months)`  
+`~4.29M tracked lines` · `3.19M Python` · `6,593 files` · `Python · Swift · TypeScript · Rust`  
+`O+V ~1.61M LOC` = `928K engine` + `682K test spine` + `~10K scripts/docs`
 
 <sub>Every figure is git-tracked and reproducible — <code>git ls-files -z | xargs -0 wc -l</code></sub>
 
@@ -49,7 +49,7 @@
 
 ### AI Safety Architect & Founding Engineer
 
-Sole architect of the **JARVIS Trinity AI ecosystem** — a **~4.29M-line** autonomous AI operating system (**3.19M LOC**) with a **~1.45M LOC** Ouroboros + Venom (O+V) self-development engine (734K engine + 646K test spine) — implementing the **Reverse Russian Doll** method for bounded Recursive Self-Improvement. Designed against Anthropic's [**Constitutional Classifiers**](https://arxiv.org/abs/2501.18837) and **ASL-4 safeguard** frameworks; every safety claim runs hypothesis → measurement-harness → falsification before it ships.
+Sole architect of the **JARVIS Trinity AI ecosystem** — a **~4.29M-line** autonomous AI operating system (**3.19M LOC**) with a **~1.61M LOC** Ouroboros + Venom (O+V) self-development engine (928K engine + 682K test spine) — implementing the **Reverse Russian Doll** method for bounded Recursive Self-Improvement. Designed against Anthropic's [**Constitutional Classifiers**](https://arxiv.org/abs/2501.18837) and **ASL-4 safeguard** frameworks; every safety claim runs hypothesis → measurement-harness → falsification before it ships.
 
 **Featured paper** — [**"Ouroboros + Venom (O+V): A Governed Architecture for Autonomous Self-Development"**](https://drussell23.github.io/JARVIS/architecture/OV_RESEARCH_PAPER_2026-04-16.html) (181-page first-author, 2026)
 
@@ -138,7 +138,7 @@ This is the load-bearing claim of the working dissertation: **bounded RSI by con
 
 <div align="center">
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=16&duration=2800&pause=800&color=39FF14&center=true&vCenter=true&repeat=true&width=1050&height=30&lines=%F0%9F%9F%A2+DoubleWord+partnership+%E2%80%94+337-session+battle-test+corpus+%2B+64-page+benchmark+report;%F0%9F%9F%A2+SWE-Bench-Pro+%E2%80%94+A%E2%86%92F+substrate+shipped+%C2%B7+299+spine+tests+%C2%B7+parallel+evaluation+rig;%F0%9F%9F%A2+Predictive+Provider+Resilience+%E2%80%94+EWMA-median+TTFT+forecaster+%2B+VRAM+eviction+detection;%F0%9F%9F%A2+Phase+B+Subagents+%E2%80%94+EXPLORE%2FREVIEW%2FPLAN%2FGENERAL+graduated+%C2%B7+138+regression+tests;%F0%9F%9F%A2+OCA+%28Operator+Commit+Authority%29+%E2%80%94+Cursor+IDE+Iron+Gate+fix+%C2%B7+Slices+1-4+landed;%F0%9F%9F%A2+IDE+Observability+%E2%80%94+VS+Code%2FCursor%2FSublime%2FJetBrains+extensions+on+SSE+stream;%F0%9F%9F%A2+J-Prime+%E2%80%94+11+GGUF+specialists+%C2%B7+%7E40.4+GB+%C2%B7+%7E87s+warm+cold-start+vs+30-60+min+fresh-VM;%F0%9F%9F%A2+ReactorCore+%E2%80%94+LoRA+fine-tuning+pipeline+on+GCP+Spot+VMs)](https://github.com/drussell23)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=16&duration=2800&pause=800&color=39FF14&center=true&vCenter=true&repeat=true&width=1050&height=30&lines=%F0%9F%9F%A2+A1+Ignition+Vector+%E2%80%94+GCP+Brain+live-fire+hardening+%C2%B7+5-layer+teardown+defense;%F0%9F%9F%A2+L2+VALIDATE_RETRY+storm+breaker+%E2%80%94+sticky-reason+%2B+exhaustion+taxonomy;%F0%9F%9F%A2+Domain+1+Causal+Graph+%E2%80%94+cross-repo+O%281%29+monotonic+fold+%C2%B7+SHIPPED;%F0%9F%9F%A2+Counterfactual+Rehearsal+Mode+%E2%80%94+pure-function+pre-APPLY+postmortem+evaluator;%F0%9F%9F%A2+deadline_wall.json+IPC+%E2%80%94+cross-host+coordination+%C2%B7+CLOSED;%F0%9F%9F%A2+systemd-run+cgroup+isolation+%E2%80%94+SSH+channel+blocking+eliminated;%F0%9F%9F%A2+9%2C231+commits+%C2%B7+1.61M+O%2BV+lines+%C2%B7+6%2C593+Python+files)](https://github.com/drussell23)
 
 </div>
 
@@ -1017,6 +1017,32 @@ python3 scripts/ouroboros_battle_test.py --cost-cap 0.50 --idle-timeout 600 -v
 
 The Reverse Russian Doll's outer shell now scales **detectionally + preventatively**. Priority #3 will add **evaluatively** — Anti-Venom mathematical auditability via deterministic counterfactual.
 
+### Recent Major Additions — June–July 2026
+
+**The A1 Ignition Vector: GCP Brain live-fire hardening. The organism's first sustained autonomous operation on a remote GCP node — the architectural gap between 'works locally' and 'works in production' is being closed.**
+
+| Arc | What it closes | Status |
+|---|---|---|
+| **A1 GCP Brain Migration** | Organism runs on GCP Stage-1 CPU golden image via `ignite_a1_brain.py`. 5-layer teardown defense-in-depth ($0 guarantee even on total Mac network loss). `provision_brain` → SSH dispatch → IapBlackBoxTransport verdict retrieval. | 🚀 IN FLIGHT |
+| **deadline_wall.json IPC** | Cross-host coordination bug eliminated. Harness publishes `deadline_wall` (epoch seconds) to same-host JSON; organism reads for cooperative shutdown. `post_wall_margin` prevents monitor budget exhaustion mid-kill-ladder. | ✅ CLOSED |
+| **systemd-run cgroup isolation** | SSH channel blocking eliminated. `systemd-run --unit=a1soak-<id> --collect` severs soak from SSH session (~3s dispatch vs. blocking until exit). Own cgroup/session. | ✅ CLOSED |
+| **DW rehearsal-lane budget** | C+ gap (organism never reached APPLY). `--dw-session-budget` knob funds the DW lane; `cost_cap=0.0` was scenario-default, not law. Synthetic adversary supplies `DOUBLEWORD_API_KEY` for keyless nodes. | ✅ CLOSED |
+| **L2 VALIDATE_RETRY storm breaker** | Infinite retry loops when VALIDATE fails with same root cause. Sticky-reason breaker + route-aware dispatch budget + exhaustion taxonomy. | ✅ CLOSED |
+| **Domain 1 Causal Graph** | Cross-repo causal graph with O(1) monotonic fold. `emit_seq`-MONOTONIC, order-independent convergence. `structural_delta.py` + `causal_graph_ingestor.py` + `blast_radius_oracle.py`. WAL (Task 3) pending. | ✅ SHIPPED |
+| **Counterfactual Rehearsal Mode** | Pure-function pre-APPLY postmortem evaluator. Posture-aware intensity scaling. `evaluate_rehearsal()` + `format_rehearsal_panel()`. Master default-FALSE pending live soak. | ✅ SHIPPED |
+
+**By the numbers (cumulative):**
+
+| Metric | Value |
+|---|---|
+| Commits | **9,231** (~28.2/day across 327 days) |
+| O+V engine | **928K lines** across 808 files |
+| O+V test spine | **682K lines** across 1,842 test files |
+| Total O+V | **~1.61M lines** |
+| Python files (git-tracked) | **6,593** |
+| Total tracked files | **9,247** |
+| `JARVIS_*` env flag seeds | **282** (481+ runtime via FlagRegistry) |
+
 ### GCP Hybrid Cloud Spot Architecture
 
 <details>
@@ -1500,10 +1526,10 @@ Native C++ Training Kernels
 
 | Metric | Value |
 |--------|-------|
-| **Total commits** | 3,900+ across 3 repositories |
-| **Codebase** | ~2.5 million lines across 18+ languages |
-| **Build duration** | 12 months, solo |
-| **Unified kernel** | 50,000+ lines in a single orchestration file |
+| **Total commits** | 9,200+ across 3 repositories |
+| **Codebase** | ~4.29 million lines across 18+ languages |
+| **Build duration** | 11 months, solo |
+| **Unified kernel** | 102,000+ lines in a single orchestration file |
 | **Neural Mesh agents** | 16+ specialized agents with async message passing |
 | **Models served** | 11 specialist GGUF models via task-type routing |
 | **Inference tiers** | GCP Golden Image → Local Metal GPU → Claude API |
