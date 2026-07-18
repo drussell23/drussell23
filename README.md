@@ -10,7 +10,7 @@
 
 <br>
 
-**Systems Engineer building JARVIS — a 4.29M-line autonomous AI OS with a 1.45M-line Ouroboros+Venom (O+V) self-development engine. Solo-built.**
+**Systems Engineer building JARVIS — a ~5M-line autonomous AI ecosystem across 3 repos with a 1.56M-line Ouroboros+Venom (O+V) self-development engine. Solo-built.**
 
 <br>
 
@@ -22,7 +22,7 @@
 
 <br>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3000&pause=1000&color=39FF14&center=true&vCenter=true&multiline=true&repeat=true&width=1050&height=80&lines=9%2C231+commits+%C2%B7+99.8%25+solo+%C2%B7+%7E4.29M+lines+%C2%B7+1.61M+O%2BV+lines;181-page+paper+%C2%B7+Constitutional+Classifier+parity+target+%C2%B7+0%2F38+cage+escapes)](https://github.com/drussell23)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3000&pause=1000&color=39FF14&center=true&vCenter=true&multiline=true&repeat=true&width=1050&height=80&lines=9%2C905+commits+%C2%B7+99.7%25+solo+%C2%B7+%7E4.9M+lines+%C2%B7+1.56M+O%2BV+lines;181-page+paper+%C2%B7+Constitutional+Classifier+parity+target+%C2%B7+0%2F38+cage+escapes)](https://github.com/drussell23)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/derek-j-russell/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/drussell23)
@@ -37,9 +37,9 @@
 
 <div align="center">
 
-`9,231 commits` · `~99.8% solo-authored` · `~28 commits/day` · `Aug 2025 → present (~11 months)`  
-`~4.29M tracked lines` · `3.19M Python` · `6,593 files` · `Python · Swift · TypeScript · Rust`  
-`O+V ~1.61M LOC` = `928K engine` + `682K test spine` + `~10K scripts/docs`
+`9,905 commits` · `~99.7% solo-authored` · `~28 commits/day` · `Aug 2025 → present (~11 months)`  
+`~4.9M tracked lines (3 repos)` · `3.70M Python` · `7,140 files` · `Python · Swift · TypeScript · Rust`  
+`O+V ~1.56M LOC` = `~832K engine` + `~730K test spine`
 
 <sub>Every figure is git-tracked and reproducible — <code>git ls-files -z | xargs -0 wc -l</code></sub>
 
@@ -49,7 +49,7 @@
 
 ### AI Safety Architect & Founding Engineer
 
-Sole architect of the **JARVIS Trinity AI ecosystem** — a **~4.29M-line** autonomous AI operating system (**3.19M LOC**) with a **~1.61M LOC** Ouroboros + Venom (O+V) self-development engine (928K engine + 682K test spine) — implementing the **Reverse Russian Doll** method for bounded Recursive Self-Improvement. Designed against Anthropic's [**Constitutional Classifiers**](https://arxiv.org/abs/2501.18837) and **ASL-4 safeguard** frameworks; every safety claim runs hypothesis → measurement-harness → falsification before it ships.
+Sole architect of the **JARVIS Trinity AI ecosystem** — a **~5M-line** autonomous AI ecosystem across three repositories (**3.70M Python LOC**) with a **~1.56M LOC** Ouroboros + Venom (O+V) self-development engine (~832K engine + ~730K test spine) — implementing the **Reverse Russian Doll** method for bounded Recursive Self-Improvement. Designed against Anthropic's [**Constitutional Classifiers**](https://arxiv.org/abs/2501.18837) and **ASL-4 safeguard** frameworks; every safety claim runs hypothesis → measurement-harness → falsification before it ships.
 
 **Featured paper** — [**"Ouroboros + Venom (O+V): A Governed Architecture for Autonomous Self-Development"**](https://drussell23.github.io/JARVIS/architecture/OV_RESEARCH_PAPER_2026-04-16.html) (181-page first-author, 2026)
 
@@ -57,7 +57,7 @@ Sole architect of the **JARVIS Trinity AI ecosystem** — a **~4.29M-line** auto
 
 - **11-phase governance pipeline** · **6-route urgency-aware provider cascade** · **17 autonomous sensors** · **29 Venom built-in tools + MCP**
 - **Iron Gate** (AST validation) + **Semantic Guardian** (12 detectors, ~10ms, zero LLM, 75 tests) + **4-tier risk escalation** + **L2 self-repair FSM** + **L3 worktree-isolated parallel subagents**
-- **~35K governance tests** · **300+ AST-pin structural invariants** across **900+ modules**
+- **55,000+ automated tests** · **300+ AST-pin structural invariants** across **900+ modules**
 - **Battle-test corpus** (as of 2026-05-17): **337 sessions** · **154h cumulative soak** · **124 clean completions** · **$54.67 total cost**
 - **GCP J-Prime self-hosted tier** — 11 GGUF specialists (~40.4 GB, Q4_K_M) · **~87s warm cold-start vs 30–60 min fresh-VM** · **~28× lower compute cost vs A100**
 - **3-tier provider cascade** (DoubleWord 397B → Claude → J-Prime) — **30–37× per-op cost reduction**
@@ -138,7 +138,7 @@ This is the load-bearing claim of the working dissertation: **bounded RSI by con
 
 <div align="center">
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=16&duration=2800&pause=800&color=39FF14&center=true&vCenter=true&repeat=true&width=1050&height=30&lines=%F0%9F%9F%A2+A1+Ignition+Vector+%E2%80%94+GCP+Brain+live-fire+hardening+%C2%B7+5-layer+teardown+defense;%F0%9F%9F%A2+L2+VALIDATE_RETRY+storm+breaker+%E2%80%94+sticky-reason+%2B+exhaustion+taxonomy;%F0%9F%9F%A2+Domain+1+Causal+Graph+%E2%80%94+cross-repo+O%281%29+monotonic+fold+%C2%B7+SHIPPED;%F0%9F%9F%A2+Counterfactual+Rehearsal+Mode+%E2%80%94+pure-function+pre-APPLY+postmortem+evaluator;%F0%9F%9F%A2+deadline_wall.json+IPC+%E2%80%94+cross-host+coordination+%C2%B7+CLOSED;%F0%9F%9F%A2+systemd-run+cgroup+isolation+%E2%80%94+SSH+channel+blocking+eliminated;%F0%9F%9F%A2+9%2C231+commits+%C2%B7+1.61M+O%2BV+lines+%C2%B7+6%2C593+Python+files)](https://github.com/drussell23)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=16&duration=2800&pause=800&color=39FF14&center=true&vCenter=true&repeat=true&width=1050&height=30&lines=%F0%9F%9F%A2+A1+Ignition+Vector+%E2%80%94+GCP+Brain+live-fire+hardening+%C2%B7+5-layer+teardown+defense;%F0%9F%9F%A2+L2+VALIDATE_RETRY+storm+breaker+%E2%80%94+sticky-reason+%2B+exhaustion+taxonomy;%F0%9F%9F%A2+Domain+1+Causal+Graph+%E2%80%94+cross-repo+O%281%29+monotonic+fold+%C2%B7+SHIPPED;%F0%9F%9F%A2+Counterfactual+Rehearsal+Mode+%E2%80%94+pure-function+pre-APPLY+postmortem+evaluator;%F0%9F%9F%A2+deadline_wall.json+IPC+%E2%80%94+cross-host+coordination+%C2%B7+CLOSED;%F0%9F%9F%A2+systemd-run+cgroup+isolation+%E2%80%94+SSH+channel+blocking+eliminated;%F0%9F%9F%A2+9%2C905+commits+%C2%B7+1.56M+O%2BV+lines+%C2%B7+7%2C140+Python+files)](https://github.com/drussell23)
 
 </div>
 
@@ -1035,11 +1035,11 @@ The Reverse Russian Doll's outer shell now scales **detectionally + preventative
 
 | Metric | Value |
 |---|---|
-| Commits | **9,231** (~28.2/day across 327 days) |
-| O+V engine | **928K lines** across 808 files |
-| O+V test spine | **682K lines** across 1,842 test files |
-| Total O+V | **~1.61M lines** |
-| Python files (git-tracked) | **6,593** |
+| Commits | **9,905** (~28/day, 3 repos) |
+| O+V engine | **~832K lines** across 1,288 files |
+| O+V test spine | **~730K lines** |
+| Total O+V | **~1.56M lines** |
+| Python files (git-tracked) | **7,140** (3 repos) |
 | Total tracked files | **9,247** |
 | `JARVIS_*` env flag seeds | **282** (481+ runtime via FlagRegistry) |
 
