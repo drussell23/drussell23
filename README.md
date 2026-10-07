@@ -37,11 +37,11 @@
 
 <div align="center">
 
-`11,230 commits` · `solo-built` · `37 machine-authored commits landed on main` · `66,000+ tests`  
+`Feb 2025 → present` · `11,230 commits` · `solo-built` · `37 machine-authored commits landed on main` · `66,000+ tests`  
 `~5.35M tracked lines (3 repos)` · `4.12M Python` · `11,185 files` · `Python · Swift · TypeScript · Rust`  
 `O+V engine ~1.03M lines` · `test spine ~1.18M lines`
 
-<sub>Every figure is git-tracked and reproducible — <code>python3 scripts/readme_stats.py</code> in <a href="https://github.com/drussell23/JARVIS">JARVIS</a> (as of 2026-10-06)</sub>
+<sub>Every figure is git-tracked and reproducible — <code>python3 scripts/readme_stats.py</code> in <a href="https://github.com/drussell23/JARVIS">JARVIS</a> (as of 2026-10-06) · built locally from Feb 2025; public on GitHub since Aug 2025</sub>
 
 </div>
 
