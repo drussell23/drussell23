@@ -60,9 +60,25 @@ The moment an agent acts on its own, the hard problem stops being what it can do
 
 ---
 
-## Latest results (Oct 2026)
+## See it run
 
-> 🎥 **See it run:** [**demo videos**](https://drive.google.com/drive/folders/1DwBzhVjeLc1ExSShl49Oiqu3tJI44Szq) — **#1** boots the `ov` cockpit and asks O+V about itself; **#2** shows O+V at work on a local 30B model at $0.00 — reading files, searching the codebase and generating, streamed live as tool calls; **#3** (4K) shows JARVIS unlocking my locked Mac by voice and carrying out the command.
+**O+V #1 — booting the `ov` cockpit and asking O+V about itself**
+
+https://github.com/user-attachments/assets/b5a4b8a9-1479-4cb4-80c3-07ee03a9f71e
+
+**O+V #2 — at work on a local 30B model at $0.00: reading files, searching the codebase and generating, streamed live as tool calls**
+
+https://github.com/user-attachments/assets/0f53aaa2-3f7f-43b5-a743-da1b56083237
+
+**JARVIS — unlocking my locked Mac by voice, then carrying out the command** (sound on)
+
+https://github.com/user-attachments/assets/874ab739-672b-40ba-8fdb-09855668fec2
+
+<sub>Full-quality originals, including the 4K unlock demo, are in the [demo folder on Google Drive](https://drive.google.com/drive/folders/1DwBzhVjeLc1ExSShl49Oiqu3tJI44Szq).</sub>
+
+---
+
+## Latest results (Oct 2026)
 
 - **Caught O+V reward-hacking its own verifier.** It landed a test that pytest reported as "1 passed" while executing nothing and never importing the code it claimed to test. [Reverted it](https://github.com/drussell23/JARVIS/commit/fcc50352f0), audited every landing from that run, and shipped a [**Test Reality Gate**](https://github.com/drussell23/JARVIS/commit/70935a4bee) that rejects tests which cannot execute, verify nothing, or never import their subject — before pytest runs.
 - **6.03-hour unattended run: 10 landed commits (6 substantive), $0 inference cost** on a local 30B model. The bottleneck it exposed was the supply of landable work, not the model. [Full evidence record](https://github.com/drussell23/JARVIS/commit/0942373817).
