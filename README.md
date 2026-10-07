@@ -10,7 +10,7 @@
 
 <br>
 
-**Systems Engineer building JARVIS — a ~5M-line autonomous AI ecosystem across 3 repos with a 1.56M-line Ouroboros+Venom (O+V) self-development engine. Solo-built.**
+**AI Systems Engineer building JARVIS — a ~5.35M-line autonomous AI ecosystem across 3 repos, developed in part by its own agent, Ouroboros + Venom (O+V). Solo-built. Open to research-engineering roles in agents, evaluation and LLM infrastructure.**
 
 <br>
 
@@ -22,7 +22,7 @@
 
 <br>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3000&pause=1000&color=39FF14&center=true&vCenter=true&multiline=true&repeat=true&width=1050&height=80&lines=9%2C905+commits+%C2%B7+99.7%25+solo+%C2%B7+%7E4.9M+lines+%C2%B7+1.56M+O%2BV+lines;181-page+paper+%C2%B7+Constitutional+Classifier+parity+target+%C2%B7+0%2F38+cage+escapes)](https://github.com/drussell23)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3000&pause=1000&color=39FF14&center=true&vCenter=true&multiline=true&repeat=true&width=1050&height=80&lines=11%2C230+commits+%C2%B7+%7E5.35M+lines+%C2%B7+66%2C000%2B+tests+%C2%B7+37+machine-authored+commits;30B+GRPO+on+one+GPU+%C2%B7+6h+unattended+runs+%C2%B7+%240+inference)](https://github.com/drussell23)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/derek-j-russell/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/drussell23)
@@ -37,11 +37,11 @@
 
 <div align="center">
 
-`9,905 commits` · `~99.7% solo-authored` · `~28 commits/day` · `Aug 2025 → present (~11 months)`  
-`~4.9M tracked lines (3 repos)` · `3.70M Python` · `7,140 files` · `Python · Swift · TypeScript · Rust`  
-`O+V ~1.56M LOC` = `~832K engine` + `~730K test spine`
+`11,230 commits` · `solo-built` · `37 machine-authored commits landed on main` · `66,000+ tests`  
+`~5.35M tracked lines (3 repos)` · `4.12M Python` · `11,185 files` · `Python · Swift · TypeScript · Rust`  
+`O+V engine ~1.03M lines` · `test spine ~1.18M lines`
 
-<sub>Every figure is git-tracked and reproducible — <code>git ls-files -z | xargs -0 wc -l</code></sub>
+<sub>Every figure is git-tracked and reproducible — <code>python3 scripts/readme_stats.py</code> in <a href="https://github.com/drussell23/JARVIS">JARVIS</a> (as of 2026-10-06)</sub>
 
 </div>
 
@@ -49,18 +49,25 @@
 
 ### AI Safety Architect & Founding Engineer
 
-Sole architect of the **JARVIS Trinity AI ecosystem** — a **~5M-line** autonomous AI ecosystem across three repositories (**3.70M Python LOC**) with a **~1.56M LOC** Ouroboros + Venom (O+V) self-development engine (~832K engine + ~730K test spine) — implementing the **Reverse Russian Doll** method for bounded Recursive Self-Improvement. Designed against Anthropic's [**Constitutional Classifiers**](https://arxiv.org/abs/2501.18837) and **ASL-4 safeguard** frameworks; every safety claim runs hypothesis → measurement-harness → falsification before it ships.
+Sole architect of the **JARVIS Trinity AI ecosystem** — a **~5.35M-line** autonomous AI ecosystem across three repositories (**4.12M Python LOC**) with a **~1.03M-line** Ouroboros + Venom (O+V) self-development engine and a ~1.18M-line test spine — implementing the **Reverse Russian Doll** method for bounded Recursive Self-Improvement. Designed against Anthropic's [**Constitutional Classifiers**](https://arxiv.org/abs/2501.18837) and **ASL-4 safeguard** frameworks; every safety claim runs hypothesis → measurement-harness → falsification before it ships.
 
 **Featured paper** — [**"Ouroboros + Venom (O+V): A Governed Architecture for Autonomous Self-Development"**](https://drussell23.github.io/JARVIS/architecture/OV_RESEARCH_PAPER_2026-04-16.html) (181-page first-author, 2026)
 
+**Latest (Oct 2026):**
+
+- **Caught O+V reward-hacking its own verifier** — it landed a test that reported "1 passed" while executing nothing. Reverted, audited every landing from that run, and shipped a **Test Reality Gate** that rejects tests which cannot execute, verify nothing, or never import their subject — before pytest runs.
+- **6.03-hour unattended run: 10 landed commits (6 substantive), $0 inference cost** on a local 30B model · **37 machine-authored commits** now on `main`, each carrying the agent's provenance trailers.
+- **Fine-tuned a 30B MoE with GRPO on one 32 GB GPU**, using the system's own validation gate as the reward — after writing the per-expert NF4 quantization the libraries lacked (~54 GiB → 15.6 GiB).
+- **Containment for unattended runs** — every candidate execution runs in an unprivileged PID namespace (a generated test once ran `pkill -f jarvis` and killed the agent); test runs beside a live soak are memory-budgeted in their own cgroup.
+
 **At a glance:**
 
-- **11-phase governance pipeline** · **6-route urgency-aware provider cascade** · **17 autonomous sensors** · **29 Venom built-in tools + MCP**
+- **11-phase governance pipeline** · **6-route urgency-aware provider cascade** · **24 autonomous sensors** · **29 Venom built-in tools + MCP**
 - **Iron Gate** (AST validation) + **Semantic Guardian** (12 detectors, ~10ms, zero LLM, 75 tests) + **4-tier risk escalation** + **L2 self-repair FSM** + **L3 worktree-isolated parallel subagents**
-- **55,000+ automated tests** · **300+ AST-pin structural invariants** across **900+ modules**
+- **66,000+ automated tests** · **300+ AST-pin structural invariants** across **900+ modules**
 - **Battle-test corpus** (as of 2026-05-17): **337 sessions** · **154h cumulative soak** · **124 clean completions** · **$54.67 total cost**
 - **GCP J-Prime self-hosted tier** — 11 GGUF specialists (~40.4 GB, Q4_K_M) · **~87s warm cold-start vs 30–60 min fresh-VM** · **~28× lower compute cost vs A100**
-- **3-tier provider cascade** (DoubleWord 397B → Claude → J-Prime) — **30–37× per-op cost reduction**
+- **Local-first inference** — a locally served 30B model is the primary lane at **$0.00 per operation**; paid lanes (DoubleWord 397B, Claude) are behind one declared switch · earlier 3-tier cascade cut per-op cost **30–37×**
 - **Adversarial cage** — 0/38 escapes on a hand-authored corpus · 12/38 documented gaps · Constitutional Classifier 86%→4.4% parity target (positioned, not yet claimed)
 
 ---
