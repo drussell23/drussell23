@@ -1,4 +1,4 @@
-> **Archived 2026-10-06.** This is the full profile README as it stood before the October 2026 renovation, kept unedited so nothing was lost. Some figures and architecture descriptions here are out of date; the current profile is the [README](../README.md).
+> **Archived 2026-10-06.** This is the full profile README as it stood before the October 2026 renovation, kept unedited so nothing was lost. Some figures and architecture descriptions here are out of date; the current profile is the [README](../README.md). Since 2026-10-28 the JARVIS, JARVIS-Prime and JARVIS-Reactor repositories are private, so links into them and the paper link below no longer resolve.
 
 <div align="center">
 
